@@ -129,6 +129,7 @@
             color: white;
             padding: 12px 16px;
             display: block;
+            text-decoration: none;
             font-family: "Karla", sans-serif;
             font-size: 18px;
         }
@@ -384,18 +385,7 @@
             }
 
             .dropdown-content {
-                position: absolute;
-                right: 0;
                 background: rgba(0, 0, 0, 0.8);
-                min-width: 180px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-                border-radius: 12px;
-                overflow: hidden;
-                margin-top: 5px;
             }
 
             .dropdown:hover .dropdown-content {
@@ -404,27 +394,11 @@
                 pointer-events: auto;
             }
 
-            .dropdown-content a {
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                font-family: "Karla", sans-serif;
-                font-size: 18px;
-            }
-
             .dropdown-content a:hover {
                 background: rgba(0, 0, 0, 0.5)
             }
 
             /* haha more stuff related to containers! */
-
-            .container h1 {
-                font-family: "Jaya", sans-serif;
-                font-size: 5em;
-                color: white;
-                text-align: center;
-            }
 
             .comselect {
                 margin: 0;
@@ -452,68 +426,10 @@
             .p7,
             .p8,
             .p9 {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 22px;
                 min-height: 13em;
                 width: 75vw;
-                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
                 margin: 20px auto;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.5s ease;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 20px;
-                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), var(--bg-img);
                 background-size: cover;
-                background-position: var(--bg-pos, center);
-                background-blend-mode: normal;
-            }
-
-            .p1 {
-                --bg-pos: 20% 90%;
-                background-size: 600px;
-            }
-
-            .p2 {
-                --bg-pos: 0% 40%;
-                background-size: 700px;
-            }
-
-            .p3 {
-                --bg-pos: 30% 0%;
-                background-size: 500px;
-            }
-
-            .p4 {
-                --bg-pos: 50% 0%;
-                background-size: 400px;
-            }
-
-            .p5 {
-                --bg-pos: 40% 100%;
-                background-size: 500px;
-            }
-
-            .p6 {
-                --bg-pos: 50% 0%;
-                background-size: 500px;
-            }
-
-            .p7 {
-                --bg-pos: 30% 100%;
-                background-size: 500px;
-            }
-
-            .p8 {
-                --bg-pos: 60% 0%;
-                background-size: 500px;
-            }
-
-            .p9 {
-                --bg-pos: 25% 100%;
-                background-size: 500px;
             }
 
             .p1 h2,
@@ -525,10 +441,6 @@
             .p7 h2,
             .p8 h2,
             .p9 h2 {
-                color: white;
-                font-family: "Karla", sans-serif;
-                font-weight: 200;
-                margin: 0;
                 font-size: 2em;
             }
 
@@ -541,45 +453,15 @@
             .p7 h3,
             .p8 h3,
             .p9 h3 {
-                color: white;
-                font-family: "Karla", sans-serif;
-                font-weight: 200;
-                margin-left: 2px;
                 font-size: 1.5em;
-                margin-top: 10px;
-                margin-bottom: 0;
             }
 
             footer {
                 height: 300px;
             }
 
-            .footerstuff {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-            }
-
             .footerstuff img {
                 height: 5em;
                 margin-top: -15px;
-            }
-
-            .footerstuff h1 {
-                font-family: "Jaya";
-                color: lightgrey;
-            }
-
-            .footerstuff h2 {
-                font-family: "Jaya";
-                color: lightgrey;
-                text-align: center;
-            }
-
-            .footerstuff a {
-                text-decoration: none;
-                background: linear-gradient(to right, purple, white);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         }

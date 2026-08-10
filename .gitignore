@@ -10,4 +10,4 @@ maumakanapa/staticfiles/
 
 .vscode/
 
-.stylelintrc.json
+.DS_Store
