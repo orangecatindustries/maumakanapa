@@ -1,0 +1,830 @@
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+        @font-face {
+            font-family: "Jaya";
+            src: url("/static/fonts/everything.otf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "Labirhin";
+            src: url("/static/fonts/labirhin.otf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            background-image: url("/static/imgs/meow.webp");
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            width: 75%;
+            max-width: 1025px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            backdrop-filter: blur(10px);
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        header img {
+            height: 60px;
+            margin-top: -3px;
+        }
+
+        .logos {
+            margin-left: 15px;
+            margin-top: -5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logos img {
+            height: 45px;
+        }
+
+        header a {
+            font-family: "Karla", sans-serif;
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
+            font-size: 22px;
+            margin-top: 15px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 62px;
+            margin-right: 35px;
+        }
+
+        .icons {
+            display: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown img {
+            margin-top: 10px;
+            height: 45px;
+            cursor: pointer;
+            filter: invert(1);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 5px;
+            backdrop-filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .dropdown-content.show {
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            transform: translateY(0%);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            margin-top: 5px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            pointer-events: all;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            font-family: "Karla", sans-serif;
+            font-size: 18px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* 1st section */
+
+        #logo {
+            display: flex;
+        }
+
+        .meow {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .videostuff {
+            width: 60em;
+            position: relative;
+            height: 15em;
+            filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.8));
+            transition: 0.5s;
+            margin-top: 0em;
+        }
+
+        .videostuff:hover {
+            transition: 0.5s;
+            filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 0.8));
+        }
+
+        .videostuff img {
+            width: 100%;
+            height: 25vh;
+            display: block;
+            object-fit: cover;
+            mask-image: url("/static/imgs/maumakanapalogo.png");
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center top;
+        }
+
+        /* containers */
+
+        .bigcontainer {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            padding: 2em;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bigcontainer h3 {
+            font-family: "Karla", sans-serif;
+            color: white;
+            font-weight: 200;
+            text-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px;
+            font-size: 25px;
+            margin-top: -5px;
+        }
+
+        #containers {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .all {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .first {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .second {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .wow-en,
+        .wow-pt,
+        .wow-in,
+        .wow-sp {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            height: 13em;
+            width: 25em;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .wow-en h1,
+        .wow-pt h1,
+        .wow-in h1,
+        .wow-sp h1 {
+            font-family: "Karla", sans-serif;
+            color: white;
+            font-weight: 200;
+            position: relative;
+            z-index: 3;
+            margin: 20px;
+            font-size: 28px;
+        }
+
+        .wow-en h2,
+        .wow-pt h2,
+        .wow-in h2,
+        .wow-sp h2 {
+            position: relative;
+            font-family: "Karla", sans-serif;
+            font-weight: 200;
+            z-index: 3;
+            color: white;
+            margin: 20px;
+            margin-top: -5px;
+            font-size: 20px;
+        }
+
+
+        .wow-en:hover,
+        .wow-pt:hover,
+        .wow-in:hover,
+        .wow-sp:hover {
+            transform: scale(1.05);
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+        }
+
+        .wow-pt .wow-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/static/imgs/0629_5.gif");
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .wow-en .wow-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/static/imgs/englishflag.gif");
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .wow-in .wow-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/static/imgs/indonesianflag.gif");
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .wow-sp .wow-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/static/imgs/spanishflag.gif");
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .wow-gif::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: scale(1.05);
+        }
+
+        .wow-en:hover .wow-gif,
+        .wow-pt:hover .wow-gif,
+        .wow-in:hover .wow-gif,
+        .wow-sp:hover .wow-gif {
+            opacity: 1;
+        }
+
+        .wow-pt img,
+        .wow-en img,
+        .wow-sp img,
+        .wow-in img {
+            margin-top: -15.9em;
+            opacity: 0.3;
+            width: 25em;
+        }
+
+        .lang-link {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .lang-link button {
+            display: flex;
+            font-size: 17px;
+            padding: 0.8em 1em 0.8em 1em;
+            font-family: "Karla", sans-serif;
+            color: white;
+            font-weight: 200;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 20em;
+            z-index: 4;
+            cursor: pointer;
+            position: relative;
+            left: 80px;
+            bottom: -40px;
+        }
+
+        .comcontainer {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            padding: 2em;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stuff h1 {
+            font-family: "Jaya";
+            text-align: center;
+            color: white;
+            font-size: 6em;
+        }
+
+        #discord,
+        #merch,
+        #patreon,
+        #twitter {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            padding: 2em;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 5em;
+            width: 21em;
+            transition: 0.5s;
+        }
+
+        #discord:hover {
+            transform: scale(1.05);
+            background-color: #3556CA;
+        }
+
+        #patreon:hover {
+            transform: scale(1.05);
+            background-color: #f96854;
+        }
+
+        #merch:hover {
+            transform: scale(1.05);
+            background-color: #fcb61e;
+        }
+
+        #twitter:hover {
+            transform: scale(1.05);
+            background-color: lightskyblue;
+        }
+
+        #discord img,
+        #merch img,
+        #twitter img {
+            height: 85px;
+            filter: invert();
+        }
+
+        #patreon img {
+            height: 65px;
+            filter: invert();
+            margin-left: 6px;
+        }
+
+        #discord h2,
+        #merch h2,
+        #twitter h2 {
+            font-family: "Karla", sans-serif;
+            color: white;
+            font-weight: 200;
+            margin-left: 40px;
+        }
+
+        #patreon h2 {
+            font-family: "Karla", sans-serif;
+            color: white;
+            font-weight: 200;
+            margin-left: 52px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .footerstuff {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .footerstuff img {
+            height: 5em;
+            margin-top: -15px;
+        }
+
+        .footerstuff h1,
+        .footerstuff h2 {
+            font-family: "Jaya";
+            color: lightgrey;
+            text-align: center;
+        }
+
+        .footerstuff a {
+            text-decoration: none;
+            background: linear-gradient(to right, purple, white);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media screen and (max-width: 500px) {
+            header {
+                width: 90%;
+                height: 5em;
+            }
+
+            header nav,
+            .logos {
+                display: none;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .icons .logo-icon img {
+                margin-top: 10px;
+                height: 60px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown img {
+                margin-top: 10px;
+                height: 45px;
+                cursor: pointer;
+                filter: invert(1);
+            }
+
+            .dropdown-content {
+                position: absolute;
+                right: 0;
+                background: rgba(0, 0, 0, 0.8);
+                min-width: 180px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                pointer-events: none;
+                border-radius: 12px;
+                overflow: hidden;
+                margin-top: 5px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-family: "Karla", sans-serif;
+                font-size: 18px;
+            }
+
+            .dropdown-content a:hover {
+                background: rgba(0, 0, 0, 0.5)
+            }
+
+            .videostuff {
+                width: 22em;
+                margin-top: 2em;
+                max-width: 100vw;
+            }
+
+            .videostuff img {
+                height: 12vh;
+            }
+
+            /* haha more stuff related to containers! */
+
+            .bigcontainer {
+                margin-top: -6em;
+                width: 70vw;
+            }
+
+            .bigcontainer h3 {
+                font-size: 25px;
+                text-align: center;
+            }
+
+            .all,
+            .first,
+            .second {
+                flex-direction: column;
+            }
+
+            .wow-en,
+            .wow-pt,
+            .wow-in,
+            .wow-sp {
+                width: 20em;
+                height: 10em;
+            }
+
+            .wow-en h1,
+            .wow-pt h1,
+            .wow-in h1,
+            .wow-sp h1 {
+                font-family: "Karla", sans-serif;
+                color: white;
+                font-weight: 200;
+                position: relative;
+                z-index: 3;
+                margin: 20px;
+                font-size: 28px;
+                margin-top: 15px;
+            }
+
+            .wow-en h2,
+            .wow-pt h2,
+            .wow-in h2,
+            .wow-sp h2 {
+                position: relative;
+                font-family: "Karla", sans-serif;
+                font-weight: 200;
+                z-index: 3;
+                color: white;
+                margin: 20px;
+                margin-top: -15px;
+                font-size: 20px;
+            }
+
+            .lang-link button {
+                left: 45px;
+                bottom: -10px;
+            }
+
+            /* community */
+
+            #about {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .stuff h1 {
+                font-family: "Jaya";
+                color: white;
+                font-size: 50px;
+                text-align: center;
+            }
+
+            #discord,
+            #merch,
+            #patreon,
+            #twitter {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 22px;
+                padding: 2em;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+                margin: 5px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 4em;
+                width: 13em;
+            }
+
+            #discord img,
+            #merch img,
+            #twitter img {
+                height: 65px;
+                margin-top: -16px;
+                filter: invert();
+            }
+
+            #patreon img {
+                height: 55px;
+                margin-top: -15px;
+                filter: invert();
+            }
+
+            #discord h2,
+            #merch h2,
+            #twitter h2 {
+                font-family: "Karla", sans-serif;
+                color: white;
+                font-weight: 200;
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+
+            #patreon h2 {
+                font-family: "Karla", sans-serif;
+                color: white;
+                font-weight: 200;
+                margin-top: 12px;
+                margin-left: 0px;
+            }
+
+            footer {
+                height: 300px;
+            }
+
+            .footerstuff {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .footerstuff img {
+                height: 5em;
+                margin-top: -15px;
+            }
+
+            .footerstuff h1 {
+                font-family: "Jaya";
+                color: lightgrey;
+            }
+
+            .footerstuff h2 {
+                font-family: "Jaya";
+                color: lightgrey;
+                text-align: center;
+            }
+
+            .footerstuff a {
+                text-decoration: none;
+                background: linear-gradient(to right, purple, white);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 900px) {
+            header nav {
+                display: none;
+            }
+
+            .logos {
+                display: none;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .icons .logo-icon img {
+                margin-top: 10px;
+                height: 60px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown img {
+                margin-top: 10px;
+                height: 45px;
+                cursor: pointer;
+                filter: invert(1);
+            }
+
+            .dropdown-content {
+                position: absolute;
+                right: 0;
+                background: rgba(0, 0, 0, 0.5);
+                min-width: 180px;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                pointer-events: none;
+                border-radius: 12px;
+                overflow: hidden;
+                margin-top: 5px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .wow-en,
+            .wow-pt,
+            .wow-in,
+            .wow-sp {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 22px;
+                height: 13em;
+                width: 20em;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+                margin: 5px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s ease;
+            }
+
+            #discord,
+            #merch,
+            #patreon,
+            #twitter {
+                width: 16em;
+            }
+
+            .videostuff {
+                width: 40em;
+                height: 10em;
+                margin-top: 1em;
+            }
+
+            .lang-link button {
+                left: 44px;
+            }
+        }

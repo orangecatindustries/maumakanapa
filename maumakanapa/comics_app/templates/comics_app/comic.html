@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mau Makan Apa¿ - {{ comic.title }}</title>
+    <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
+    <link rel="stylesheet" href="{% static 'css/comic.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="icons">
+            <div class="logo-icon">
+                <a href="{{ t.index }}"><img src="{% static 'imgs/logolabirhin.png' %}" alt=""></a>
+            </div>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}" alt="Menu">
+                <div class="dropdown-content">
+                    <a href="{{ t.selector }}">webcomics</a>
+                    <a href="https://shop.labirhin.com">merch</a>
+                    <a href="https://labirhin.com">labirhin</a>
+                    <a href="{{ t.about }}">about</a>
+                    <a href="">---------------------</a>
+                    <a href="/english/comics">english</a>
+                    <a href="/indonesian/comics">indonesian</a>
+                    <a href="/spanish/comics">spanish</a>
+                    <a href="/portuguese/comics">portuguese</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="logos">
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/logolabirhin.png' %}" alt="">
+            </a>
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            </a>
+        </div>
+        <nav>
+            <a href="{{ t.selector }}">webcomics</a>
+            <a href="https://shop.labirhin.com">merch</a>
+            <a href="https://labirhin.com">labirhin</a>
+            <a href="{{ t.about }}">about</a>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}" onclick="showList(this)" alt="">
+                <div class="dropdown-content">
+                    <a href="/english/comics">english</a>
+                    <a href="/indonesian/comics">indonesian</a>
+                    <a href="/spanish/comics">spanish</a>
+                    <a href="/portuguese/comics">portuguese</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="reader-section">
+        <div class="reader-container">
+            <div class="comic-header">
+                <h1>{{ comic.title }}</h1>
+                {% if comic.subtitle %}
+                <p>{{ comic.subtitle }}</p>
+                {% endif %}
+            </div>
+            <div class="comic-nav">
+                {% if prev_comic %}
+                <a href="{% url 'page' lang=prev_comic.language number=prev_comic.ep_number %}" class="nav-btn">‹ Prev
+                    Episode</a>
+                {% else %}
+                <span class="nav-btn disabled">‹ Prev Episode</span>
+                {% endif %}
+
+                {% if next_comic %}
+                <a href="{% url 'page' lang=next_comic.language number=next_comic.ep_number %}" class="nav-btn">Next
+                    Episode ›</a>
+                {% else %}
+                <span class="nav-btn disabled">Next Episode ›</span>
+                {% endif %}
+            </div>
+            <div class="pages-stack">
+                {% for page in pages %}
+                <img src="{{ page.image.url }}" alt="{{ comic.title }} - Page {{ page.page_num }}">
+                {% empty %}
+                <p style="color: white; font-family: 'Karla', sans-serif;">No pages uploaded for this episode yet.</p>
+                {% endfor %}
+            </div>
+            <div class="comic-nav">
+                {% if prev_comic %}
+                <a href="{% url 'page' lang=prev_comic.language number=prev_comic.ep_number %}" class="nav-btn">‹ Prev
+                    Episode</a>
+                {% else %}
+                <span class="nav-btn disabled">‹ Prev Episode</span>
+                {% endif %}
+
+                {% if next_comic %}
+                <a href="{% url 'page' lang=next_comic.language number=next_comic.ep_number %}" class="nav-btn">Next
+                    Episode ›</a>
+                {% else %}
+                <span class="nav-btn disabled">Next Episode ›</span>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footerstuff">
+            <h1>{{ t.owned_by }}</h1>
+            <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            <h2>{{ t.assets|safe }}</h2>
+            <h2>{{ t.made_with }} <a href="https://discord.com/users/1494322472646873280">laurah</a></h2>
+        </div>
+    </footer>
+</body>
+<script>
+    function showList(imgElement) {
+        const content = imgElement.nextElementSibling;
+        content.classList.toggle("show")
+    }
+</script>
+
+</html>

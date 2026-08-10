@@ -1,0 +1,8 @@
+venv/
+
+maumakanapa/db.sqlite3
+maumakanapa/__pycache__/
+maumakanapa/media/
+maumakanapa/staticfiles/
+
+l.vscode/

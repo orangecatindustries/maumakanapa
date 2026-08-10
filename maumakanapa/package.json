@@ -1,0 +1,21 @@
+{
+  "name": "maumakanapa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+    "scripts": {
+    "minify-js": "terser static/js/main.js -o static/js/main.min.js -c -m",
+    "minify-css": "cleancss -o static/css/style.min.css static/css/style.css",
+    "minify": "npm run minify-js && npm run minify-css"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.x.x"
+  }
+
+}

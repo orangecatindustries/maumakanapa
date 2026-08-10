@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="maumakanapa.art // your place to read labirhin's comics!">
+    <meta property="og:description" content="here, you can read labirhin's Mau Makan Apa comic in four languages! totally for free!">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://maumakanapa.art/static/imgs/maumakanapathumbnail.png">
+    <meta name="theme-color" content="#0052FF">
+    <title>Mau Makan Apa¿</title>
+    <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="icons">
+            <div class="logo-icon">
+                <a href="{{ t.index }}"><img src="{% static 'imgs/logolabirhin.png' %}" alt=""></a>
+            </div>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}" alt="Menu">
+                <div class="dropdown-content">
+                    <a href="{{ t.selector }}">webcomics</a>
+                    <a href="https://shop.labirhin.com">merch</a>
+                    <a href="https://labirhin.com">labirhin</a>
+                    <a href="{{ t.about }}">about</a>
+                    <a href="">---------------------</a>
+                    <a href="/english/">english</a>
+                    <a href="/indonesian/">indonesian</a>
+                    <a href="/spanish/">spanish</a>
+                    <a href="/portuguese/">portuguese</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="logos">
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/logolabirhin.png' %}" alt="">
+            </a>
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            </a>
+        </div>
+        <nav>
+            <a href="{{ t.selector }}">webcomics</a>
+            <a href="https://shop.labirhin.com">merch</a>
+            <a href="https://labirhin.com">labirhin</a>
+            <a href="{{ t.about }}">about</a>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}" onclick="showList(this)" alt="">
+                <div class="dropdown-content">
+                    <a href="/english/">english</a>
+                    <a href="/indonesian/">indonesian</a>
+                    <a href="/spanish/">spanish</a>
+                    <a href="/portuguese/">portuguese</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="logo">
+        <div class="meow">
+            <div class="videostuff">
+                <img src="" alt="animated logo" id="random-media">
+            </div>
+        </div>
+    </section>
+
+    <section id="containers">
+        <div class="bigcontainer">
+            <h3>{{ t.main_part }}</h3>
+            <div class="all">
+                <div class="first">
+                    <div class="wow-in">
+                        <h1>Indonesian</h1>
+                        <h2>MMA dalam bahasa Indonesia!</h2>
+                        <a href="/indonesian/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/indonesiapng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                    <div class="wow-en">
+                        <h1>English</h1>
+                        <h2>MMA in English!</h2>
+                        <a href="/english/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/englishpng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="wow-sp">
+                        <h1>Spanish</h1>
+                        <h2>¡MMA en español!</h2>
+                        <a href="/spanish/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/spanishpng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                    <div class="wow-pt">
+                        <h1>Brazilian Portuguese</h1>
+                        <h2>MMA em português!</h2>
+                        <a href="/portuguese/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/brazilgif-0.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="stuff">
+            <h1>{{ t.community }}</h1>
+            <div class="comcontainer">
+                <div class="first">
+                    <a href="https://discord.gg/labirhin" style="text-decoration: none">
+                        <div id="discord">
+                            <img src="{% static 'svg/discord.svg' %}" alt="">
+                            <h2>{{ t.discord }}</h2>
+                        </div>
+                    </a>
+                    <a href="https://shop.labirhin.com" style="text-decoration: none">
+                        <div id="merch">
+                            <img src="{% static 'svg/merch.svg' %}" alt="">
+                            <h2>{{ t.merch }}</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="second">
+                    <a href="https://www.patreon.com/LABIRHIN" style="text-decoration: none">
+                        <div id="patreon">
+                            <img src="{% static 'svg/patreon.svg' %}" alt="">
+                            <h2>{{ t.patreon }}</h2>
+                        </div>
+                    </a>
+                    <a href="https://x.com/LabiLabirhin" style="text-decoration: none">
+                        <div id="twitter">
+                            <img src="{% static 'svg/twitter.svg' %}" alt="">
+                            <h2>{{ t.twitter }}</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footerstuff">
+            <h1>{{ t.owned_by }}</h1>
+            <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            <h2>{{ t.assets|safe }}</h2>
+            <h2>{{ t.made_with }} <a href="https://discord.com/users/1494322472646873280">laurah</a></h2>
+        </div>
+    </footer>
+
+    <script>
+        const randolist = [
+            "{% static 'imgs/gif1.gif' %}",
+            "{% static 'imgs/gif2.gif' %}",
+            "{% static 'imgs/gif3.gif' %}",
+            "{% static 'imgs/gif4.gif' %}",
+            "{% static 'imgs/gif5.gif' %}",
+            "{% static 'imgs/gif6.gif' %}",
+            "{% static 'imgs/gif7.gif' %}"
+        ]
+
+        const rindex = Math.floor(Math.random() * randolist.length);
+        const selected = randolist[rindex];
+        document.getElementById("random-media").src = selected;
+
+        function showList(imgElement) {
+            const content = imgElement.nextElementSibling;
+            content.classList.toggle("show")
+        }
+    </script>
+</body>
+
+</html>

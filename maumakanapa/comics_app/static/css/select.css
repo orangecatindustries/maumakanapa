@@ -1,0 +1,585 @@
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+        @font-face {
+            font-family: "Jaya";
+            src: url("/static/fonts/everything.otf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "Labirhin";
+            src: url("/static/fonts/labirhin.otf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
+        body {
+            background-image: url("/static/imgs/meow.webp");
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            width: 75%;
+            max-width: 1025px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            backdrop-filter: blur(10px);
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        header img {
+            height: 60px;
+            margin-top: -3px;
+        }
+
+        .logos {
+            margin-left: 15px;
+            margin-top: -5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logos img {
+            height: 45px;
+        }
+
+        header a {
+            font-family: "Karla", sans-serif;
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
+            font-size: 22px;
+            margin-top: 15px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 62px;
+            margin-right: 35px;
+        }
+
+        .icons {
+            display: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown img {
+            margin-top: 10px;
+            height: 45px;
+            cursor: pointer;
+            filter: invert(1);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 5px;
+            backdrop-filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .dropdown-content.show {
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            transform: translateY(0%);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            margin-top: 5px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            pointer-events: all;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            font-family: "Karla", sans-serif;
+            font-size: 18px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #logo {
+            display: flex;
+        }
+
+        /* containers */
+
+        .container h1 {
+            font-family: "Jaya", sans-serif;
+            font-size: 5em;
+            color: white;
+            text-align: center;
+        }
+
+        .comselect {
+            margin: -25px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            padding: 2em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+        }
+
+        .first {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .second {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        .third {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        .p1,
+        .p2,
+        .p3,
+        .p4,
+        .p5,
+        .p6,
+        .p7,
+        .p8,
+        .p9 {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            min-height: 10em;
+            width: 16em;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), var(--bg-img);
+            background-position: var(--bg-pos, center);
+            background-blend-mode: normal;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+        }
+
+        .p1:hover,
+        .p2:hover,
+        .p3:hover,
+        .p4:hover,
+        .p5:hover,
+        .p6:hover,
+        .p7:hover,
+        .p8:hover,
+        .p9:hover {
+            transform: scale(1.05);
+            transition: 0.5s;
+        }
+
+        .p1 {
+            --bg-img: url('/static/imgs/p1.png');
+            --bg-pos: 20% 90%;
+            background-size: 600px;
+        }
+
+        .p2 {
+            --bg-img: url('/static/imgs/p2.png');
+            --bg-pos: 0% 40%;
+            background-size: 700px;
+        }
+
+        .p3 {
+            --bg-img: url('/static/imgs/p3.png');
+            --bg-pos: 30% 0%;
+            background-size: 500px;
+        }
+
+        .p4 {
+            --bg-img: url('/static/imgs/p4.png');
+            --bg-pos: 50% 0%;
+            background-size: 400px;
+        }
+
+        .p5 {
+            --bg-img: url('/static/imgs/p5.png');
+            --bg-pos: 40% 100%;
+            background-size: 500px;
+        }
+
+        .p6 {
+            --bg-img: url('/static/imgs/p6.png');
+            --bg-pos: 50% 0%;
+            background-size: 500px;
+        }
+
+        .p7 {
+            --bg-img: url('/static/imgs/p7.png');
+            --bg-pos: 30% 100%;
+            background-size: 500px;
+        }
+
+        .p8 {
+            --bg-img: url('/static/imgs/p8.png');
+            --bg-pos: 60% 0%;
+            background-size: 500px;
+        }
+
+        .p9 {
+            --bg-img: url('/static/imgs/p9.png');
+            --bg-pos: 25% 100%;
+            background-size: 500px;
+        }
+
+        .p1 h2,
+        .p2 h2,
+        .p3 h2,
+        .p4 h2,
+        .p5 h2,
+        .p6 h2,
+        .p7 h2,
+        .p8 h2,
+        .p9 h2 {
+            color: white;
+            font-family: "Karla", sans-serif;
+            font-weight: 200;
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .p1 h3,
+        .p2 h3,
+        .p3 h3,
+        .p4 h3,
+        .p5 h3,
+        .p6 h3,
+        .p7 h3,
+        .p8 h3,
+        .p9 h3 {
+            color: white;
+            font-family: "Karla", sans-serif;
+            font-weight: 200;
+            margin-left: 2px;
+            font-size: 1.3em;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .footerstuff {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .footerstuff img {
+            height: 5em;
+            margin-top: -15px;
+        }
+
+        .footerstuff h1 {
+            font-family: "Jaya";
+            color: lightgrey;
+        }
+
+        .footerstuff h2 {
+            font-family: "Jaya";
+            color: lightgrey;
+            text-align: center;
+        }
+
+        .footerstuff a {
+            text-decoration: none;
+            background: linear-gradient(to right, purple, white);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media screen and (max-width: 900px) {
+            header {
+                width: 90%;
+                height: 5em;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            .logos {
+                display: none;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .icons .logo-icon img {
+                margin-top: 10px;
+                height: 60px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown img {
+                margin-top: 10px;
+                height: 45px;
+                cursor: pointer;
+                filter: invert(1);
+            }
+
+            .dropdown-content {
+                position: absolute;
+                right: 0;
+                background: rgba(0, 0, 0, 0.8);
+                min-width: 180px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                pointer-events: none;
+                border-radius: 12px;
+                overflow: hidden;
+                margin-top: 5px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-family: "Karla", sans-serif;
+                font-size: 18px;
+            }
+
+            .dropdown-content a:hover {
+                background: rgba(0, 0, 0, 0.5)
+            }
+
+            /* haha more stuff related to containers! */
+
+            .container h1 {
+                font-family: "Jaya", sans-serif;
+                font-size: 5em;
+                color: white;
+                text-align: center;
+            }
+
+            .comselect {
+                margin: 0;
+            }
+
+            .first {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .second {
+                flex-direction: column;
+            }
+
+            .third {
+                flex-direction: column;
+            }
+
+            .p1,
+            .p2,
+            .p3,
+            .p4,
+            .p5,
+            .p6,
+            .p7,
+            .p8,
+            .p9 {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 22px;
+                min-height: 13em;
+                width: 75vw;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+                margin: 20px auto;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 20px;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), var(--bg-img);
+                background-size: cover;
+                background-position: var(--bg-pos, center);
+                background-blend-mode: normal;
+            }
+
+            .p1 {
+                --bg-pos: 20% 90%;
+                background-size: 600px;
+            }
+
+            .p2 {
+                --bg-pos: 0% 40%;
+                background-size: 700px;
+            }
+
+            .p3 {
+                --bg-pos: 30% 0%;
+                background-size: 500px;
+            }
+
+            .p4 {
+                --bg-pos: 50% 0%;
+                background-size: 400px;
+            }
+
+            .p5 {
+                --bg-pos: 40% 100%;
+                background-size: 500px;
+            }
+
+            .p6 {
+                --bg-pos: 50% 0%;
+                background-size: 500px;
+            }
+
+            .p7 {
+                --bg-pos: 30% 100%;
+                background-size: 500px;
+            }
+
+            .p8 {
+                --bg-pos: 60% 0%;
+                background-size: 500px;
+            }
+
+            .p9 {
+                --bg-pos: 25% 100%;
+                background-size: 500px;
+            }
+
+            .p1 h2,
+            .p2 h2,
+            .p3 h2,
+            .p4 h2,
+            .p5 h2,
+            .p6 h2,
+            .p7 h2,
+            .p8 h2,
+            .p9 h2 {
+                color: white;
+                font-family: "Karla", sans-serif;
+                font-weight: 200;
+                margin: 0;
+                font-size: 2em;
+            }
+
+            .p1 h3,
+            .p2 h3,
+            .p3 h3,
+            .p4 h3,
+            .p5 h3,
+            .p6 h3,
+            .p7 h3,
+            .p8 h3,
+            .p9 h3 {
+                color: white;
+                font-family: "Karla", sans-serif;
+                font-weight: 200;
+                margin-left: 2px;
+                font-size: 1.5em;
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+
+            footer {
+                height: 300px;
+            }
+
+            .footerstuff {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .footerstuff img {
+                height: 5em;
+                margin-top: -15px;
+            }
+
+            .footerstuff h1 {
+                font-family: "Jaya";
+                color: lightgrey;
+            }
+
+            .footerstuff h2 {
+                font-family: "Jaya";
+                color: lightgrey;
+                text-align: center;
+            }
+
+            .footerstuff a {
+                text-decoration: none;
+                background: linear-gradient(to right, purple, white);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
