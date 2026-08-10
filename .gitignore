@@ -1,8 +1,11 @@
 venv/
 
 maumakanapa/db.sqlite3
-maumakanapa/__pycache__/
+**/__pycache__/
+*.py[cod]
+
+maumakanapa/node_modules/
 maumakanapa/media/
 maumakanapa/staticfiles/
 
-l.vscode/
+.vscode/
