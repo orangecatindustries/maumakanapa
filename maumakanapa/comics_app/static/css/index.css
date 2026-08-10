@@ -101,7 +101,7 @@
         .dropdown-content {
             position: absolute;
             right: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             min-width: 180px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             opacity: 0;
@@ -117,7 +117,7 @@
         .dropdown-content.show {
             position: absolute;
             right: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             min-width: 180px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             opacity: 1;
@@ -140,7 +140,7 @@
         }
 
         .dropdown-content a:hover {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
         }
 
         /* 1st section */
