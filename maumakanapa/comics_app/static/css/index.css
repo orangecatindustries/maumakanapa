@@ -136,6 +136,7 @@
             display: block;
             font-family: "Karla", sans-serif;
             font-size: 18px;
+            text-decoration: none;
         }
 
         .dropdown-content a:hover {
@@ -532,45 +533,14 @@
                 display: inline-block;
             }
 
-            .dropdown img {
-                margin-top: 10px;
-                height: 45px;
-                cursor: pointer;
-                filter: invert(1);
-            }
-
             .dropdown-content {
-                position: absolute;
-                right: 0;
                 background: rgba(0, 0, 0, 0.8);
-                min-width: 180px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-                border-radius: 12px;
-                overflow: hidden;
-                margin-top: 5px;
             }
 
             .dropdown:hover .dropdown-content {
                 opacity: 1;
                 transform: translateY(0);
                 pointer-events: auto;
-            }
-
-            .dropdown-content a {
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                font-family: "Karla", sans-serif;
-                font-size: 18px;
-            }
-
-            .dropdown-content a:hover {
-                background: rgba(0, 0, 0, 0.5)
             }
 
             .videostuff {
@@ -591,7 +561,6 @@
             }
 
             .bigcontainer h3 {
-                font-size: 25px;
                 text-align: center;
             }
 
@@ -613,13 +582,6 @@
             .wow-pt h1,
             .wow-in h1,
             .wow-sp h1 {
-                font-family: "Karla", sans-serif;
-                color: white;
-                font-weight: 200;
-                position: relative;
-                z-index: 3;
-                margin: 20px;
-                font-size: 28px;
                 margin-top: 15px;
             }
 
@@ -627,14 +589,7 @@
             .wow-pt h2,
             .wow-in h2,
             .wow-sp h2 {
-                position: relative;
-                font-family: "Karla", sans-serif;
-                font-weight: 200;
-                z-index: 3;
-                color: white;
-                margin: 20px;
                 margin-top: -15px;
-                font-size: 20px;
             }
 
             .lang-link button {
@@ -660,17 +615,8 @@
             #merch,
             #patreon,
             #twitter {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 22px;
-                padding: 2em;
                 box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-                margin: 5px;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.5s ease;
-                display: flex;
                 flex-direction: column;
-                align-items: center;
                 height: 4em;
                 width: 13em;
             }
@@ -680,64 +626,27 @@
             #twitter img {
                 height: 65px;
                 margin-top: -16px;
-                filter: invert();
             }
 
             #patreon img {
                 height: 55px;
                 margin-top: -15px;
-                filter: invert();
             }
 
             #discord h2,
             #merch h2,
             #twitter h2 {
-                font-family: "Karla", sans-serif;
-                color: white;
-                font-weight: 200;
                 margin-top: 0px;
                 margin-left: 0px;
             }
 
             #patreon h2 {
-                font-family: "Karla", sans-serif;
-                color: white;
-                font-weight: 200;
                 margin-top: 12px;
                 margin-left: 0px;
             }
 
             footer {
                 height: 300px;
-            }
-
-            .footerstuff {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-            }
-
-            .footerstuff img {
-                height: 5em;
-                margin-top: -15px;
-            }
-
-            .footerstuff h1 {
-                font-family: "Jaya";
-                color: lightgrey;
-            }
-
-            .footerstuff h2 {
-                font-family: "Jaya";
-                color: lightgrey;
-                text-align: center;
-            }
-
-            .footerstuff a {
-                text-decoration: none;
-                background: linear-gradient(to right, purple, white);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         }
 
@@ -776,20 +685,6 @@
                 filter: invert(1);
             }
 
-            .dropdown-content {
-                position: absolute;
-                right: 0;
-                background: rgba(0, 0, 0, 0.5);
-                min-width: 180px;
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-                border-radius: 12px;
-                overflow: hidden;
-                margin-top: 5px;
-            }
-
             .dropdown:hover .dropdown-content {
                 opacity: 1;
                 transform: translateY(0);
@@ -800,15 +695,7 @@
             .wow-pt,
             .wow-in,
             .wow-sp {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 22px;
-                height: 13em;
                 width: 20em;
-                box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
-                margin: 5px;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.5s ease;
             }
 
             #discord,

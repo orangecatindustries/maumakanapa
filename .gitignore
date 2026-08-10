@@ -9,3 +9,5 @@ maumakanapa/media/
 maumakanapa/staticfiles/
 
 .vscode/
+
+.stylelintrc.json
