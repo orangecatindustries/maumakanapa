@@ -16,9 +16,10 @@
             font-weight: 400;
         }
 
-        html, body {
-            overflow-x: hidden;
+        html,
+        body {
             max-width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -39,8 +40,6 @@
             margin: 0 auto;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 22px;
-            left: 0;
-            right: 0;
             height: 60px;
             display: flex;
             align-items: center;
@@ -49,6 +48,7 @@
             backdrop-filter: blur(10px);
             border-style: solid;
             border-color: rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
         }
 
         header img {
@@ -354,15 +354,17 @@
         .wow-en img,
         .wow-sp img,
         .wow-in img {
-            margin-top: -15.9em;
+            margin-top: -13em;
             opacity: 0.3;
             width: 25em;
         }
 
         .lang-link {
             text-decoration: none;
-            display: flex;
-            justify-content: center;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            z-index: 4;
         }
 
         .lang-link button {
@@ -377,9 +379,6 @@
             border-radius: 20em;
             z-index: 4;
             cursor: pointer;
-            position: relative;
-            left: 80px;
-            bottom: -40px;
         }
 
         .comcontainer {
@@ -574,7 +573,7 @@
             .wow-pt,
             .wow-in,
             .wow-sp {
-                width: 20em;
+                width: 80vw;
                 height: 10em;
             }
 
@@ -590,11 +589,6 @@
             .wow-in h2,
             .wow-sp h2 {
                 margin-top: -15px;
-            }
-
-            .lang-link button {
-                left: 45px;
-                bottom: -10px;
             }
 
             /* community */
