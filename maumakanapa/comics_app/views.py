@@ -36,6 +36,9 @@ TRANSLATIONS = {
         "about4": "thank you to everyone who motivated me to actually <br> make this website!",
         "about5": "-laurah",
         "abouth1": "about this website!",
+        "notcomic1": "episode not available...",
+        "notcomic2": "what typa episode are you trying to access????",
+        "notcomic3": "back to the webcomics",
     },
     "indonesian": {
         "main_part": "di sini, kamu bisa membaca webcomic-nya! (gratis!)",
@@ -71,6 +74,9 @@ TRANSLATIONS = {
         "about4": "terima kasih kepada semua orang yang memotivasi saya untuk <br>benar-benar membuat situs web ini!",
         "about5": "-laurah",
         "abouth1": "tentang situs web ini!",
+        "notcomic1": "episode tidak tersedia...",
+        "notcomic2": "jenis episode apa yang coba kamu akses????",
+        "notcomic3": "kembali ke webcomic",
     },
     "spanish": {
         "comics_title": "COMICS",
@@ -106,6 +112,9 @@ TRANSLATIONS = {
         "about4": "¡gracias a todos los que me motivaron a <br>hacer este sitio web!",
         "about5": "-laurah",
         "abouth1": "acerca de este sitio web!",
+        "notcomic1": "episodio no disponible...",
+        "notcomic2": "¿¿¿¿a qué tipo de episodio intentas acceder????",
+        "notcomic3": "volver a los webcómics",
     },
     "portuguese": {
         "comics_title": "QUADRINHOS",
@@ -141,6 +150,9 @@ TRANSLATIONS = {
         "about4": "obrigado a todos por terem me motivado <br>a fazer este site!",
         "about5": "-laurah (sim, sou portuguesa, não brasileira c:)",
         "abouth1": "sobre o site!",
+        "notcomic1": "página indisponível..",
+        "notcomic2": "que tipo de página é que estás a tentar aceder????",
+        "notcomic3": "voltar para a webcomic",
     },
 }
 
@@ -168,18 +180,24 @@ def comic_list(request, lang):
 def page(request, lang, number):
     if lang not in TRANSLATIONS:
         lang = "english"
-    
-    comic = get_object_or_404(webcomic, language__iexact=lang, ep_number=number)
-    pages = comic.pages.all()
-    
-    prev_comic = webcomic.objects.filter(
-        language=comic.language,
-        ep_number__lt=comic.ep_number
-    ).order_by('-ep_number').first()
-    next_comic = webcomic.objects.filter(
+
+    comic = webcomic.objects.filter(language__iexact=lang, ep_number=number).first()
+
+    if comic:
+        pages = comic.pages.all()
+        
+        prev_comic = webcomic.objects.filter(
             language=comic.language,
-            ep_number__gt=comic.ep_number
-        ).order_by('ep_number').first()
+            ep_number__lt=comic.ep_number
+        ).order_by('-ep_number').first()
+        next_comic = webcomic.objects.filter(
+                language=comic.language,
+                ep_number__gt=comic.ep_number
+            ).order_by('ep_number').first()
+    else:
+        pages = []
+        prev_comic = None
+        next_comic = None
     
     context = {
               "current_lang": lang,

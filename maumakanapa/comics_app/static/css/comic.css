@@ -210,7 +210,7 @@
             padding: 10px 24px;
             border-radius: 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: 0.5s;
             font-weight: 200;
         }
 
