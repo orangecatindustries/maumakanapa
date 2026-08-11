@@ -463,5 +463,12 @@
             .footerstuff img {
                 height: 5em;
                 margin-top: -15px;
+            }    
+        }
+        
+        @media screen and (min-width: 901px) and (max-width: 1100px) {
+            header {
+                width: 90%;
+                height: 5em;
             }
         }

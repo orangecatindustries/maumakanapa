@@ -362,8 +362,8 @@
         .lang-link {
             text-decoration: none;
             position: absolute;
-            bottom: 15px;
-            right: 15px;
+            bottom: 10px;
+            right: 10px;
             z-index: 4;
         }
 
@@ -644,7 +644,7 @@
             }
         }
 
-        @media screen and (min-width: 500px) and (max-width: 900px) {
+        @media screen and (min-width: 501px) and (max-width: 1100px) {
             header nav {
                 display: none;
             }

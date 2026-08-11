@@ -365,3 +365,23 @@
                 height: 300px;
             }
         }
+
+        @media screen and (min-width: 901px) and (max-width: 1100px) {
+            header {
+                width: 90%;
+                height: 5em;
+            }
+
+            .pages-stack img {
+                width: 80vw;
+            }
+
+            .comic-header h1 {
+                font-size: 5em;
+            }
+
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 24px;
+            }
+        }
