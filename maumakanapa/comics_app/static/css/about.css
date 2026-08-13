@@ -104,7 +104,6 @@
         transition: all 0.3s ease;
         border-radius: 12px;
         overflow: hidden;
-        margin-top: 5px;
         backdrop-filter: blur(10px);
         pointer-events: none;
     }
@@ -119,10 +118,10 @@
         transform: translateY(0%);
         transition: all 0.3s ease;
         border-radius: 12px;
-        margin-top: 5px;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         pointer-events: all;
+        overflow: auto;
     }
 
     .dropdown-content a {
@@ -131,6 +130,7 @@
         display: block;
         font-family: "Karla", sans-serif;
         font-size: 18px;
+        margin-bottom: 8px;
     }
 
     .dropdown-content a:hover {
@@ -241,36 +241,29 @@
             filter: invert(1);
         }
 
-        .dropdown-content {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8 );
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 5px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-        }
-
         .dropdown:hover .dropdown-content {
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto;
+            overflow: auto;
+            max-height: 520px;
+            background: rgba(0, 0, 0, 0.8);
         }
 
         .dropdown-content a {
             color: white;
-            padding: 12px 16px;
+            padding: 18px 20px;
             text-decoration: none;
             display: block;
             font-family: "Karla", sans-serif;
             font-size: 18px;
+            margin-top: 0;
+        }
+
+        .dropdown li {
+            display: flex;
+            margin: 12px;
+            border-bottom: 1px solid #999999;
         }
 
         #aboutsec {
@@ -310,9 +303,10 @@
             height: 300px;
         }
     }
+
     @media screen and (min-width: 901px) and (max-width: 1100px) {
-            header {
-                width: 90%;
-                height: 5em;
-            }
+        header {
+            width: 90%;
+            height: 5em;
         }
+    }
