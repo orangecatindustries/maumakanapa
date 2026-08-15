@@ -369,10 +369,6 @@
                 padding: 8px 16px;
                 font-size: 14px;
             }
-
-            footer {
-                height: 300px;
-            }
         }
 
         @media screen and (min-width: 901px) and (max-width: 1100px) {
