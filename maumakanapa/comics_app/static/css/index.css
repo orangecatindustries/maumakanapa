@@ -493,11 +493,6 @@
             margin-left: 52px;
         }
 
-        html[lang="russian"] #discord h2, #merch h2, #twitter h2, #patreon h2 {
-            font-family: "russianlabi", "Karla", sans-serif;
-            font-size: 2.5em;
-        }
-
         footer {
             margin-top: 50px;
             background-color: rgba(0, 0, 0, 0.3);
