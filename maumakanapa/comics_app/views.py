@@ -39,6 +39,11 @@ TRANSLATIONS = {
         "notcomic1": "episode not available...",
         "notcomic2": "what typa episode are you trying to access????",
         "notcomic3": "back to the webcomics",
+        "aboutme": "about me!",
+        "aboutme1": "my name is laurah, i'm the person who made <br> this website, and i'm just your typical web developer!",
+        "aboutme2": "i'm also a youtuber, so if you want to go <br> check out my channel, you can do so here: ",
+        "aboutme3": "fun fact: this website is actually open-sourced <br> on github! you can go check it out here:  ",
+        "aboutme4": "thank you!!!",
     },
     "indonesian": {
         "main_part": "di sini, kamu bisa membaca webcomic-nya! (gratis!)",
@@ -77,6 +82,11 @@ TRANSLATIONS = {
         "notcomic1": "episode tidak tersedia...",
         "notcomic2": "jenis episode apa yang coba kamu akses????",
         "notcomic3": "kembali ke webcomic",
+        "aboutme": "tentang saya!",
+        "aboutme1": "nama saya laurah, akulah orang yang membuat <br> situs web ini, dan aku hanyalah pengembang web biasa!",
+        "aboutme2": "aku juga seorang youtuber, jadi jika kamu ingin <br> memeriksa saluranku, kamu bisa melakukannya di sini: ",
+        "aboutme3": "fakta menarik: situs web ini sebenarnya bersumber terbuka <br> di github! kamu bisa memeriksanya di sini:",
+        "aboutme4": "terima kasih!!!",
     },
     "spanish": {
         "comics_title": "COMICS",
@@ -115,6 +125,11 @@ TRANSLATIONS = {
         "notcomic1": "episodio no disponible...",
         "notcomic2": "¿¿¿¿a qué tipo de episodio intentas acceder????",
         "notcomic3": "volver a los webcómics",
+        "aboutme": "¡sobre mí!",
+        "aboutme1": "¡mi nombre es laurah, soy la persona que hizo <br> este sitio web y soy una desarrolladora web típica!",
+        "aboutme2": "también soy youtuber, así que si quieres <br> visitar mi canal, puedes hacerlo aquí: ",
+        "aboutme3": "dato curioso: ¡este sitio web es de código abierto <br> en github! puedes consultarlo aquí:",
+        "aboutme4": "¡¡¡muchas gracias!!!",
     },
     "portuguese": {
         "comics_title": "QUADRINHOS",
@@ -147,12 +162,17 @@ TRANSLATIONS = {
         "about1": "este site foi feito com o objetivo de <br>ser um backup em caso que os sites que <br>tem o comic Mau Makan Apa vão a baixo.",
         "about2": "eu trabalhei muito neste site, então eu espero que <br>tu, o leitor(a), goste do site, como eu gostei de o fazer.",
         "about3": "eu planeio em adicionar mais coisas no futuro, como: <br>mais línguas, mais coisas sobre MMA, e muito mais!",
-        "about4": "obrigado a todos por terem me motivado <br>a fazer este site!",
+        "about4": "obrigada a todos por terem me motivado <br>a fazer este site!",
         "about5": "-laurah (sim, sou portuguesa, não brasileira c:)",
         "abouth1": "sobre o site!",
         "notcomic1": "página indisponível..",
         "notcomic2": "que tipo de página é que estás a tentar aceder????",
         "notcomic3": "voltar para a webcomic",
+        "aboutme": "sobre mim!",
+        "aboutme1": "o meu nome é laurah, eu sou a pessoa que fez <br> este site, e sou a tua típica programadora de Web",
+        "aboutme2": "eu também sou uma youtuber, então se quiseres ir dar <br> uma olhada, podes ir ver aqui: ",
+        "aboutme3": "fun fact: este site é de código aberto <br> no github! tu podes ir ver aqui: ",
+        "aboutme4": "obrigada!!!!!!!",
     },
     "russian": {
         "comics_title": "КОМИКСЫ",
@@ -179,7 +199,7 @@ TRANSLATIONS = {
         "selector": "/russian/comics",
         "index": "/russian/",
         "about": "/russian/about",
-        "about1": "этот сайт был создан с единственной целью — <br> быть 'резервной копией' на случай, если другие сайты, <br> где размещен Mau Makan Apa, внезапно перестанут работать",
+        "about1": "этот сайт был создан с единственной целью <br> быть 'резервной копией' на случай, если другие сайты, <br> где размещен Mau Makan Apa, внезапно перестанут работать",
         "about2": "в это было вложено много труда, поэтому я надеюсь, что <br> вам, читатель, это действительно понравится <br> так же сильно, как мне понравилось создавать сам сайт!",
         "about3": "в будущем сюда добавится больше нового, например: <br> больше языков, больше материалов о MMA и многое другое!",
         "about4": "спасибо всем, кто мотивировал меня <br> сделать этот сайт!",
@@ -187,7 +207,12 @@ TRANSLATIONS = {
         "abouth1": "об этом сайте!",
         "notcomic1": "эпизод недоступен...",
         "notcomic2": "что за эпизод вы пытаетесь открыть????",
-        "notcomic3": "вернуться к веб-комиксам"
+        "notcomic3": "вернуться к веб-комиксам",
+        "aboutme": "о обо мне!",
+        "aboutme1": "моё имя лора, я тот человек, который создал <br> этот сайт, и я просто типичный веб-разработчик!",
+        "aboutme2": "я также ютубер, так что если вы хотите <br> заглянуть на мой канал, вы можете сделать это здесь:",
+        "aboutme3": "интересный факт: этот сайт на самом деле с открытым исходным кодом <br> на github! вы можете посмотреть его здесь:",
+        "aboutme4": "спасибо вам!!!",
     },
     "chinese": {
         "comics_title": "漫画",
@@ -222,7 +247,12 @@ TRANSLATIONS = {
         "abouth1": "关于本网站！",
         "notcomic1": "章节不可用...",
         "notcomic2": "你到底在尝试访问什么类型的章节????",
-        "notcomic3": "返回网络漫画"
+        "notcomic3": "返回网络漫画",
+        "aboutme": "关于我！",
+        "aboutme1": "我叫拉拉（laurah），我是制作 <br> 这个网站的人，我只是一个普通的网页开发者！",
+        "aboutme2": "我同时也是一名油管（YouTube）博主，如果你想去 <br> 看看我的频道，可以在这里找到：",
+        "aboutme3": "趣事：这个网站其实在 <br> GitHub上是开源的！你可以在这里查看：",
+        "aboutme4": "非常感谢！！！",
     },
     "filipino": {
         "comics_title": "MGA KOMIKS",
@@ -257,7 +287,12 @@ TRANSLATIONS = {
         "abouth1": "tungkol sa website na ito!",
         "notcomic1": "hindi available ang episode...",
         "notcomic2": "anong klaseng episode ba ang sinusubukan mong puntahan????",
-        "notcomic3": "bumalik sa mga webcomic"
+        "notcomic3": "bumalik sa mga webcomic",
+        "aboutme": "tungkol sa akin!",
+        "aboutme1": "ang pangalan ko ay laurah, ako ang gumawa <br> ng website na ito, at isa lang akong tipikal na web developer!",
+        "aboutme2": "isa rin akong youtuber, kaya kung gusto mong <br> bisitahin ang aking channel, maaari mo itong gawin dito:",
+        "aboutme3": "fun fact: ang website na ito ay open-source <br> sa github! maaari mo itong tignan dito: ",
+        "aboutme4": "maraming salamat!!!",
     },
     "italiano": {
         "comics_title": "FUMETTI",
@@ -292,7 +327,12 @@ TRANSLATIONS = {
         "abouth1": "informazioni su questo sito!",
         "notcomic1": "episodio non disponibile...",
         "notcomic2": "che tipo di episodio stai cercando di raggiungere????",
-        "notcomic3": "torna ai webcomic"
+        "notcomic3": "torna ai webcomic",
+        "aboutme": "su di me!",
+        "aboutme1": "mi chiamo laurah, sono la persona che ha creato <br> questo sito web e sono una normale sviluppatrice web!",
+        "aboutme2": "sono anche una youtuber, quindi se vuoi <br> dare un'occhiata al mio canale, puoi farlo qui",
+        "aboutme3": "curiosità: questo sito web è open-source <br> su github! puoi darci un'occhiata qui: ",
+        "aboutme4": "grazie mille!!!",
     }
 }
 
@@ -340,23 +380,30 @@ def page(request, lang, number):
         next_comic = None
     
     context = {
-              "current_lang": lang,
-              "t": TRANSLATIONS[lang],
-              "comic": comic,
-              "pages": pages,
-              "prev_comic": prev_comic,
-              "next_comic": next_comic,
+            "current_lang": lang,
+            "t": TRANSLATIONS[lang],
+            "comic": comic,
+            "pages": pages,
+            "prev_comic": prev_comic,
+            "next_comic": next_comic,
           }
     
     return render(request, "comics_app/comic.html", context)
 
 def about(request, lang):
-  if lang not in TRANSLATIONS:
-    lang = "english"
+    if lang not in TRANSLATIONS:
+        lang = "english"
 
-  context = {
-      "current_lang": lang,
-      "t": TRANSLATIONS[lang],
-  }
+    custom_fonts = {
+       "russian": "russianlabi, sans-serif",
+    }
 
-  return render(request, "comics_app/about.html", context)
+    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
+
+    context = {
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+        "fonts": fonts,
+    }
+
+    return render(request, "comics_app/about.html", context)

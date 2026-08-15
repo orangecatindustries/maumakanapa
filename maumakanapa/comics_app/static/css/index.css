@@ -16,6 +16,14 @@
             font-weight: 400;
         }
 
+        @font-face {
+            font-family: "russianlabi";
+            src: url("/static/fonts/russianlabi.ttf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
         html,
         body {
             max-width: 100%;
@@ -267,6 +275,15 @@
             font-size: 20px;
         }
 
+        html[lang="russian"] :is(button) {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 25px;
+        }
+
+        html[lang="russian"] .bigcontainer h3 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 35px;
+        }
 
         .wow-en:hover,
         .wow-pt:hover,
@@ -402,6 +419,11 @@
             font-size: 6em;
         }
 
+        html[lang="russian"] .stuff h1 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 7em;
+        }
+
         #discord,
         #merch,
         #patreon,
@@ -471,6 +493,11 @@
             margin-left: 52px;
         }
 
+        html[lang="russian"] #discord h2, #merch h2, #twitter h2, #patreon h2 {
+            font-family: "russianlabi", "Karla", sans-serif;
+            font-size: 2.5em;
+        }
+
         footer {
             margin-top: 50px;
             background-color: rgba(0, 0, 0, 0.3);
@@ -493,6 +520,11 @@
             font-family: "Jaya";
             color: lightgrey;
             text-align: center;
+        }
+
+        html[lang="russian"] .footerstuff h1,
+        html[lang="russian"] .footerstuff h2 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
         }
 
         .footerstuff a {

@@ -16,6 +16,14 @@
             font-weight: 400;
         }
 
+        @font-face {
+            font-family: "russianlabi";
+            src: url("/static/fonts/russianlabi.ttf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
         body {
             background-image: url("/static/imgs/meow.webp");
             display: flex;
@@ -179,6 +187,19 @@
             letter-spacing: 1px;
         }
 
+        html[lang="russian"] .comic-header h1 {
+            font-family: "russianlabi", "Jaya", sans-serif;
+        }
+
+        html[lang="russian"] .comic-header p {
+            font-family: "russianlabi", "Jaya", sans-serif;
+            font-size: 25px;
+        }
+
+        html[lang="russian"] .nav-btn {
+            font-family: "russianlabi", "Jaya", sans-serif;
+        }
+
         .comic-header h1 {
             font-family: "Jaya", sans-serif;
             color: white;
@@ -263,6 +284,11 @@
             font-family: "Jaya";
             color: lightgrey;
             text-align: center;
+        }
+
+        html[lang="russian"] .footerstuff h1,
+        html[lang="russian"] .footerstuff h2 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
         }
 
         .footerstuff a {

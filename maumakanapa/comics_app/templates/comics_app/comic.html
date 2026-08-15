@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}">
 
 <head>
     <meta charset="UTF-8">
@@ -113,8 +113,8 @@
             </div>
             {% else %}
             <div class="comic-header" style="text-align: center; padding: 50px 0;">
-                <h1 style="color: white; font-family: 'labirhin', sans-serif; ">{{ t.notcomic1 }}</h1>
-                <p style="color: #aaa; font-family: 'Karla', sans-serif;">{{ t.notcomic2 }}</p>
+                <h1>{{ t.notcomic1 }}</h1>
+                <p style="color: #aaa;">{{ t.notcomic2 }}</p>
                 <a href="{{ t.selector }}" class="nav-btn" style="display: inline-block; margin-top: 20px;">{{ t.notcomic3 }}</a>
             </div>
             {% endif %}

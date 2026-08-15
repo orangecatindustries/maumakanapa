@@ -16,6 +16,14 @@
         font-weight: 400;
     }
 
+    @font-face {
+        font-family: "russianlabi";
+        src: url("/static/fonts/russianlabi.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+    }
+
     body {
         background-image: url("/static/imgs/meow.webp");
         display: flex;
@@ -141,35 +149,50 @@
         display: flex;
     }
 
-    #aboutsec {
+    #aboutsec,
+    #aboutme {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .sectext {
+    .sectext,
+    .textme {
         background-color: rgba(0, 0, 0, 0.3);
         padding: 2em;
         border-radius: 22px;
         transition: 0.5s;
     }
 
-    .sectext:hover {
+    .sectext:hover,
+    .textme:hover {
         transition: 0.5s;
         transform: scale(1.05);
     }
 
-    #aboutsec h1 {
+    #aboutsec h1,
+    #aboutme h1 {
         font-family: "Labirhin", sans-serif;
         color: white;
         font-size: 4em;
     }
 
-    #aboutsec h2 {
+    #aboutsec h2,
+    #aboutme h2 {
         font-family: "Labirhin", sans-serif;
         color: white;
         font-size: 2em;
         text-align: center;
+    }
+
+    html[lang="russian"] #aboutsec h1,
+    html[lang="russian"] #aboutme h1 {
+        font-family: "russianlabi", "Labirhin", sans-serif;
+        font-size: 6em;
+    }
+    html[lang="russian"] #aboutsec h2,
+    html[lang="russian"] #aboutme h2 {
+        font-family: "russianlabi", "Labirhin", sans-serif;
     }
 
     footer {
@@ -196,12 +219,25 @@
         text-align: center;
     }
 
+    html[lang="russian"] .footerstuff h1,
+    html[lang="russian"] .footerstuff h2 {
+        font-family: "russianlabi", "Labirhin", sans-serif;
+    }
+
     .footerstuff a {
         text-decoration: none;
         background: linear-gradient(to right, purple, white);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    #aboutme a {
+        text-decoration: none;
+        background: linear-gradient(to right, purple, white);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 
     @media screen and (max-width: 900px) {
@@ -272,31 +308,41 @@
             align-items: center;
         }
 
-        .sectext {
+        .sectext,
+        .textme {
             background-color: rgba(0, 0, 0, 0.3);
             padding: 1em;
             border-radius: 22px;
             transition: 0.5s;
         }
 
-        .sectext:hover {
+        .sectext:hover,
+        .textme:hover {
             transition: 0.5s;
             transform: scale(1.05);
         }
 
-        #aboutsec h1 {
-            font-family: "Labirhin", sans-serif;
+        #aboutsec h1,
+        #aboutme h1 {
             color: white;
             font-size: 2.5em;
             text-align: center;
             margin-top: 45px;
         }
 
-        #aboutsec h2 {
-            font-family: "Labirhin", sans-serif;
+        #aboutsec h2,
+        #aboutme h2 {
             color: white;
             font-size: 2em;
             text-align: center;
+            text-decoration: none;
+        }
+
+        #aboutme a {
+            text-decoration: none;
+            background: linear-gradient(to right, purple, white);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     }
 

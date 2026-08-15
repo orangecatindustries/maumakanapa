@@ -16,6 +16,14 @@
             font-weight: 400;
         }
 
+        @font-face {
+            font-family: "russianlabi";
+            src: url("/static/fonts/russianlabi.ttf") format("truetype");
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+        }
+
         body {
             background-image: url("/static/imgs/meow.webp");
             display: flex;
@@ -151,6 +159,11 @@
             text-align: center;
         }
 
+        html[lang="russian"] .container h1 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 7em;
+        }
+
         .comselect {
             margin: -25px;
             background-color: rgba(0, 0, 0, 0.3);
@@ -275,6 +288,11 @@
             background-size: 500px;
         }
 
+        html[lang="russian"] :is(.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9) :is(h2, h3){
+            font-family: "russianlabi", "Karla", sans-serif;
+            font-size: 2em;
+        }
+
         .p1 h2,
         .p2 h2,
         .p3 h2,
@@ -335,6 +353,11 @@
             font-family: "Jaya";
             color: lightgrey;
             text-align: center;
+        }
+
+        html[lang="russian"] .footerstuff h1,
+        html[lang="russian"] .footerstuff h2 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
         }
 
         .footerstuff a {

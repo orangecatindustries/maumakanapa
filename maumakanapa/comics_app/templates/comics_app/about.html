@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}">
 
 <head>
     <meta charset="UTF-8">
@@ -71,7 +71,16 @@
             <h2>{{ t.about2|safe }}</h2>
             <h2>{{ t.about3|safe }}</h2>
             <h2>{{ t.about4|safe }}</h2>
-            <h2>{{ t.about5|safe }}</h2>
+            <h2>-laurah</h2>
+        </div>
+    </section>
+    <section id="aboutme">
+        <h1>{{ t.aboutme }}</h1>
+        <div class="textme">
+            <h2>{{ t.aboutme1|safe }}</h2>
+            <h2>{{ t.aboutme2|safe }} <a href="https://youtube.com/@midnightmarissa">channel</a></h2>
+            <h2>{{ t.aboutme3|safe }} <a href="https://github.com/orangecatindustries/maumakanapa">github</a></h2>
+            <h2>{{ t.aboutme4 }}</h2>
         </div>
     </section>
     <footer>
