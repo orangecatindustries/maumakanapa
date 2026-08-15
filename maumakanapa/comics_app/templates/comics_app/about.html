@@ -89,13 +89,13 @@
         content.classList.toggle("show")
     }
     document.addEventListener("click", function (e) {
-    document.querySelectorAll(".dropdown-content.show").forEach(function (dropdown) {
-        const parentDropdown = dropdown.closest(".dropdown");
-        if (parentDropdown && !parentDropdown.contains(e.target)) {
-            dropdown.classList.remove("show");
-        }
+        document.querySelectorAll(".dropdown-content.show").forEach(function (dropdown) {
+            const parentDropdown = dropdown.closest(".dropdown");
+            if (parentDropdown && !parentDropdown.contains(e.target)) {
+                dropdown.classList.remove("show");
+            }
+        });
     });
-});
 </script>
 
 </html>
