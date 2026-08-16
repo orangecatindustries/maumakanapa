@@ -8,7 +8,7 @@ class webcomic(models.Model):
         ('portuguese', 'Portuguese'),
         ('russian', 'Russian'),
         ('chinese', 'Chinese'),
-        ('italian', 'Italian'),
+        ('italiano', 'Italiano'),
         ('filipino', 'Filipino')
     ]
 
