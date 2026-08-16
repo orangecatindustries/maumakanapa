@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="maumakanapa.art // your place to read labirhin's comics!">
-    <meta property="og:description" content="here, you can read labirhin's Mau Makan Apa comic in four languages! totally for free!">
+    <meta property="og:description"
+        content="here, you can read labirhin's Mau Makan Apa comic in four languages! totally for free!">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="https://maumakanapa.art/static/imgs/maumakanapathumbnail.png">
     <meta name="theme-color" content="#0052FF">
@@ -114,6 +115,41 @@
                         <div class="wow-gif"></div>
                     </div>
                 </div>
+                <div class="third">
+                    <div class="wow-ru">
+                        <h1>Russian</h1>
+                        <h2>MMA по-русски!</h2>
+                        <a href="/russian/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/russianpng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                    <div class="wow-it">
+                        <h1>Italian</h1>
+                        <h2>MMA in italiano!</h2>
+                        <a href="/italiano/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/italianpng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                </div>
+                <div class="fourth">
+                    <div class="wow-fl">
+                        <h1>Filipino</h1>
+                        <h2>MMA sa wikang Filipino!</h2>
+                        <a href="/filipino/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/filipinopng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                    <div class="wow-ch">
+                        <h1>Chinese</h1>
+                        <h2>中文版 MMA！</h2>     
+                        <a href="/chinese/comics" class="lang-link"><button>{{ t.button }}</button></a>
+                        <img src="{% static 'imgs/chinapng.png' %}" alt="">
+                        <div class="wow-gif"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow">
+                <button class="expandbutton" onclick="widthChange()">{{ t.languages }}</button>
             </div>
         </div>
     </section>
@@ -184,13 +220,18 @@
         }
 
         document.addEventListener("click", function (e) {
-        document.querySelectorAll(".dropdown-content.show").forEach(function (dropdown) {
-            const parentDropdown = dropdown.closest(".dropdown");
-            if (parentDropdown && !parentDropdown.contains(e.target)) {
-                dropdown.classList.remove("show");
-            }
+            document.querySelectorAll(".dropdown-content.show").forEach(function (dropdown) {
+                const parentDropdown = dropdown.closest(".dropdown");
+                if (parentDropdown && !parentDropdown.contains(e.target)) {
+                    dropdown.classList.remove("show");
+                }
+            });
         });
-    });
+
+        function widthChange() {
+            document.querySelector(".all").style.maxHeight = "2000px";
+            document.querySelector(".shadow").style.display = "none"
+        }
     </script>
 </body>
 
