@@ -172,6 +172,8 @@
             padding-top: 1em;
             padding-bottom: 1em;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
 
         .first {
@@ -331,6 +333,8 @@
             margin-top: 50px;
             background-color: rgba(0, 0, 0, 0.3);
             width: 100%;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
 
         .footerstuff {
