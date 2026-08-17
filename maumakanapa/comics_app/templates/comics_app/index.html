@@ -27,7 +27,7 @@
                 <div class="dropdown-content">
                     <a href="{{ t.selector }}">webcomics</a>
                     <a href="https://shop.labirhin.com">merch</a>
-                    <a href="https://labirhin.com">labirhin</a>
+                    <a href="https://maumakanapa.wiki.gg">wiki</a>
                     <a href="{{ t.about }}">about</a>
                     <li></li>
                     <a href="/english/">english</a>
@@ -53,7 +53,7 @@
         <nav>
             <a href="{{ t.selector }}">webcomics</a>
             <a href="https://shop.labirhin.com">merch</a>
-            <a href="https://labirhin.com">labirhin</a>
+            <a href="https://maumakanapa.wiki.gg">wiki</a>
             <a href="{{ t.about }}">about</a>
             <div class="dropdown">
                 <img src="{% static 'svg/dropdown.svg' %}" onclick="showList(this)" alt="">
@@ -183,6 +183,20 @@
                         <div id="twitter">
                             <img src="{% static 'svg/twitter.svg' %}" alt="">
                             <h2>{{ t.twitter }}</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="third">
+                    <a href="https://www.youtube.com/@labirhin" style="text-decoration: none">
+                        <div id="youtube">
+                            <img src="{% static 'svg/youtube.svg' %}" alt="">
+                            <h2>{{ t.youtube }}</h2>
+                        </div>
+                    </a>
+                    <a href="https://maumakanapa.wiki.gg" style="text-decoration: none">
+                        <div id="wiki">
+                            <img src="{% static 'svg/book.svg' %}" alt="">
+                            <h2>{{ t.wiki }}</h2>
                         </div>
                     </a>
                 </div>

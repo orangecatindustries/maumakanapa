@@ -582,7 +582,9 @@
         #discord,
         #merch,
         #patreon,
-        #twitter {
+        #twitter,
+        #youtube,
+        #wiki {
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 22px;
             padding: 2em;
@@ -619,9 +621,21 @@
             background-color: lightskyblue;
         }
 
+        #youtube:hover {
+            transform: scale(1.05);
+            background-color: red;
+        }
+
+        #wiki:hover {
+            transform: scale(1.05);
+            background-color: darkblue;
+        }
+
         #discord img,
         #merch img,
-        #twitter img {
+        #twitter img,
+        #wiki img,
+        #youtube img {
             height: 85px;
             filter: invert();
         }
@@ -634,7 +648,9 @@
 
         #discord h2,
         #merch h2,
-        #twitter h2 {
+        #twitter h2,
+        #wiki h2,
+        #youtube h2 {
             font-family: "Karla", sans-serif;
             color: white;
             font-weight: 200;
