@@ -2,21 +2,36 @@
 
 # `maumakanapa.art` // your place to read labirhin's comics!
 
-## What is this webite?
+## What is this website?
 maumakanapa.art is a website where people can read Labirhin's Mau Makan Apa comic!\
 It also has some links that redirect to his Discord, merch website, Patreon, etc
+Currently it has the following languages (both for the website & the webcomic:
+* Indonesian
+* English
+* Spanish
+* Russian
+* Italian
+* Brazilian Portuguese
+* Chinese
+* Filipino
 
 ## What is this repository?
-This repository is literally just the website it self, I decided to make it open-source because, well, I love making everything open-sourced.
-
-## Is there any monitization?
-No, I, orangecatindustries, do not get monitized for anything in this website, I made the website just for fun and archival, I do not have plans for monitization.
+This repository is literally just the website it self, I decided to make it open-source because, well, I love making everything open-source.
 
 ## What can we expect for the future?
 I am planning to continue working on this website, adding content such as:
 * Revision after Revision
 * The Stars Are Falling
 * The Big Tempeh Lie
+
+## Is there any monitization?
+No, I, orangecatindustries, do not get monitized for anything in this website, I made the website just for fun and archival, I do not have plans for monitization.
+
+## What do we need to host this?
+You will need the following:
+* Pillow
+* WhiteNoise
+* django-admin-sortables2
 
 ## Do you have permission to host the webcomic?
 I have talked with higher ups about my website, and it is now considered an official website to read the Mau Makan Apa comic, so technically, yes, I do have permission.
@@ -35,4 +50,3 @@ Under this license, you are free to copy, modify, and distribute this website's 
 
 All comic pages, artwork, characters, story elements, and related media are intellectual property of **Labirhin**. 
 * You do **NOT** have permission to copy, scrape, redistribute, or monetize the comic assets. 
-
