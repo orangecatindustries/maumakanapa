@@ -842,7 +842,9 @@
             #discord,
             #merch,
             #patreon,
-            #twitter {
+            #twitter,
+            #wiki,
+            #youtube {
                 box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
                 flex-direction: column;
                 height: 4em;
@@ -851,8 +853,14 @@
 
             #discord img,
             #merch img,
-            #twitter img {
+            #twitter img,
+            #youtube img {
                 height: 65px;
+                margin-top: -16px;
+            }
+
+            #wiki img {
+                height: 50px;
                 margin-top: -16px;
             }
 
@@ -863,8 +871,13 @@
 
             #discord h2,
             #merch h2,
-            #twitter h2 {
+            #twitter h2,
+            #youtube h2 {
                 margin-top: 0px;
+                margin-left: 0px;
+            }
+
+            #wiki h2 {
                 margin-left: 0px;
             }
 
@@ -935,7 +948,9 @@
             #discord,
             #merch,
             #patreon,
-            #twitter {
+            #twitter,
+            #wiki,
+            #youtube {
                 width: 16em;
             }
 
