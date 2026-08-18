@@ -23,7 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = False
 
-
 ALLOWED_HOSTS = ['maumakanapa.art', 'www.maumakanapa.art', '26.39.33.94', '127.0.0.1']
 
 # Application definition
