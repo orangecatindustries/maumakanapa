@@ -1,7 +1,14 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from comics_app.sitemaps import comicSitemap, staticSitemap
 from . import views
+
+sitemaps = {
+    'static': staticSitemap,
+    'webcomics': comicSitemap,
+}
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -9,6 +16,7 @@ urlpatterns = [
     path('<str:lang>/', views.index, name='index'),
     path('<str:lang>/comics/<int:number>/', views.page, name='page'),
     path('<str:lang>/about/', views.about, name='about'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 if settings.DEBUG:

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class webcomic(models.Model):
     LANGUAGE_CHOICES = [
@@ -17,6 +18,12 @@ class webcomic(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200, blank=True, null=True)
 
+    def get_absolute_url(self):
+        return reverse('webcomic_detail', kwargs={
+            'language': self.language,
+            'ep_number': self.ep_number
+        })
+    
     class Meta:
         ordering = ['language', 'ep_number']
         unique_together = ('language', 'ep_number')
