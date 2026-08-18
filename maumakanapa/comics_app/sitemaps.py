@@ -14,16 +14,10 @@ class comicSitemap(Sitemap):
 
 class staticSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.5
+    priority = 0.9
 
     def items(self):
-        languages = ["english", "indonesian", "spanish", "portuguese", "russian", "chinese", "filipino", "italiano"]
-        static_items = []
-        for lang in languages:
-            static_items.append({'lang': lang, 'viewname': 'index'})
-            static_items.append({'lang': lang, 'viewname': 'comic_list'})
-            static_items.append({'lang': lang, 'viewname': 'about'})
-        return static_items
+        return webcomic.objects.all()
 
-    def location(self, item):
-        return reverse(item['viewname'], kwargs={'lang': item['lang']})
+    def location(self, obj):
+        return reverse('page', kwargs={'lang': obj.language, 'number': obj.ep_number})
