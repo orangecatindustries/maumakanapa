@@ -117,19 +117,10 @@
         }
 
         .dropdown-content.show {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             opacity: 1;
             transform: translateY(0%);
             transition: all 0.3s ease;
-            border-radius: 12px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
             pointer-events: all;
-            overflow: auto;
         }
 
         .dropdown-content a {
@@ -344,20 +335,7 @@
             }
 
             .dropdown-content {
-                position: absolute;
-                right: 0;
-                background: rgba(0, 0, 0, 0.8);
-                min-width: 180px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-                border-radius: 12px;
-                overflow: hidden;
-                margin-top: 5px;
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
+                max-height: 520px;
             }
 
             .dropdown:hover .dropdown-content {

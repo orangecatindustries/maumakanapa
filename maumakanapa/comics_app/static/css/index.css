@@ -122,19 +122,10 @@
         }
 
         .dropdown-content.show {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            min-width: 180px;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
             opacity: 1;
             transform: translateY(0%);
             transition: all 0.3s ease;
-            border-radius: 12px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
             pointer-events: all;
-            overflow: auto;
         }
 
         .dropdown-content a {
@@ -576,6 +567,7 @@
             text-align: center;
             color: white;
             font-size: 6em;
+            text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 24px;
         }
 
         html[lang="russian"] .stuff h1 {
@@ -738,6 +730,10 @@
             .dropdown {
                 position: relative;
                 display: inline-block;
+            }
+
+            .dropdown-content {
+                max-height: 520px;
             }
 
             .dropdown:hover .dropdown-content {

@@ -117,19 +117,10 @@
     }
 
     .dropdown-content.show {
-        position: absolute;
-        right: 0;
-        background: rgba(0, 0, 0, 0.8);
-        min-width: 180px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         opacity: 1;
         transform: translateY(0%);
         transition: all 0.3s ease;
-        border-radius: 12px;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
         pointer-events: all;
-        overflow: auto;
     }
 
     .dropdown-content a {
@@ -194,6 +185,7 @@
         font-family: "russianlabi", "Labirhin", sans-serif;
         font-size: 6em;
     }
+
     html[lang="russian"] #aboutsec h2,
     html[lang="russian"] #aboutme h2 {
         font-family: "russianlabi", "Labirhin", sans-serif;
@@ -281,6 +273,10 @@
             height: 45px;
             cursor: pointer;
             filter: invert(1);
+        }
+
+        .dropdown-content {
+            max-height: 520px;
         }
 
         .dropdown:hover .dropdown-content {
