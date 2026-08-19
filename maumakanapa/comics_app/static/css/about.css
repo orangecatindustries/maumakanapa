@@ -238,6 +238,123 @@
         -webkit-background-clip: text;
     }
 
+    button, .meow {
+        margin-top: 2em;
+        font-family: "Karla", sans-serif;
+        font-size: 1.5em;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: 0.5s;
+        font-weight: 200;
+        border-style: none;
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite;
+    }
+
+    button:hover, .meow:hover {
+        animation: none;
+        transform: scale(1.1);
+        transition: 1s;
+        pointer-events: all;
+    }
+
+    #donation {
+        top: 20%;
+        position: fixed;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 22px;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 5;
+        box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.65);
+        animation: fadeInOpacity;
+        animation-duration: 0.3s;
+        overflow-y: scroll;
+        max-height: 600px;
+        visibility: visible;
+    }
+
+    #donation.after {
+        animation: fadeOutOpacity;
+        animation-duration: 0.3s;
+        visibility: hidden;
+    }
+
+    @keyframes fadeInOpacity {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOutOpacity {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    #donation h2 {
+        max-width: 600px;
+        font-family: "Karla", sans-serif;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: white;
+        line-height: 40px;
+    }
+
+    #donation strong {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .meow {
+        animation: none;
+        transition: none;
+        margin-top: 0;
+    }
+
+    .meow:hover {
+        transform: none;
+    }
+
+    @keyframes shake {
+
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    }
+
     @media screen and (max-width: 900px) {
         header {
             width: 90%;
@@ -345,6 +462,19 @@
             background: linear-gradient(to right, purple, white);
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        #donation {
+            max-width: 80vw;
+        }
+
+        #donation h2 {
+            max-width: 70vw;
+            word-break: break-word;
+        }
+
+        #donation strong {
+            font-size: 25px;
         }
     }
 
