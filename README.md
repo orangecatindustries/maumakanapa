@@ -32,11 +32,13 @@ You will need the following:
 * Pillow
 * WhiteNoise
 * django-admin-sortables2
+* django-html-minify
+* django-compressor
 
 ## Do you have permission to host the webcomic?
 I have talked with higher ups about my website, and it is now considered an official website to read the Mau Makan Apa comic, so technically, yes, I do have permission.
 
-## License & Copyright [![License: GPL v3](https://shields.io)](https://gnu.org)
+## License & Copyright
 
 ### Website Source Code
 The custom code, layout, and software frameworks created for this website are licensed under the **GNU General Public License v3.0 (GPLv3)**. 
