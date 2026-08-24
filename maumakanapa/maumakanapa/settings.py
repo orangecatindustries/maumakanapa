@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['maumakanapa.art', 'www.maumakanapa.art', '26.39.33.94', '127.0.0.1']
@@ -38,7 +38,19 @@ INSTALLED_APPS = [
     'comics_app',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'compressor',
 ]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+
+COMPRESS_ENABLED = True
+COMPRESS_DEBUG_TOGGLE = True
+COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.rCSSMinFilter']
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.rJSMinFilter']
 
 SITE_ID = 1
 
@@ -51,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_minify_html.middleware.MinifyHtmlMiddleware',
 ]
 
 ROOT_URLCONF = 'maumakanapa.urls'

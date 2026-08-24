@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="{{ current_lang }}">
 
@@ -13,7 +14,9 @@
     <meta name="theme-color" content="#FFFFFF">
     <title>Mau Makan Apa¿ - {{ comic.title }}</title>
     <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'css/comic.css' %}">
+    {% endcompress %}
 </head>
 
 <body>
