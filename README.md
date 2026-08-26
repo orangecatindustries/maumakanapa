@@ -31,8 +31,8 @@ No, I, orangecatindustries, do not get monitized for anything in this website, I
 You will need the following:
 * Pillow
 * WhiteNoise
-* django-admin-sortables2
-* django-html-minify
+* django-admin-sortable2
+* django-minify-html
 * django-compressor
 
 ## Do you have permission to host the webcomic?
