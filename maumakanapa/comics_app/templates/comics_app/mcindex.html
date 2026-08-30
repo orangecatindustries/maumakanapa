@@ -1,0 +1,124 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="maumakanapa.art // your place to read labirhin's comics!">
+    <meta property="og:description"
+        content="here, you can read labirhin's Mau Makan Apa comic in eight languages! and check out more of his work!! (all for free!!)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://maumakanapa.art/static/imgs/maumakanapathumbnail.png">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Mau Makan Apa¿</title>
+    <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/revindex.css' %}">
+    {% endcompress %}
+</head>
+
+<body>
+    <header>
+        <div class="icons">
+            <div class="logo-icon">
+                <a href="{{ t.index }}"><img src="{% static 'imgs/logolabirhin.png' %}" alt=""></a>
+            </div>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}">
+                <div class="dropdown-content">
+                    <a href="{{ t.selector }}">webcomics</a>
+                    <a href="https://shop.labirhin.com">merch</a>
+                    <a href="https://maumakanapa.wiki.gg">wiki</a>
+                    <a href="{{ t.about }}">about</a>
+                    <li></li>
+                    <a href="/english/mc">english</a>
+                    <a href="/indonesian/mc">indonesian</a>
+                    <a href="/spanish/mc">spanish</a>
+                    <a href="/portuguese/mc">portuguese</a>
+                    <a href="/russian/mc">russian</a>
+                    <a href="/italiano/mc">italian</a>
+                    <a href="/filipino/mc">filipino</a>
+                    <a href="/chinese/mc">chinese</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="logos">
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/logolabirhin.png' %}" alt="">
+            </a>
+            <a href="{{ t.index }}">
+                <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            </a>
+        </div>
+        <nav>
+            <a href="{{ t.selector }}">webcomics</a>
+            <a href="https://shop.labirhin.com">merch</a>
+            <a href="https://maumakanapa.wiki.gg">wiki</a>
+            <a href="{{ t.about }}">about</a>
+            <div class="dropdown">
+                <img src="{% static 'svg/dropdown.svg' %}" onclick="showList(this)" alt="">
+                <div class="dropdown-content">
+                    <a href="/english/mc">english</a>
+                    <a href="/indonesian/mc">indonesian</a>
+                    <a href="/spanish/mc">spanish</a>
+                    <a href="/portuguese/mc">portuguese</a>
+                    <a href="/russian/mc">russian</a>
+                    <a href="/italiano/mc">italian</a>
+                    <a href="/filipino/mc">filipino</a>
+                    <a href="/chinese/mc">chinese</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="maininfo">
+        <div class="maincon">
+            <div class="preview">
+                <div class="conprev" id="con">
+                    <iframe src="https://www.youtube.com/embed/I0MUW5PIEno?rel=0"
+                        style=""
+                        allowfullscreen scrolling="no"
+                        allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"
+                        referrerpolicy="strict-origin"></iframe>
+                </div>
+            </div>
+            <div class="text">
+                <div class="context" id="con">
+                    <h1>{{ t.missilecity }}</h1>
+                    <h2>{{ t.missilecityinfo|safe }}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerstuff">
+            <h1>{{ t.owned_by }}</h1>
+            <img src="{% static 'imgs/markiplier.png' %}" alt="">
+            <h2>{{ t.assets|safe }}</h2>
+            <h2>{{ t.made_with }} <a href="https://discord.com/users/1494322472646873280">laurah</a></h2>
+        </div>
+    </footer>
+</body>
+<script>
+    function showList(imgElement) {
+        const content = imgElement.nextElementSibling;
+        content.classList.toggle("show")
+    }
+
+    function dropdGone(event) {
+        document.querySelectorAll('.dropdown-content.show').forEach(
+            function (dropdown) {
+                const parentDropdown = dropdown.closest('.dropdown')
+                if (parentDropdown && !parentDropdown.contains(event.target)) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        )
+    }
+
+    document.addEventListener('click', dropdGone);
+</script>
+
+</html>

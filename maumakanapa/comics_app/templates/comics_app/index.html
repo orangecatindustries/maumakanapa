@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="maumakanapa.art // your place to read labirhin's comics!">
     <meta property="og:description"
-        content="here, you can read labirhin's Mau Makan Apa comic in eight languages! totally for free!">
+        content="here, you can read labirhin's Mau Makan Apa comic in eight languages! and check out more of his work!! (all for free!!)">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="https://maumakanapa.art/static/imgs/maumakanapathumbnail.png">
     <meta name="theme-color" content="#FFFFFF">
@@ -87,14 +87,14 @@
             <h3>{{ t.main_part }}</h3>
             <div class="all">
                 <div class="first">
-                    <div class="wow-in">
+                    <div class="wow-in" id="webcon">
                         <h1>Indonesian</h1>
                         <h2>MMA dalam bahasa Indonesia!</h2>
                         <a href="/indonesian/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/indonesiapng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-en">
+                    <div class="wow-en" id="webcon">
                         <h1>English</h1>
                         <h2>MMA in English!</h2>
                         <a href="/english/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -103,14 +103,14 @@
                     </div>
                 </div>
                 <div class="second">
-                    <div class="wow-sp">
+                    <div class="wow-sp" id="webcon">
                         <h1>Spanish</h1>
                         <h2>¡MMA en español!</h2>
                         <a href="/spanish/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/spanishpng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-pt">
+                    <div class="wow-pt" id="webcon">
                         <h1>Brazilian Portuguese</h1>
                         <h2>MMA em português!</h2>
                         <a href="/portuguese/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -119,14 +119,14 @@
                     </div>
                 </div>
                 <div class="third">
-                    <div class="wow-ru">
+                    <div class="wow-ru" id="webcon">
                         <h1>Russian</h1>
                         <h2>MMA по-русски!</h2>
                         <a href="/russian/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/russianpng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-it">
+                    <div class="wow-it" id="webcon">
                         <h1>Italian</h1>
                         <h2>MMA in italiano!</h2>
                         <a href="/italiano/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -135,16 +135,16 @@
                     </div>
                 </div>
                 <div class="fourth">
-                    <div class="wow-fl">
+                    <div class="wow-fl" id="webcon">
                         <h1>Filipino</h1>
                         <h2>MMA sa wikang Filipino!</h2>
                         <a href="/filipino/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/filipinopng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-ch">
+                    <div class="wow-ch" id="webcon">
                         <h1>Chinese</h1>
-                        <h2>中文版 MMA！</h2>     
+                        <h2>中文版 MMA！</h2>
                         <a href="/chinese/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/chinapng.png' %}" alt="">
                         <div class="wow-gif"></div>
@@ -155,13 +155,46 @@
                 <button class="expandbutton" onclick="widthChange()">{{ t.languages }}</button>
             </div>
         </div>
+        <div class="secbigcontainer">
+            <h3>want to see more of labirhin's content?</h3>
+            <div class="all2">
+                <div class="first">
+                    <div class="rar" id="labcon">
+                        <h1>{{ t.titlerar }}</h1>
+                        <h2>{{ t.subtitlerar }}</h2>
+                        <a href="{{ t.buttonrar }}" class="lang-link"><button>{{ t.button2 }}</button></a>
+                        <img src="{% static 'imgs/revisionafterrevision.jpg' %}" alt="">
+                    </div>
+                    <div class="tsrf" id="labcon">
+                        <h1>{{ t.titletsrf }}</h1>
+                        <h2>{{ t.subtitletsrf }}</h2>
+                        <a href="{{ t.buttontsrf }}" class="lang-link"><button>{{ t.button2 }}</button></a>
+                        <img src="{% static 'imgs/thestarsarefalling.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="mc" id="labcon">
+                        <h1>{{ t.titlemc }}</h1>
+                        <h2>{{ t.subtitlemc }}</h2>
+                        <a href="{{ t.buttonmc }}" class="lang-link"><button>{{ t.button2 }}</button></a>
+                        <img src="{% static 'imgs/missilecity.jpg' %}" alt="">
+                    </div>
+                    <div class="tbtl" id="labcon">
+                        <h1>{{ t.titletbtl }}</h1>
+                        <h2>{{ t.subtitletbtl }}</h2>
+                        <a href="{{ t.buttontbtl }}" class="lang-link"><button>{{ t.button2 }}</button></a>
+                        <img src="{% static 'imgs/thebigtempelie.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="about">
         <div class="stuff">
             <h1>{{ t.community }}</h1>
             <div class="comcontainer">
-                <div class="first">
+                <div class="firststuff">
                     <a href="https://discord.gg/labirhin" style="text-decoration: none">
                         <div id="discord">
                             <img src="{% static 'svg/discord.svg' %}" alt="">
@@ -175,7 +208,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="second">
+                <div class="secondstuff">
                     <a href="https://www.patreon.com/LABIRHIN" style="text-decoration: none">
                         <div id="patreon">
                             <img src="{% static 'svg/patreon.svg' %}" alt="">
@@ -189,7 +222,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="third">
+                <div class="thirdstuff">
                     <a href="https://www.youtube.com/@labirhin" style="text-decoration: none">
                         <div id="youtube">
                             <img src="{% static 'svg/youtube.svg' %}" alt="">

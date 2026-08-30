@@ -205,7 +205,7 @@
             -webkit-backdrop-filter: blur(5px);
         }
 
-        .bigcontainer h3 {
+        #containers h3 {
             font-family: var(--primary-font);
             color: white;
             font-weight: 200;
@@ -246,10 +246,7 @@
             flex-direction: row;
         }
 
-        .wow-en,
-        .wow-pt,
-        .wow-in,
-        .wow-sp {
+        #webcon {
             background-color: var(--main-background-color);
             border-radius: 22px;
             height: 13em;
@@ -261,10 +258,10 @@
             transition: all 0.5s ease;
         }
 
-        .wow-en h1,
-        .wow-pt h1,
-        .wow-in h1,
-        .wow-sp h1 {
+        .first h1,
+        .second h1,
+        .third h1,
+        .fourth h1 {
             font-family: var(--primary-font);
             color: white;
             font-weight: 200;
@@ -274,10 +271,10 @@
             font-size: 28px;
         }
 
-        .wow-en h2,
-        .wow-pt h2,
-        .wow-in h2,
-        .wow-sp h2 {
+        .first h2,
+        .second h2,
+        .third h2,
+        .fourth h2 {
             position: relative;
             font-family: var(--primary-font);
             font-weight: 200;
@@ -298,170 +295,54 @@
             font-size: 35px;
         }
 
-        .wow-pt:hover,
-        .wow-en:hover,
-        .wow-sp:hover,
-        .wow-in:hover,
-        .wow-ru:hover,
-        .wow-it:hover,
-        .wow-fl:hover,
-        .wow-ch:hover {
+        #webcon:hover {
             transform: scale(1.05);
             box-shadow: var(--main-box-shadow);
         }
 
-        .wow-ru,
-        .wow-it,
-        .wow-fl,
-        .wow-ch {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            height: 13em;
-            width: 25em;
-            box-shadow: var(--main-box-shadow);
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .wow-ru h1,
-        .wow-it h1,
-        .wow-fl h1,
-        .wow-ch h1 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            position: relative;
-            z-index: 3;
-            margin: 20px;
-            font-size: 28px;
-        }
-
-        .wow-ru h2,
-        .wow-it h2,
-        .wow-fl h2,
-        .wow-ch h2 {
-            position: relative;
-            font-family: var(--primary-font);
-            font-weight: 200;
-            z-index: 3;
-            color: white;
-            margin: 20px;
-            margin-top: -5px;
-            font-size: 20px;
+        .wow-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
         }
 
         .wow-pt .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/0629_5.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-en .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/englishflag.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-in .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/indonesianflag.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-sp .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/spanishflag.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-ru .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/russiangif.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-it .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/italiangif.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-fl .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/filipinogif.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-ch .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: url("/static/imgs/chinagif.gif");
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
         }
 
         .wow-gif::after {
@@ -482,15 +363,6 @@
             opacity: 1;
         }
 
-        .wow-pt img,
-        .wow-en img,
-        .wow-sp img,
-        .wow-in img {
-            margin-top: -13em;
-            opacity: 0.3;
-            width: 25em;
-        }
-
         .wow-ru:hover .wow-gif,
         .wow-it:hover .wow-gif,
         .wow-fl:hover .wow-gif,
@@ -498,10 +370,7 @@
             opacity: 1;
         }
 
-        .wow-ru img,
-        .wow-it img,
-        .wow-fl img,
-        .wow-ch img {
+        .all img {
             margin-top: -13em;
             opacity: 0.3;
             width: 25em;
@@ -553,6 +422,77 @@
             bottom: 0%;
         }
 
+        .secbigcontainer {
+            margin-top: 2em;
+            background-color: var(--main-background-color);
+            border-radius: 22px;
+            padding: 2em;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 1.2em;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .all2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .all2 img {
+            margin-top: -9em;
+            opacity: 0.3;
+            width: 25em;
+            transition: 0.5s;
+        }
+
+        html[lang="russian"] .all2 h1,
+        html[lang="russian"] #labcon h2 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 35px;
+        }
+
+        .all2 h1 {
+            font-family: var(--primary-font);
+            color: white;
+            font-weight: 200;
+            position: relative;
+            z-index: 3;
+            margin: 20px;
+            font-size: 28px;
+        }
+
+        #labcon {
+            background-color: var(--main-background-color);
+            border-radius: 22px;
+            height: 13em;
+            width: 25em;
+            box-shadow: var(--main-box-shadow);
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        #labcon:hover {
+            transform: scale(1.05);
+            box-shadow: var(--main-box-shadow);
+            opacity: 1;
+        }
+
+        #labcon:hover img {
+            opacity: 0.5;
+        }
+
+        #labcon img {
+            margin-top: -120px;
+        }
+
         .comcontainer {
             background-color: var(--main-background-color);
             border-radius: 22px;
@@ -567,6 +507,12 @@
             align-items: center;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
+        }
+
+        .firststuff,
+        .secondstuff,
+        .thirdstuff {
+            display: flex;
         }
 
         .stuff h1 {
@@ -705,7 +651,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 600px) {
             html {
                 overflow-x: hidden;
             }
@@ -790,41 +736,34 @@
 
             .all,
             .first,
-            .second, .third, .fourth {
+            .second,
+            .third,
+            .fourth {
                 flex-direction: column;
             }
 
-            .wow-en,
-            .wow-pt,
-            .wow-in,
-            .wow-sp,
-            .wow-ru,
-            .wow-it,
-            .wow-fl,
-            .wow-ch {
+            .all img {
+                margin-top: -13em;
+                opacity: 0.3;
+                width: 25em;
+                position: absolute;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                transition: opacity 0.3s ease-in-out;
+                z-index: 1;
+            }
+
+            #webcon {
                 width: 80vw;
                 height: 10em;
             }
 
-            .wow-en h1,
-            .wow-pt h1,
-            .wow-in h1,
-            .wow-sp h1,
-            .wow-ru h1,
-            .wow-it h1,
-            .wow-fl h1,
-            .wow-ch h1 {
+            #all h1 {
                 margin-top: 15px;
             }
 
-            .wow-en h2,
-            .wow-pt h2,
-            .wow-in h2,
-            .wow-sp h2,
-            .wow-ru h2,
-            .wow-it h2,
-            .wow-fl h2,
-            .wow-ch h2 {
+            #all h2 {
                 margin-top: -15px;
             }
 
@@ -844,6 +783,33 @@
                 font-family: "Jaya";
                 color: white;
                 font-size: 50px;
+                text-align: center;
+            }
+
+            .firststuff,
+            .secondstuff,
+            .thirdstuff {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .secbigcontainer {
+                width: 70vw;
+            }
+
+            #labcon {
+                width: 80vw;
+                height: 12em;
+                align-items: center;
+            }
+
+            #labcon img {
+                position: absolute;
+                top: 50%;
+                right: -15%;
+            }
+
+            #containers h3 {
                 text-align: center;
             }
 
@@ -896,7 +862,7 @@
 
         }
 
-        @media screen and (min-width: 501px) and (max-width: 1100px) {
+        @media screen and (min-width: 601px) and (max-width: 1100px) {
             header {
                 width: 90%;
                 height: 5em;
@@ -942,15 +908,18 @@
                 pointer-events: auto;
             }
 
-            .wow-en,
-            .wow-pt,
-            .wow-in,
-            .wow-sp,
-            .wow-ru,
-            .wow-it,
-            .wow-fl,
-            .wow-ch {
-                width: 20em;
+            #webcon {
+                width: 40vw;
+            }
+
+            #labcon {
+                width: 40vw;
+            }
+
+            #labcon img {
+                position: absolute;
+                top: 50%;
+                right: -15%;
             }
 
             #discord,
@@ -959,7 +928,18 @@
             #twitter,
             #wiki,
             #youtube {
-                width: 16em;
+                width: 30vw;
+            }
+
+            .wow-en,
+            .wow-pt,
+            .wow-in,
+            .wow-sp,
+            .wow-ru,
+            .wow-it,
+            .wow-fl,
+            .wow-ch {
+                width: 15em;
             }
 
             .videostuff {

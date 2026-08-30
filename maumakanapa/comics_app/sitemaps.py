@@ -13,6 +13,10 @@ class staticSitemap(Sitemap):
             static_items.append({'lang': lang, 'viewname': 'index'})
             static_items.append({'lang': lang, 'viewname': 'comic_list'})
             static_items.append({'lang': lang, 'viewname': 'about'})
+            static_items.append({'lang': lang, 'viewname': 'revindex'})
+            static_items.append({'lang': lang, 'viewname': 'tsrfindex'})
+            static_items.append({'lang': lang, 'viewname': 'tbtlindex'})
+            static_items.append({'lang': lang, 'viewname': 'tsrfindex'})
         return static_items
 
     def location(self, item):

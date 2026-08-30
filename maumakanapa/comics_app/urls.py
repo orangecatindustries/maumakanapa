@@ -16,6 +16,10 @@ urlpatterns = [
     path('<str:lang>/', views.index, name='index'),
     path('<str:lang>/comics/<int:number>/', views.page, name='page'),
     path('<str:lang>/about/', views.about, name='about'),
+    path('<str:lang>/rar/', views.revindex, name='revindex'),
+    path('<str:lang>/tsrf/', views.tsrfindex, name='tsrfindex'),
+    path('<str:lang>/tbtl/', views.tbtlindex, name='tbtlindex'),
+    path('<str:lang>/mc/', views.mcindex, name='mcindex'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
