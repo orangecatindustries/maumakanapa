@@ -490,7 +490,11 @@
         }
 
         #labcon img {
-            margin-top: -120px;
+            position: absolute;
+            top: 65%;
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
         }
 
         .comcontainer {
@@ -802,11 +806,13 @@
                 height: 12em;
                 align-items: center;
             }
-
+            
             #labcon img {
                 position: absolute;
-                top: 50%;
-                right: -15%;
+                top: 75%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
             #containers h3 {
@@ -914,12 +920,7 @@
 
             #labcon {
                 width: 40vw;
-            }
-
-            #labcon img {
-                position: absolute;
-                top: 50%;
-                right: -15%;
+                aspect-ratio: 16 / 9;
             }
 
             #discord,
@@ -929,6 +930,14 @@
             #wiki,
             #youtube {
                 width: 30vw;
+            }
+
+            #labcon img {
+                position: absolute;
+                top: 69%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
             .wow-en,
