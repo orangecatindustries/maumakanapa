@@ -18,11 +18,12 @@ Currently it has the following languages (both for the website & the webcomic:
 ## What is this repository?
 This repository is literally just the website it self, I decided to make it open-source because, well, I love making everything open-source.
 
-## What can we expect for the future?
-I am planning to continue working on this website, adding content such as:
+## What does the website currently have?
+Not only does the website have stuff about, well, Mau Makan Apa, it also has info about:
 * Revision after Revision
 * The Stars Are Falling
 * The Big Tempeh Lie
+* Missile City
 
 ## Is there any monitization?
 No, I, orangecatindustries, do not get monitized for anything in this website, I made the website just for fun and archival, I do not have plans for monitization.
