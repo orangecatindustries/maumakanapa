@@ -264,7 +264,7 @@ TRANSLATIONS = {
         "titlemc": "Cidade Míssil",
         "subtitlemc": "Lobi, por que você está algemado?!",
         "titletbtl": "A Grande Mentira de Tempe",
-        "subtitletbtl": "O tempeh NÃO vai te transformar em um vilão!",
+        "subtitletbtl": "O tempeh NÃO vai te tornar vilão!",
         "buttonmc": "/portuguese/mc",
         "buttontsrf": "/portuguese/tsrf",
         "buttontbtl": "/portuguese/tbtl",
