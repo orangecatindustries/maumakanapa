@@ -112,7 +112,6 @@
         transition: all 0.3s ease;
         border-radius: 12px;
         overflow: hidden;
-        backdrop-filter: blur(10px);
         pointer-events: none;
     }
 
