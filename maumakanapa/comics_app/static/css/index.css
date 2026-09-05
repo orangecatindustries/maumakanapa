@@ -786,7 +786,7 @@
             .stuff h1 {
                 font-family: "Jaya";
                 color: white;
-                font-size: 50px;
+                font-size: 15vw;
                 text-align: center;
             }
 
@@ -810,6 +810,10 @@
             #labcon img {
                 top: 75%;
             }
+
+            .comcontainer {
+                width: 70vw;
+            }
             
             #containers h3 {
                 text-align: center;
@@ -824,14 +828,14 @@
                 box-shadow: var(--main-box-shadow);
                 flex-direction: column;
                 height: 4em;
-                width: 14em;
+                width: 50vw;
             }
 
             #discord img,
             #merch img,
             #twitter img,
             #youtube img {
-                height: 65px;
+                height: 55px;
                 margin-top: -16px;
             }
 
@@ -848,19 +852,24 @@
             #discord h2,
             #merch h2,
             #twitter h2,
-            #youtube h2 {
-                margin-top: 0px;
+            #youtube h2,
+            #wiki h2,
+            #patreon h2 {
+                font-size: 20px;
+                margin-top: 15px;
                 margin-left: 0px;
             }
 
             #wiki h2 {
-                margin-left: 0px;
+                margin-top: 25px;
             }
 
             #patreon h2 {
-                margin-top: 12px;
+                margin-top: 20px;
                 margin-left: 0px;
             }
+
+            
         }
 
         @media screen and (min-width: 601px) and (max-width: 1100px) {
@@ -924,7 +933,11 @@
             #twitter,
             #wiki,
             #youtube {
-                width: 30vw;
+                width: 26vw;
+            }
+
+            #discord img, #merch img, #twitter img, #wiki img, #youtube img {
+                height: 68px;
             }
 
             .wow-en,
