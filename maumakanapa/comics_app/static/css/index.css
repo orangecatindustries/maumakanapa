@@ -273,7 +273,8 @@
             font-size: 28px;
         }
 
-        .labcon h2, .webcon h2 {
+        .labcon h2,
+        .webcon h2 {
             position: relative;
             font-family: var(--primary-font);
             font-weight: 200;
@@ -526,6 +527,7 @@
             align-items: center;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
         }
 
         .comcontainer h2 {
@@ -540,6 +542,21 @@
         html[lang="russian"] .comcontainer h2 {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 32px;
+        }
+
+        .xenobot {
+            height: 200px;
+            width: auto;
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+            margin-left: 3em;
+        }
+
+        .title {
+            display: flex;
+            align-items: flex-end;
+            gap: 3em;
         }
 
         .firststuff,
@@ -786,11 +803,17 @@
                 font-size: 5em;
             }
 
+            .title {
+                align-items: normal;
+                gap: 1em;
+            }
+
             .stuff h1 {
                 font-family: "Jaya";
                 color: white;
-                font-size: 15vw;
+                font-size: 11vw;
                 text-align: center;
+                margin-left: -1.8em;
             }
 
             .firststuff,
@@ -863,6 +886,11 @@
                 margin-left: 0px;
             }
 
+            .xenobot {
+                height: 134px;
+                top: 203%;
+                margin-left: 20px;
+            }
 
         }
 
@@ -927,6 +955,20 @@
 
             .socialcon img {
                 height: 68px;
+            }
+
+            .xenobot {
+                top: 157%;
+                height: 160px;
+                margin-left: 0;
+            }
+
+            .title {
+                gap: 0;
+            }
+
+            .stuff h1 {
+                font-size: 10vw;
             }
 
             .videostuff {
