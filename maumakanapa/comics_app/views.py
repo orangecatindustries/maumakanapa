@@ -32,8 +32,8 @@ TRANSLATIONS = {
         "selector": "/english/comics",
         "index": "/english/",
         "about": "/english/about",
-        "about1": "this website was made with the sole purpose of <br> being a 'backup' in case other websites that <br> host Mau Makan Apa randomly go down",
-        "about2": "a lot of hard work was put onto this, so i hope that <br> you, the reader, actually enjoys it, <br> as much as i enjoyed making the website it self!",
+        "about1": "maumakanapa.art is a website where you can <br> check out about labirhin's comics, we currently <br> have eight languages available and soon to add more!",
+        "about2": "initially it was supposed to be an archival, but i decided that it <br> should be more than that, because the community deserves it!",
         "about3": "more stuff will get added here in the future, such as: <br> more languages, more stuff about MMA, and much more!",
         "about4": "thank you to everyone who motivated me to actually <br> make this website!",
         "about5": "-laurah",
@@ -68,6 +68,7 @@ TRANSLATIONS = {
         "buttontsrf": "/english/tsrf",
         "buttontbtl": "/english/tbtl",
         "buttonrar": "/english/rar",
+        "wantmore": "want to see more of labirhin's content?",
     },
     "indonesian": {
         "main_part": "di sini, kamu bisa membaca webcomic-nya! (gratis!)",
@@ -99,9 +100,9 @@ TRANSLATIONS = {
         "selector": "/indonesian/comics",
         "index": "/indonesian/",
         "about": "/indonesian/about",
-        "about1": "situs web ini dibuat dengan tujuan semata-mata untuk <br>menjadi 'cadangan' jika situs web lain yang <br>menghosting Mau Makan Apa tiba-tiba tidak aktif.",
-        "about2": "banyak kerja keras yang dicurahkan untuk ini, jadi saya harap <br>Anda, pembaca, benar-benar menikmatinya, <br>sama seperti saya menikmati pembuatan situs web itu sendiri!",
-        "about3": "lebih banyak hal akan ditambahkan di sini di masa mendatang, seperti: <br>lebih banyak bahasa, lebih banyak hal tentang MMA, dan <br>masih banyak lagi!",
+        "about1": "maumakanapa.art adalah situs web tempat kamu bisa <br> melihat komik labirhin, saat ini kami <br> memiliki delapan bahasa dan akan segera menambah lebih banyak!",
+        "about2": "awalnya ini dimaksudkan sebagai arsip, tapi aku memutuskan bahwa <br> ini harus lebih dari itu, karena komunitas ini pantas mendapatkannya!",
+        "about3": "lebih banyak hal akan ditambahkan di sini di masa depan, seperti: <br> lebih banyak bahasa, lebih banyak konten tentang MMA, dan masih banyak lagi!",
         "about4": "terima kasih kepada semua orang yang memotivasi saya untuk <br>benar-benar membuat situs web ini!",
         "about5": "-laurah",
         "abouth1": "tentang situs web ini!",
@@ -135,6 +136,7 @@ TRANSLATIONS = {
         "buttontsrf": "/indonesian/tsrf",
         "buttontbtl": "/indonesian/tbtl",
         "buttonrar": "/indonesian/rar",
+        "wantmore": "mau lihat lebih banyak konten dari labirhin?",
     },
     "spanish": {
         "comics_title": "COMICS",
@@ -166,10 +168,9 @@ TRANSLATIONS = {
         "selector": "/spanish/comics",
         "index": "/spanish/",
         "about": "/spanish/about",
-        "about1": "este sitio web fue hecho con el único propósito de <br>ser una 'copia de seguridad' en caso de que otros sitios web que <br>alojan Mau Makan Apa se caigan repentinamente.",
-        "about2": "¡se puso mucho esfuerzo en esto, así que espero que <br>tú, el lector, realmente lo disfrutes, <br>tanto como yo disfruté haciendo el sitio web en sí!",
-        "about3": "se agregarán más cosas aquí en el futuro, como: <br>más idiomas, más cosas sobre MMA y <br>mucho más!",
-        "about4": "¡gracias a todos los que me motivaron a <br>hacer este sitio web!",
+        "about1": "maumakanapa.art es un sitio web donde puedes <br> ver los cómics de labirhin, actualmente <br> tenemos ocho idiomas disponibles y pronto añadiremos más!",
+        "about2": "al principio se suponía que fuera un archivo, pero decidí que <br> debía ser más que eso, porque la comunidad se lo merece!",
+        "about3": "más cosas se añadirán aquí en el futuro, como: <br> más idiomas, más contenido sobre MMA, y mucho más!",
         "about5": "-laurah",
         "abouth1": "acerca de este sitio web!",
         "notcomic1": "episodio no disponible...",
@@ -202,6 +203,7 @@ TRANSLATIONS = {
         "buttontsrf": "/spanish/tsrf",
         "buttontbtl": "/spanish/tbtl",
         "buttonrar": "/spanish/rar",
+        "wantmore": "¿quieres ver más contenido de labirhin?",
     },
     "portuguese": {
         "comics_title": "QUADRINHOS",
@@ -233,9 +235,9 @@ TRANSLATIONS = {
         "selector": "/portuguese/comics",
         "index": "/portuguese/",
         "about": "/portuguese/about",
-        "about1": "este site foi feito com o objetivo de <br>ser um backup em caso que os sites que <br>tem o comic Mau Makan Apa vão a baixo.",
-        "about2": "eu trabalhei muito neste site, então eu espero que <br>tu, o leitor(a), goste do site, como eu gostei de o fazer.",
-        "about3": "eu planeio em adicionar mais coisas no futuro, como: <br>mais línguas, mais coisas sobre MMA, e muito mais!",
+        "about1": "maumakanapa.art é um site onde você pode <br> conferir os quadrinhos do labirhin, atualmente <br> temos oito idiomas disponíveis e em breve adicionaremos mais!",
+        "about2": "no início era para ser um arquivo, mas decidi que <br> deveria ser mais do que isso, porque a comunidade merece!",
+        "about3": "mais coisas serão adicionadas aqui no futuro, como: <br> mais idiomas, mais conteúdo sobre MMA, e muito mais!",
         "about4": "obrigada a todos por terem me motivado <br>a fazer este site!",
         "about5": "-laurah (sim, sou portuguesa, não brasileira c:)",
         "abouth1": "sobre o site!",
@@ -269,6 +271,7 @@ TRANSLATIONS = {
         "buttontsrf": "/portuguese/tsrf",
         "buttontbtl": "/portuguese/tbtl",
         "buttonrar": "/portuguese/rar",
+        "wantmore": "quer ver mais conteúdo do labirhin?",
     },
     "russian": {
         "comics_title": "КОМИКСЫ",
@@ -297,9 +300,9 @@ TRANSLATIONS = {
         "selector": "/russian/comics",
         "index": "/russian/",
         "about": "/russian/about",
-        "about1": "этот сайт был создан с единственной целью <br> быть 'резервной копией' на случай, если другие сайты, <br> где размещен Mau Makan Apa, внезапно перестанут работать",
-        "about2": "в это было вложено много труда, поэтому я надеюсь, что <br> вам, читатель, это действительно понравится <br> так же сильно, как мне понравилось создавать сам сайт!",
-        "about3": "в будущем сюда добавится больше нового, например: <br> больше языков, больше материалов о MMA и многое другое!",
+        "about1": "maumakanapa.art это сайт, где вы можете <br> ознакомиться с комиксами labirhin, сейчас у нас <br> доступно восемь языков, и скоро добавим ещё!",
+        "about2": "изначально это должно было быть архивом, но я решил, что <br> это должно быть чем-то большим, ведь сообщество этого заслуживает!",
+        "about3": "в будущем здесь появится больше всего, например: <br> больше языков, больше контента про ММА, и многое другое!",
         "about4": "спасибо всем, кто мотивировал меня <br> сделать этот сайт!",
         "about5": "-лора",
         "abouth1": "об этом сайте!",
@@ -333,6 +336,7 @@ TRANSLATIONS = {
         "buttontsrf": "/russian/tsrf",
         "buttontbtl": "/russian/tbtl",
         "buttonrar": "/russian/rar",
+        "wantmore": "хочешь увидеть больше контента от labirhin?",
     },
     "chinese": {
         "comics_title": "漫画",
@@ -361,9 +365,9 @@ TRANSLATIONS = {
         "selector": "/chinese/comics",
         "index": "/chinese/",
         "about": "/chinese/about",
-        "about1": "创建本网站的唯一目的就是 <br> 作为“备份”，以防托管 Mau Makan Apa 的其他网站 <br> 随机瘫痪",
-        "about2": "这其中倾注了许多心血，所以我希望 <br> 作为读者的你能够真正喜欢它， <br> 就像我享受制作这个网站的过程一样!",
-        "about3": "未来这里还会添加更多内容，例如： <br> 更多语言、更多关于 MMA 的内容等等!",
+        "about1": "maumakanapa.art 是一个网站，你可以在这里 <br> 查看 labirhin 的漫画，目前我们 <br> 提供八种语言，未来还会添加更多！",
+        "about2": "最初这只是打算做成一个存档，但我决定 <br> 它应该不止于此，因为社区值得拥有更好的！",
+        "about3": "未来这里还会添加更多内容，例如： <br> 更多语言、更多关于 MMA 的内容，以及更多惊喜！",
         "about4": "感谢所有激励我 <br> 制作这个网站的人!",
         "about5": "-laurah",
         "abouth1": "关于本网站!",
@@ -397,6 +401,7 @@ TRANSLATIONS = {
         "buttontsrf": "/chinese/tsrf",
         "buttontbtl": "/chinese/tbtl",
         "buttonrar": "/chinese/rar",
+        "wantmore": "想看更多 labirhin 的内容吗？",
     },
     "filipino": {
         "comics_title": "MGA KOMIKS",
@@ -425,9 +430,9 @@ TRANSLATIONS = {
         "selector": "/filipino/comics",
         "index": "/filipino/",
         "about": "/filipino/about",
-        "about1": "ang website na ito ay ginawa para sa tanging layunin na <br> maging 'backup' kung sakaling biglang bumagsak ang ibang mga website <br> na nagho-host ng Mau Makan Apa",
-        "about2": "maraming hirap ang ibinuhos dito, kaya umaasa ako na <br> ikaw, ang mambabasa, ay talagang mag-enjoy dito, <br> tulad ng pag-enjoy ko sa paggawa ng website mismo!",
-        "about3": "mas maraming bagay ang idadagdag dito sa hinaharap, tulad ng: <br> mas maraming wika, mas maraming bagay tungkol sa MMA, at marami pang iba!",
+        "about1": "ang maumakanapa.art ay isang website kung saan pwede mong <br> tingnan ang mga comics ni labirhin, sa ngayon mayroon kaming <br> walong wika na available at malapit na ring magdagdag pa!",
+        "about2": "sa simula, ang plano ay maging isang archive lamang, pero napagdesisyunan kong <br> dapat itong maging mas higit pa doon, dahil karapat dapat ito para sa komunidad!",
+        "about3": "mas maraming bagay ang idadagdag dito sa hinaharap, tulad ng: <br> mas maraming wika, mas maraming content tungkol sa MMA, at marami pang iba!",
         "about4": "salamat sa lahat ng nag-udyok sa akin na <br> gawin talaga ang website na ito!",
         "about5": "-laurah",
         "abouth1": "tungkol sa website na ito!",
@@ -461,6 +466,7 @@ TRANSLATIONS = {
         "buttontsrf": "/filipino/tsrf",
         "buttontbtl": "/filipino/tbtl",
         "buttonrar": "/filipino/rar",
+        "wantmore": "gusto mo bang makakita ng mas maraming content ni labirhin?",
     },
     "italiano": {
         "comics_title": "FUMETTI",
@@ -499,9 +505,9 @@ TRANSLATIONS = {
         "notcomic2": "che tipo di episodio stai cercando di raggiungere????",
         "notcomic3": "torna ai webcomic",
         "aboutme": "su di me!",
-        "aboutme1": "mi chiamo laurah, sono la persona che ha creato <br> questo sito web e sono una normale sviluppatrice web!",
-        "aboutme2": "sono anche una youtuber, quindi se vuoi <br> dare un'occhiata al mio canale, puoi farlo qui",
-        "aboutme3": "curiosità: questo sito web è open-source <br> su github! puoi darci un'occhiata qui: ",
+        "about1": "maumakanapa.art è un sito web dove puoi <br> scoprire i fumetti di labirhin, attualmente <br> abbiamo otto lingue disponibili e presto ne aggiungeremo altre!",
+        "about2": "inizialmente doveva essere un archivio, ma ho deciso che <br> doveva essere molto di più, perché la community se lo merita!",
+        "about3": "in futuro verranno aggiunte altre cose qui, come: <br> più lingue, più contenuti su MMA, e molto altro ancora!",
         "aboutme4": "grazie mille!!!",
         "languages": "visualizza altre lingue qui!",
         "missilecity": "CITTÀ MISSILE",
@@ -525,29 +531,99 @@ TRANSLATIONS = {
         "buttontsrf": "/italian/tsrf",
         "buttontbtl": "/italian/tbtl",
         "buttonrar": "/italian/rar",
+        "wantmore": "vuoi vedere altri contenuti di labirhin?",
+    },
+    "ukrainian": {
+        "comics_title": "КОМІКСИ",
+        "main_part": "тут ти можеш читати вебкомікс! (безкоштовно!)",
+        "community": "СПІЛЬНОТА",
+        "discord": "Сервер Discord!",
+        "patreon": "Профіль на Patreon!",
+        "merch": "Сайт з мерчем!",
+        "twitter": "Профіль у Twitter/X!",
+        "wiki": "Офіційна вікі!",
+        "youtube": "Канал на YouTube!",
+        "button": "Переглянути вебкомікс тут!",
+        "episode": "Епізод",
+        "ep_1": "ДЕУС ЕКС МАКІНА",
+        "ep_2": "ДЕСЬ ТАМ ВОСТАННЄ БАЧИЛИ МОГО БАТЬКА",
+        "ep_3": "ТИ ТОДІ ЗАЛИШИВ МЕНІ ЦЕ",
+        "ep_4": "КОНФЛІКТ",
+        "ep_5": "ХОДІМО,Я НАВЧУ ТЕБЕ ГОТУВАТИ",
+        "ep_6": "ПОВЕРНУВСЯ ДОДОМУ ЛИШЕ ДЛЯ ТОГО, ЩОБ ЗАСТАТИ ЛИХІ НОВИНИ",
+        "ep_7": "НЕ ПОКИДАЙ МЕНЕ",
+        "ep_8": "КОЛИ ЗАВГОДНО, У БУДЬ-ЯКИЙ ЧАС",
+        "ep_9": "ВЕЛИЧНА ТИША ПІСЛЯ ВИБУХУ",
+        "owned_by": "maumakanapa належить:",
+        "assets": (
+            "усі використані ресурси належать <br> labirhin та їхнім відповідним"
+            " авторам"
+        ),
+        "made_with": "сайт зроблено з любов'ю:",
+        "selector": "/ukrainian/comics",
+        "index": "/ukrainian/",
+        "about": "/ukrainian/about",
+        "about1": "maumakanapa.art це сайт, де ти можеш <br> переглянути комікси labirhin, наразі у нас <br> доступно вісім мов, і скоро додамо ще більше!",
+        "about2": "спочатку це мало бути архівом, але я вирішив, що <br> це має бути чимось більшим, адже спільнота цього заслуговує!",
+        "about3": "у майбутньому тут з'явиться ще більше, наприклад: <br> більше мов, більше контенту про ММА, і багато іншого!",
+        "about4": "дякую всім, хто мотивував мене насправді <br> створити цей сайт!",
+        "about5": "-laurah",
+        "abouth1": "про цей сайт!",
+        "notcomic1": "епізод недоступний...",
+        "notcomic2": "який епізод ти взагалі намагаєшся відкрити????",
+        "notcomic3": "повернутися до вебкоміксів",
+        "aboutme": "про мене!",
+        "aboutme1": "мене звати laurah, я людина, яка створила <br> цей сайт, і я просто звичайний веброзробник!",
+        "aboutme2": "я також ютубер, тож якщо хочеш <br> зазирнути на мій канал, можеш зробити це тут: ",
+        "aboutme3": "цікавий факт: цей сайт насправді з відкритим кодом <br> на github! можеш переглянути його тут: ",
+        "aboutme4": "дякую!!!",
+        "languages": "переглянути більше мов тут!",
+        "missilecity": "МІСТО РАКЕТ",
+        "missilecityinfo": "«Місто Ракет» наразі є майбутнім вебкоміксом та анімаційним серіалом, який планують випустити після фінальної анімації Mau Makan Apa (у цьому випадку — епізоду 9). У серіалі з'являться персонажі з MMA, а також власні унікальні герої, як-от: Ві-Ві, Лобі Калобі та Супернова. Згідно з наявною наразі інформацією, дія анімації відбуватиметься в Пемучику, а сюжет розповідатиме про Ві-Ві та Лобі, яких у якийсь момент приковують один до одного наручниками, і які шукають місцеперебування злого верховного лідера — Супернови. <br> (Офіційна анімація ще не вийшла, тож поки що ось музичне відео!)",
+        "rar": "ПРАВКА ЗА ПРАВКОЮ",
+        "rarinfo": "«Правка за Правкою» — короткометражний фільм, що розповідає історію Сорбітолу, який наразі працює в Jaya Studios, анімаційній студії каналу Jaya TV. У короткометражці він розповідає про свої почуття та про те, наскільки він втомився від правок, які дає йому керівник. Він також зустрічає Контол Даймонд, яка стає його коханням, що натякає на те, що зрештою вони прожили своє життя разом.",
+        "tsrf": "ЗІРКИ ПАДАЮТЬ",
+        "tsrfinfo": "У «Зірки Падають» шкільних друзів Потето та Октану розлучає доля, коли Потето заражається коростою. Під час ізоляції Потето трагічно відрізає собі вуха й отримує металеві протези, після чого його вражає блискавка, і він воскресає із суперсилами після розмови з ангелом. Повернувшись, Потето знаходить Октану з жінкою на ім'я Бомбакс, хоча Октана стверджує, що насправді хоче бути з ним. Розлючений тим, що Октана дражнить його протезовані вуха 'кумедними', Потето використовує свої нові сили, щоб обрушити на Лаву-Сіті град падаючих зірок, і публічно звинувачує в хаосі Октану.",
+        "tbtl": "ВЕЛИКА БРЕХНЯ ПРО ТЕМПЕ",
+        "tbtlinfo": "У «Великій Брехні про Темпе» ЗМІ неправдиво стверджують, що новий штам темпе, спричинений вулканічним попелом, перетворює людей на грибів-монстрів, що керують розумом, через що уряд оголошує карантин у Бойолалі. Дино проникає в карантинну зону, щоб знайти свого друга Різо, і виявляє, що вся епідемія була містифікацією: 'монстри' — це просто люди в рекламних костюмах темпе. Надихнутий Різо на порятунок їхньої культурної їжі, Дино записує відеодокази й тікає, щоб викрити правду в інтернеті, успішно знявши карантин і відновивши нормальне життя через два місяці.",
+        "button2": "переглянути контент!",
+        "titlerar": "Правка за Правкою",
+        "subtitlerar": "Ммм.. Так, Сорбітол.",
+        "titletsrf": "Зірки Падають",
+        "subtitletsrf": "Потето та його кумедні вуха.",
+        "titlemc": "Місто Ракет",
+        "subtitlemc": "Лобі, чому ти в наручниках?!",
+        "titletbtl": "Велика Брехня про Темпе",
+        "subtitletbtl": "Темпе НЕ зробить тебе злим!",
+        "buttonmc": "/ukrainian/mc",
+        "buttontsrf": "/ukrainian/tsrf",
+        "buttontbtl": "/ukrainian/tbtl",
+        "buttonrar": "/ukrainian/rar",
+        "wantmore": "хочеш побачити більше контенту від labirhin?",
     }
 }
 
+# i feel bad for people who make every single website translation
+
 def index(request, lang="english"):
-  if lang not in TRANSLATIONS:
-    lang = "english"
+    if lang not in TRANSLATIONS:
+        lang = "english"
 
-  context = {
-      "current_lang": lang,
-      "t": TRANSLATIONS[lang],
-  }
-  return render(request, "comics_app/index.html", context)
-
+    context = {
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+    }
+    return render(request, "comics_app/index.html", context)
 
 def comic_list(request, lang):
-  if lang not in TRANSLATIONS:
-    lang = "english"
+    if lang not in TRANSLATIONS:
+        lang = "english"
 
-  context = {
-      "current_lang": lang,
-      "t": TRANSLATIONS[lang],
-  }
-  return render(request, "comics_app/select.html", context)
+    context = {
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+    }
+    return render(request, "comics_app/select.html", context)
 
 def page(request, lang, number):
     if lang not in TRANSLATIONS:
@@ -557,117 +633,76 @@ def page(request, lang, number):
 
     if comic:
         pages = comic.pages.all()
-        
+
         prev_comic = webcomic.objects.filter(
             language=comic.language,
             ep_number__lt=comic.ep_number
         ).order_by('-ep_number').first()
         next_comic = webcomic.objects.filter(
-                language=comic.language,
-                ep_number__gt=comic.ep_number
-            ).order_by('ep_number').first()
+            language=comic.language,
+            ep_number__gt=comic.ep_number
+        ).order_by('ep_number').first()
     else:
         pages = []
         prev_comic = None
         next_comic = None
-    
+
     context = {
-            "current_lang": lang,
-            "t": TRANSLATIONS[lang],
-            "comic": comic,
-            "pages": pages,
-            "prev_comic": prev_comic,
-            "next_comic": next_comic,
-          }
-    
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+        "comic": comic,
+        "pages": pages,
+        "prev_comic": prev_comic,
+        "next_comic": next_comic,
+    }
     return render(request, "comics_app/comic.html", context)
 
 def about(request, lang):
     if lang not in TRANSLATIONS:
         lang = "english"
 
-    custom_fonts = {
-       "russian": "russianlabi, sans-serif",
-    }
-
-    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
-
     context = {
         "current_lang": lang,
         "t": TRANSLATIONS[lang],
-        "fonts": fonts,
     }
-
     return render(request, "comics_app/about.html", context)
 
 def revindex(request, lang):
     if lang not in TRANSLATIONS:
         lang = "english"
 
-    custom_fonts = {
-       "russian": "russianlabi, sans-serif",
-    }
-
-    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
-
     context = {
-       "current_lang": lang,
-       "t": TRANSLATIONS[lang],
-       "fonts": fonts,
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
     }
-
     return render(request, "comics_app/revindex.html", context)
 
 def mcindex(request, lang):
     if lang not in TRANSLATIONS:
         lang = "english"
 
-    custom_fonts = {
-       "russian": "russianlabi, sans-serif",
-    }
-
-    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
-
     context = {
-       "current_lang": lang,
-       "t": TRANSLATIONS[lang],
-       "fonts": fonts,
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
     }
-
     return render(request, "comics_app/mcindex.html", context)
 
 def tsrfindex(request, lang):
     if lang not in TRANSLATIONS:
         lang = "english"
 
-    custom_fonts = {
-       "russian": "russianlabi, sans-serif",
-    }
-
-    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
-
     context = {
-       "current_lang": lang,
-       "t": TRANSLATIONS[lang],
-       "fonts": fonts,
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
     }
-
     return render(request, "comics_app/tsrfindex.html", context)
 
 def tbtlindex(request, lang):
     if lang not in TRANSLATIONS:
         lang = "english"
 
-    custom_fonts = {
-       "russian": "russianlabi, sans-serif",
-    }
-
-    fonts = custom_fonts.get(lang, "Labirhin, sans-serif")
-
     context = {
-       "current_lang": lang,
-       "t": TRANSLATIONS[lang],
-       "fonts": fonts,
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
     }
-
     return render(request, "comics_app/tbtlindex.html", context)

@@ -41,6 +41,7 @@
                     <a href="/italiano/about">italian</a>
                     <a href="/filipino/about">filipino</a>
                     <a href="/chinese/about">chinese</a>
+                    <a href="/ukrainian/about">ukrainian</a>
                 </div>
             </div>
         </div>
@@ -69,42 +70,49 @@
                     <a href="/italiano/about">italian</a>
                     <a href="/filipino/about">filipino</a>
                     <a href="/chinese/about">chinese</a>
+                    <a href="/ukrainian/about">ukrainian</a>
                 </div>
             </div>
         </nav>
     </header>
     <div id="donation">
         <h2>
-            <strong>As you probably already know:</strong><br> I'm the only one who works on this website, the one who pays for it, etc, but
-            my financial situation isn't the best either.<br>Recently, I broke my laptop's hinge, which I now have to
-            give it in for repairs, and I will lose my SSD. <br><strong>Why am I so worried about my SSD?</strong> <br>Well, my SSD is the
-            same drive I use in my PC, without it, I'm basically nothing.<br><strong>What can we do?</strong><br>Well if you guys could,
-            please donate to me via amazon gift cards, I'm still 16 so I can't just set up some sort of GoFundMe or
-            Ko-Fi without being 18, so if possible just buy a amazon gift card for me & send it to either my Discord or
-            my email: <strong>midnightmarbusiness@gmail.com</strong><br>I hate asking for donations, I feel extremely guilty about it,
-            but the situation that I am currently in right now is making me lose my marbles, so if you guys could
-            donate, I would appreciate!!<br>Thank you guys so much for the latest support, and I hope that
-            maumakanapa.art can go on and live a long life!<br> -laurah
+            <strong>As you probably already know: </strong> <br> I'm the only one who works on this website, the one who
+            maintains it, and hosts it.
+            But unfortunately, I need a new SSD, and they are really expensive, more than what I can even have for next
+            few months. <br> I'm still 16 years old, meaning that I can't just set up some sort of gofundme, or kofi,
+            without being 18. <br>
+            so if you guys could, please donate to me via Amazon Gift Cards (yes, i know, it's stupid) and send them to
+            my email: <br> <strong>midnightmarbusiness@gmail.com</strong> <br>
+            I hate asking for donations, it makes me feel extremely guilty, but I'm at the risk of not being able to
+            work on the website, meaning the website could rot or die, and I really don't want either of those to happen
+            :( <br>
+            I'm forever thankful for all the support you guys have given me, and I really hope that maumakanapa.art can
+            go on and live a long life! <br> -laurah
         </h2>
         <button class="meow" onclick="sAlert()">Okay, I'll think about it..</button>
     </div>
     <section id="aboutsec">
         <h1>{{ t.abouth1 }}</h1>
-        <div class="sectext">
-            <h2>{{ t.about1|safe }}</h2>
-            <h2>{{ t.about2|safe }}</h2>
-            <h2>{{ t.about3|safe }}</h2>
-            <h2>{{ t.about4|safe }}</h2>
-            <h2>-laurah</h2>
+        <div class="main1 main">
+            <div class="sectext">
+                <h2>{{ t.about1|safe }}</h2>
+                <h2>{{ t.about2|safe }}</h2>
+                <h2>{{ t.about3|safe }}</h2>
+                <h2>{{ t.about4|safe }}</h2>
+                <h2>-laurah</h2>
+            </div>
         </div>
     </section>
     <section id="aboutme">
         <h1>{{ t.aboutme }}</h1>
-        <div class="textme">
-            <h2>{{ t.aboutme1|safe }}</h2>
-            <h2>{{ t.aboutme2|safe }} <a href="https://youtube.com/@midnightmarissa">channel</a></h2>
-            <h2>{{ t.aboutme3|safe }} <a href="https://github.com/orangecatindustries/maumakanapa">github</a></h2>
-            <h2>{{ t.aboutme4 }}</h2>
+        <div class="main2 main">
+            <div class="textme">
+                <h2>{{ t.aboutme1|safe }}</h2>
+                <h2>{{ t.aboutme2|safe }} <a href="https://youtube.com/@midnightmarissa">channel</a></h2>
+                <h2>{{ t.aboutme3|safe }} <a href="https://github.com/orangecatindustries/maumakanapa">github</a></h2>
+                <h2>{{ t.aboutme4 }}</h2>
+            </div>
         </div>
         <button onclick="sAlert()">What is this button?</button>
     </section>
@@ -122,17 +130,17 @@
         const content = imgElement.nextElementSibling;
         content.classList.toggle("show")
     }
-    
+
     function dropdGone(event) {
-            document.querySelectorAll('.dropdown-content.show').forEach(
-                function (dropdown) {
-                    const parentDropdown = dropdown.closest('.dropdown')
-                    if (parentDropdown && !parentDropdown.contains(event.target)) {
-                        dropdown.classList.remove('show');
-                    }
+        document.querySelectorAll('.dropdown-content.show').forEach(
+            function (dropdown) {
+                const parentDropdown = dropdown.closest('.dropdown')
+                if (parentDropdown && !parentDropdown.contains(event.target)) {
+                    dropdown.classList.remove('show');
                 }
-            )
-        }
+            }
+        )
+    }
 
     document.addEventListener('click', dropdGone);
 

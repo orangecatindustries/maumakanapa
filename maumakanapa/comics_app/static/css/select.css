@@ -24,6 +24,12 @@
             font-weight: 400;
         }
 
+        :root {
+            --primary-font: "Karla", sans-serif;
+            --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            --main-background-color: rgba(0, 0, 0, 0.3);
+        }
+
         body {
             background-image: url("/static/imgs/meow.webp");
             display: flex;
@@ -40,7 +46,7 @@
             width: 75%;
             max-width: 1025px;
             margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: var(--main-background-color);
             border-radius: 22px;
             left: 0;
             right: 0;
@@ -71,7 +77,7 @@
         }
 
         header a {
-            font-family: "Karla", sans-serif;
+            font-family: var(--primary-font);
             text-decoration: none;
             color: white;
             font-weight: 200;
@@ -106,7 +112,7 @@
             right: 0;
             background: rgba(0, 0, 0, 0.8);
             min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--main-box-shadow);
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
@@ -127,7 +133,7 @@
             padding: 12px 16px;
             display: block;
             text-decoration: none;
-            font-family: "Karla", sans-serif;
+            font-family: var(--primary-font);
             font-size: 18px;
             margin-bottom: 8px;
         }
@@ -150,14 +156,15 @@
             text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 24px;
         }
 
-        html[lang="russian"] .container h1 {
+        html[lang="russian"] .container h1,
+        html[lang="ukrainian"] .container h1 {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 7em;
         }
 
         .comselect {
             margin: -25px;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: var(--main-background-color);
             border-radius: 22px;
             padding: 2em;
             padding-top: 1em;
@@ -186,16 +193,8 @@
             gap: 5px;
         }
 
-        .p1,
-        .p2,
-        .p3,
-        .p4,
-        .p5,
-        .p6,
-        .p7,
-        .p8,
-        .p9 {
-            background-color: rgba(0, 0, 0, 0.3);
+        .conp {
+            background-color: var(--main-background-color);
             border-radius: 22px;
             min-height: 10em;
             width: 16em;
@@ -214,15 +213,7 @@
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
         }
 
-        .p1:hover,
-        .p2:hover,
-        .p3:hover,
-        .p4:hover,
-        .p5:hover,
-        .p6:hover,
-        .p7:hover,
-        .p8:hover,
-        .p9:hover {
+        .conp:hover {
             transform: scale(1.05);
             transition: 0.5s;
         }
@@ -281,38 +272,23 @@
             background-size: 500px;
         }
 
-        html[lang="russian"] :is(.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9) :is(h2, h3){
+        html[lang="russian"] :is(.conp) :is(h2, h3),
+        html[lang="ukrainian"] :is(.conp) :is(h2, h3) {
             font-family: "russianlabi", "Karla", sans-serif;
             font-size: 2em;
         }
 
-        .p1 h2,
-        .p2 h2,
-        .p3 h2,
-        .p4 h2,
-        .p5 h2,
-        .p6 h2,
-        .p7 h2,
-        .p8 h2,
-        .p9 h2 {
+        .conp h2 {
             color: white;
-            font-family: "Karla", sans-serif;
+            font-family: var(--primary-font);
             font-weight: 200;
             margin: 0;
             font-size: 1.8em;
         }
 
-        .p1 h3,
-        .p2 h3,
-        .p3 h3,
-        .p4 h3,
-        .p5 h3,
-        .p6 h3,
-        .p7 h3,
-        .p8 h3,
-        .p9 h3 {
+        .conp h3 {
             color: white;
-            font-family: "Karla", sans-serif;
+            font-family: var(--primary-font);
             font-weight: 200;
             margin-left: 2px;
             font-size: 1.3em;
@@ -322,7 +298,7 @@
 
         footer {
             margin-top: 50px;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: var(--main-background-color);
             width: 100%;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
@@ -351,7 +327,9 @@
         }
 
         html[lang="russian"] .footerstuff h1,
-        html[lang="russian"] .footerstuff h2 {
+        html[lang="russian"] .footerstuff h2,
+        html[lang="ukrainian"] .footerstuff h1,
+        html[lang="ukrainian"] .footerstuff h2 {
             font-family: "russianlabi", "Labirhin", sans-serif;
         }
 
@@ -401,7 +379,7 @@
                 cursor: pointer;
                 filter: invert(1);
             }
-            
+
             .dropdown-content {
                 max-height: 520px;
             }
@@ -416,12 +394,7 @@
             }
 
             .dropdown-content a {
-                color: white;
                 padding: 18px 20px;
-                text-decoration: none;
-                display: block;
-                font-family: "Karla", sans-serif;
-                font-size: 18px;
                 margin-top: 0;
             }
 
@@ -454,42 +427,18 @@
                 flex-direction: column;
             }
 
-            .p1,
-            .p2,
-            .p3,
-            .p4,
-            .p5,
-            .p6,
-            .p7,
-            .p8,
-            .p9 {
+            .conp {
                 min-height: 13em;
                 width: 75vw;
                 margin: 20px auto;
                 background-size: cover;
             }
 
-            .p1 h2,
-            .p2 h2,
-            .p3 h2,
-            .p4 h2,
-            .p5 h2,
-            .p6 h2,
-            .p7 h2,
-            .p8 h2,
-            .p9 h2 {
+            .conp h2 {
                 font-size: 2em;
             }
 
-            .p1 h3,
-            .p2 h3,
-            .p3 h3,
-            .p4 h3,
-            .p5 h3,
-            .p6 h3,
-            .p7 h3,
-            .p8 h3,
-            .p9 h3 {
+            .conp h3 {
                 font-size: 1.5em;
             }
 

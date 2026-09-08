@@ -212,6 +212,12 @@
             margin-top: -5px;
         }
 
+        html[lang="russian"] #containers h3,
+        html[lang="ukrainian"] #containers h3 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 30px;
+        }
+
         #containers {
             display: flex;
             flex-direction: column;
@@ -244,7 +250,7 @@
             flex-direction: row;
         }
 
-        #webcon {
+        .webcon {
             background-color: var(--main-background-color);
             border-radius: 22px;
             height: 13em;
@@ -254,12 +260,10 @@
             position: relative;
             overflow: hidden;
             transition: all 0.5s ease;
+            position: relative;
         }
 
-        .first h1,
-        .second h1,
-        .third h1,
-        .fourth h1 {
+        .webcon h1 {
             font-family: var(--primary-font);
             color: white;
             font-weight: 200;
@@ -269,10 +273,7 @@
             font-size: 28px;
         }
 
-        .first h2,
-        .second h2,
-        .third h2,
-        .fourth h2 {
+        .labcon h2, .webcon h2 {
             position: relative;
             font-family: var(--primary-font);
             font-weight: 200;
@@ -283,17 +284,19 @@
             font-size: 20px;
         }
 
-        html[lang="russian"] :is(button) {
+        html[lang="russian"] :is(button),
+        html[lang="ukrainian"] :is(button) {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 25px;
         }
 
-        html[lang="russian"] .bigcontainer h3 {
+        html[lang="russian"] .bigcontainer h3,
+        html[lang="ukrainian"] .bigcontainer h3 {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 35px;
         }
 
-        #webcon:hover {
+        .webcon:hover {
             transform: scale(1.05);
             box-shadow: var(--main-box-shadow);
         }
@@ -382,6 +385,16 @@
             z-index: 4;
         }
 
+        .lang-link::after {
+            content: "";
+            position: absolute;
+            top: -500px;
+            left: -500px;
+            right: -500px;
+            bottom: -500px;
+            z-index: 8;
+        }
+
         .lang-link button {
             display: flex;
             font-size: 17px;
@@ -450,12 +463,14 @@
         }
 
         html[lang="russian"] .all2 h1,
-        html[lang="russian"] #labcon h2 {
+        html[lang="russian"] .labcon h2,
+        html[lang="ukrainian"] .all2 h1,
+        html[lang="ukrainian"] .labcon h2 {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 35px;
         }
 
-        .all2 h1 {
+        .labcon h1 {
             font-family: var(--primary-font);
             color: white;
             font-weight: 200;
@@ -465,7 +480,7 @@
             font-size: 28px;
         }
 
-        #labcon {
+        .labcon {
             background-color: var(--main-background-color);
             border-radius: 22px;
             height: 13em;
@@ -477,17 +492,17 @@
             transition: all 0.5s ease;
         }
 
-        #labcon:hover {
+        .labcon:hover {
             transform: scale(1.05);
             box-shadow: var(--main-box-shadow);
             opacity: 1;
         }
 
-        #labcon:hover img {
+        .labcon:hover img {
             opacity: 0.5;
         }
 
-        #labcon img {
+        .labcon img {
             position: absolute;
             top: 69%;
             left: 0;
@@ -513,6 +528,20 @@
             -webkit-backdrop-filter: blur(5px);
         }
 
+        .comcontainer h2 {
+            color: white;
+            font-family: var(--primary-font);
+            font-weight: 200;
+            margin-left: 40px;
+            text-decoration: none;
+        }
+
+        html[lang="ukrainian"] .comcontainer h2,
+        html[lang="russian"] .comcontainer h2 {
+            font-family: "russianlabi", "Labirhin", sans-serif;
+            font-size: 32px;
+        }
+
         .firststuff,
         .secondstuff,
         .thirdstuff {
@@ -527,17 +556,13 @@
             text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 24px;
         }
 
-        html[lang="russian"] .stuff h1 {
+        html[lang="russian"] .stuff h1,
+        html[lang="ukrainian"] .stuff h1 {
             font-family: "russianlabi", "Labirhin", sans-serif;
             font-size: 7em;
         }
 
-        #discord,
-        #merch,
-        #patreon,
-        #twitter,
-        #youtube,
-        #wiki {
+        .socialcon {
             background-color: var(--main-background-color);
             border-radius: 22px;
             padding: 2em;
@@ -554,67 +579,47 @@
             transition: 0.5s;
         }
 
-        #discord:hover {
+        .socialcon:hover {
             transform: scale(1.05);
+        }
+
+        .discord:hover {
             background-color: #3556CA;
         }
 
-        #patreon:hover {
-            transform: scale(1.05);
+        .patreon:hover {
             background-color: #f96854;
         }
 
-        #merch:hover {
-            transform: scale(1.05);
+        .merch:hover {
             background-color: #fcb61e;
         }
 
-        #twitter:hover {
-            transform: scale(1.05);
+        .twitter:hover {
             background-color: lightskyblue;
         }
 
-        #youtube:hover {
-            transform: scale(1.05);
+        .youtube:hover {
             background-color: red;
         }
 
-        #wiki:hover {
-            transform: scale(1.05);
+        .wiki:hover {
             background-color: darkblue;
         }
 
-        #discord img,
-        #merch img,
-        #twitter img,
-        #wiki img,
-        #youtube img {
+        .socialcon img {
             height: 85px;
             filter: invert();
         }
 
-        #patreon img {
+        .patreon img {
             height: 65px;
             filter: invert();
             margin-left: 6px;
         }
 
-        #discord h2,
-        #merch h2,
-        #twitter h2,
-        #wiki h2,
-        #youtube h2 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            margin-left: 40px;
-        }
-
-        #patreon h2 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            margin-left: 52px;
+        .wiki img {
+            height: 65px;
         }
 
         footer {
@@ -644,7 +649,9 @@
         }
 
         html[lang="russian"] .footerstuff h1,
-        html[lang="russian"] .footerstuff h2 {
+        html[lang="russian"] .footerstuff h2,
+        html[lang="ukrainian"] .footerstuff h1,
+        html[lang="ukrainian"] .footerstuff h2 {
             font-family: "russianlabi", "Labirhin", sans-serif;
         }
 
@@ -703,11 +710,7 @@
             }
 
             .dropdown-content a {
-                color: white;
                 padding: 18px 20px;
-                text-decoration: none;
-                display: block;
-                font-size: 18px;
                 margin-top: 0;
             }
 
@@ -758,7 +761,7 @@
                 z-index: 1;
             }
 
-            #webcon {
+            .webcon {
                 width: 80vw;
                 height: 10em;
             }
@@ -801,75 +804,66 @@
                 width: 70vw;
             }
 
-            #labcon {
+            .labcon {
                 width: 80vw;
                 height: 12em;
                 align-items: center;
             }
 
-            #labcon img {
+            .labcon img {
                 top: 75%;
             }
 
             .comcontainer {
                 width: 70vw;
             }
-            
+
             #containers h3 {
                 text-align: center;
             }
 
-            #discord,
-            #merch,
-            #patreon,
-            #twitter,
-            #wiki,
-            #youtube {
+            .socialcon {
                 box-shadow: var(--main-box-shadow);
                 flex-direction: column;
                 height: 4em;
                 width: 50vw;
             }
 
-            #discord img,
-            #merch img,
-            #twitter img,
-            #youtube img {
+            .socialcon img {
                 height: 55px;
                 margin-top: -16px;
             }
 
-            #wiki img {
+            .wiki img {
                 height: 50px;
                 margin-top: -16px;
             }
 
-            #patreon img {
+            .patreon img {
                 height: 55px;
                 margin-top: -15px;
             }
 
-            #discord h2,
-            #merch h2,
-            #twitter h2,
-            #youtube h2,
-            #wiki h2,
-            #patreon h2 {
+            .comcontainer h2 {
+                color: white;
+                font-family: var(--primary-font);
+                font-weight: 200;
+                text-decoration: none;
                 font-size: 20px;
                 margin-top: 15px;
                 margin-left: 0px;
             }
 
-            #wiki h2 {
+            .wiki h2 {
                 margin-top: 25px;
             }
 
-            #patreon h2 {
+            .patreon h2 {
                 margin-top: 20px;
                 margin-left: 0px;
             }
 
-            
+
         }
 
         @media screen and (min-width: 601px) and (max-width: 1100px) {
@@ -918,37 +912,21 @@
                 pointer-events: auto;
             }
 
-            #webcon {
+            .webcon {
                 width: 40vw;
             }
 
-            #labcon {
+            .labcon {
                 width: 40vw;
                 aspect-ratio: 16 / 9;
             }
 
-            #discord,
-            #merch,
-            #patreon,
-            #twitter,
-            #wiki,
-            #youtube {
+            .socialcon {
                 width: 26vw;
             }
 
-            #discord img, #merch img, #twitter img, #wiki img, #youtube img {
+            .socialcon img {
                 height: 68px;
-            }
-
-            .wow-en,
-            .wow-pt,
-            .wow-in,
-            .wow-sp,
-            .wow-ru,
-            .wow-it,
-            .wow-fl,
-            .wow-ch {
-                width: 15em;
             }
 
             .videostuff {

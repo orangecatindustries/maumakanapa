@@ -7,7 +7,7 @@ class staticSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        languages = ["english", "indonesian", "spanish", "portuguese", "russian", "chinese", "filipino", "italiano"]
+        languages = ["english", "indonesian", "spanish", "portuguese", "russian", "chinese", "filipino", "italiano", "ukranian"]
         static_items = []
         for lang in languages:
             static_items.append({'lang': lang, 'viewname': 'index'})

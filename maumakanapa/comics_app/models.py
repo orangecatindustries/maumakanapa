@@ -10,7 +10,8 @@ class webcomic(models.Model):
         ('russian', 'Russian'),
         ('chinese', 'Chinese'),
         ('italiano', 'Italiano'),
-        ('filipino', 'Filipino')
+        ('filipino', 'Filipino'),
+        ('ukrainian', 'Ukrainian')
     ]
 
     language = models.CharField(max_length=20, choices=LANGUAGE_CHOICES)

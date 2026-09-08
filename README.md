@@ -5,7 +5,7 @@
 ## What is this website?
 maumakanapa.art is a website where people can read Labirhin's Mau Makan Apa comic!\
 It also has some links that redirect to his Discord, merch website, Patreon, etc
-Currently it has the following languages (both for the website & the webcomic:
+Currently it has the following languages (both for the website & the webcomic):
 * Indonesian
 * English
 * Spanish
@@ -14,6 +14,7 @@ Currently it has the following languages (both for the website & the webcomic:
 * Brazilian Portuguese
 * Chinese
 * Filipino
+* Ukrainian
 
 ## What is this repository?
 This repository is literally just the website it self, I decided to make it open-source because, well, I love making everything open-source.
@@ -31,10 +32,10 @@ No, I, orangecatindustries, do not get monitized for anything in this website, I
 ## What do we need to host this?
 You will need the following:
 * Pillow
-* WhiteNoise
 * django-admin-sortable2
 * django-minify-html
 * django-compressor
+* gunicorn
 
 ## Do you have permission to host the webcomic?
 I have talked with higher ups about my website, and it is now considered an official website to read the Mau Makan Apa comic, so technically, yes, I do have permission.

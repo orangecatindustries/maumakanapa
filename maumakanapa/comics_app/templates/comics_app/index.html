@@ -41,6 +41,7 @@
                     <a href="/italiano/">italian</a>
                     <a href="/filipino/">filipino</a>
                     <a href="/chinese/">chinese</a>
+                    <a href="/ukrainian/">ukrainian</a>
                 </div>
             </div>
         </div>
@@ -69,6 +70,7 @@
                     <a href="/italiano/">italian</a>
                     <a href="/filipino/">filipino</a>
                     <a href="/chinese/">chinese</a>
+                    <a href="/ukrainian/">ukrainian</a>
                 </div>
             </div>
         </nav>
@@ -87,14 +89,14 @@
             <h3>{{ t.main_part }}</h3>
             <div class="all">
                 <div class="first">
-                    <div class="wow-in" id="webcon">
+                    <div class="wow-in webcon">
                         <h1>Indonesian</h1>
                         <h2>MMA dalam bahasa Indonesia!</h2>
                         <a href="/indonesian/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/indonesiapng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-en" id="webcon">
+                    <div class="wow-en webcon">
                         <h1>English</h1>
                         <h2>MMA in English!</h2>
                         <a href="/english/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -103,14 +105,14 @@
                     </div>
                 </div>
                 <div class="second">
-                    <div class="wow-sp" id="webcon">
+                    <div class="wow-sp webcon">
                         <h1>Spanish</h1>
                         <h2>¡MMA en español!</h2>
                         <a href="/spanish/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/spanishpng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-pt" id="webcon">
+                    <div class="wow-pt    webcon">
                         <h1>Brazilian Portuguese</h1>
                         <h2>MMA em português!</h2>
                         <a href="/portuguese/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -119,14 +121,14 @@
                     </div>
                 </div>
                 <div class="third">
-                    <div class="wow-ru" id="webcon">
+                    <div class="wow-ru webcon">
                         <h1>Russian</h1>
                         <h2>MMA по-русски!</h2>
                         <a href="/russian/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/russianpng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-it" id="webcon">
+                    <div class="wow-it webcon">
                         <h1>Italian</h1>
                         <h2>MMA in italiano!</h2>
                         <a href="/italiano/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -135,14 +137,14 @@
                     </div>
                 </div>
                 <div class="fourth">
-                    <div class="wow-fl" id="webcon">
+                    <div class="wow-fl webcon">
                         <h1>Filipino</h1>
                         <h2>MMA sa wikang Filipino!</h2>
                         <a href="/filipino/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/filipinopng.png' %}" alt="">
                         <div class="wow-gif"></div>
                     </div>
-                    <div class="wow-ch" id="webcon">
+                    <div class="wow-ch webcon">
                         <h1>Chinese</h1>
                         <h2>中文版 MMA！</h2>
                         <a href="/chinese/comics" class="lang-link"><button>{{ t.button }}</button></a>
@@ -156,16 +158,16 @@
             </div>
         </div>
         <div class="secbigcontainer">
-            <h3>want to see more of labirhin's content?</h3>
+            <h3>{{ t.wantmore }}</h3>
             <div class="all2">
                 <div class="first">
-                    <div class="rar" id="labcon">
+                    <div class="rar labcon">
                         <h1>{{ t.titlerar }}</h1>
                         <h2>{{ t.subtitlerar }}</h2>
                         <a href="{{ t.buttonrar }}" class="lang-link"><button>{{ t.button2 }}</button></a>
                         <img src="{% static 'imgs/revisionafterrevision.jpg' %}" alt="">
                     </div>
-                    <div class="tsrf" id="labcon">
+                    <div class="tsrf labcon">
                         <h1>{{ t.titletsrf }}</h1>
                         <h2>{{ t.subtitletsrf }}</h2>
                         <a href="{{ t.buttontsrf }}" class="lang-link"><button>{{ t.button2 }}</button></a>
@@ -173,13 +175,13 @@
                     </div>
                 </div>
                 <div class="second">
-                    <div class="mc" id="labcon">
+                    <div class="mc labcon">
                         <h1>{{ t.titlemc }}</h1>
                         <h2>{{ t.subtitlemc }}</h2>
                         <a href="{{ t.buttonmc }}" class="lang-link"><button>{{ t.button2 }}</button></a>
                         <img src="{% static 'imgs/missilecity.jpg' %}" alt="">
                     </div>
-                    <div class="tbtl" id="labcon">
+                    <div class="tbtl labcon">
                         <h1>{{ t.titletbtl }}</h1>
                         <h2>{{ t.subtitletbtl }}</h2>
                         <a href="{{ t.buttontbtl }}" class="lang-link"><button>{{ t.button2 }}</button></a>
@@ -196,13 +198,13 @@
             <div class="comcontainer">
                 <div class="firststuff">
                     <a href="https://discord.gg/labirhin" style="text-decoration: none">
-                        <div id="discord">
+                        <div class="discord socialcon">
                             <img src="{% static 'svg/discord.svg' %}" alt="">
                             <h2>{{ t.discord }}</h2>
                         </div>
                     </a>
                     <a href="https://shop.labirhin.com" style="text-decoration: none">
-                        <div id="merch">
+                        <div class="merch socialcon">
                             <img src="{% static 'svg/merch.svg' %}" alt="">
                             <h2>{{ t.merch }}</h2>
                         </div>
@@ -210,13 +212,13 @@
                 </div>
                 <div class="secondstuff">
                     <a href="https://www.patreon.com/LABIRHIN" style="text-decoration: none">
-                        <div id="patreon">
+                        <div class="patreon socialcon">
                             <img src="{% static 'svg/patreon.svg' %}" alt="">
                             <h2>{{ t.patreon }}</h2>
                         </div>
                     </a>
                     <a href="https://x.com/LabiLabirhin" style="text-decoration: none">
-                        <div id="twitter">
+                        <div class="twitter socialcon">
                             <img src="{% static 'svg/twitter.svg' %}" alt="">
                             <h2>{{ t.twitter }}</h2>
                         </div>
@@ -224,13 +226,13 @@
                 </div>
                 <div class="thirdstuff">
                     <a href="https://www.youtube.com/@labirhin" style="text-decoration: none">
-                        <div id="youtube">
+                        <div class="youtube socialcon">
                             <img src="{% static 'svg/youtube.svg' %}" alt="">
                             <h2>{{ t.youtube }}</h2>
                         </div>
                     </a>
                     <a href="https://maumakanapa.wiki.gg" style="text-decoration: none">
-                        <div id="wiki">
+                        <div class="wiki socialcon">
                             <img src="{% static 'svg/book.svg' %}" alt="">
                             <h2>{{ t.wiki }}</h2>
                         </div>
@@ -287,11 +289,6 @@
             document.querySelector(".shadow").style.display = "none"
         }
 
-        function randomAlert() {
-            window.alert("The website is going to be down for a few hours starting today, 7th of September 2026. Just a heads up!")
-        }
-
-        randomAlert()
     </script>
 </body>
 
