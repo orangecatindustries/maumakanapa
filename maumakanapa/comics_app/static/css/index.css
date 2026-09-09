@@ -549,8 +549,26 @@
             width: auto;
             position: relative;
             z-index: 2;
-            pointer-events: none;
+            pointer-events: all;
+            cursor: pointer;
             margin-left: 3em;
+            transition: 0.2s;
+        }
+
+        .xenobot.show {
+            animation: xenoscale 0.2s ease;
+        }
+
+        @keyframes xenoscale {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.10);
+            }
+            100% {
+                transform: scale(1.0);
+            }
         }
 
         .title {
@@ -670,6 +688,16 @@
         html[lang="ukrainian"] .footerstuff h1,
         html[lang="ukrainian"] .footerstuff h2 {
             font-family: "russianlabi", "Labirhin", sans-serif;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer img {
+            height: 100px;
         }
 
         .footerstuff a {
@@ -890,6 +918,14 @@
                 height: 134px;
                 top: 203%;
                 margin-left: 20px;
+            }
+
+            footer img {
+                display: none;
+            }
+
+            .footerstuff img {
+                display: block;
             }
 
         }

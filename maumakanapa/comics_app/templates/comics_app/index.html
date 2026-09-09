@@ -246,11 +246,17 @@
     </section>
 
     <footer>
+        <div class="jaya">
+            <img src="{% static 'imgs/footerjaya.png' %}" alt="">
+        </div>
         <div class="footerstuff">
             <h1>{{ t.owned_by }}</h1>
             <img src="{% static 'imgs/markiplier.png' %}" alt="">
             <h2>{{ t.assets|safe }}</h2>
             <h2>{{ t.made_with }} <a href="https://discord.com/users/1494322472646873280">laurah</a></h2>
+        </div>
+        <div class="atom">
+            <img src="{% static 'imgs/footeratom.png' %}" alt="">
         </div>
     </footer>
 
@@ -291,6 +297,22 @@
             document.querySelector(".all").style.maxHeight = "2000px";
             document.querySelector(".shadow").style.display = "none"
         }
+
+        let countClicks = 0;
+
+        document.addEventListener('click', function (event) {
+            const xenobot = event.target.closest('.xenobot');
+            if (!xenobot) return;
+            countClicks++
+            if (countClicks >= 1) {
+                xenobot.classList.remove('show');
+                console.log('meow');
+                void xenobot.offsetWidth;
+                xenobot.classList.add("show");
+            } if (countClicks >= 10) {
+                window.location.href = "/english/xenobot";
+            }
+        })
 
     </script>
 </body>

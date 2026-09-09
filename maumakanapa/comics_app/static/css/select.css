@@ -340,6 +340,16 @@
             -webkit-text-fill-color: transparent;
         }
 
+        footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer img {
+            height: 100px;
+        }
+
         @media screen and (max-width: 900px) {
             header {
                 width: 90%;
@@ -445,6 +455,14 @@
             .footerstuff img {
                 height: 5em;
                 margin-top: -15px;
+            }
+
+            footer img {
+                display: none;
+            }
+
+            .footerstuff img {
+                display: block;
             }
         }
 

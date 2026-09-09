@@ -15,11 +15,14 @@
     <title>Mau Makan Apa¿</title>
     <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
     {% compress css %}
-    <link rel="stylesheet" href="{% static 'css/revindex.css' %}">
+    <link rel="stylesheet" href="{% static 'css/xenobot.css' %}">
     {% endcompress %}
 </head>
 
 <body>
+    <div class="xenojump">
+        <img src="{% static 'imgs/xenobot4.gif' %}" alt="">
+    </div>
     <header>
         <div class="icons">
             <div class="logo-icon">
@@ -33,15 +36,15 @@
                     <a href="https://maumakanapa.wiki.gg">wiki</a>
                     <a href="{{ t.about }}">about</a>
                     <li></li>
-                    <a href="/english/tbtl">english</a>
-                    <a href="/indonesian/tbtl">indonesian</a>
-                    <a href="/spanish/tbtl">spanish</a>
-                    <a href="/portuguese/tbtl">portuguese</a>
-                    <a href="/russian/tbtl">russian</a>
-                    <a href="/italiano/tbtl">italian</a>
-                    <a href="/filipino/tbtl">filipino</a>
-                    <a href="/chinese/tbtl">chinese</a>
-                    <a href="/ukrainian/tbtl">ukrainian</a>
+                    <a href="/english/mc">english</a>
+                    <a href="/indonesian/mc">indonesian</a>
+                    <a href="/spanish/mc">spanish</a>
+                    <a href="/portuguese/mc">portuguese</a>
+                    <a href="/russian/mc">russian</a>
+                    <a href="/italiano/mc">italian</a>
+                    <a href="/filipino/mc">filipino</a>
+                    <a href="/chinese/mc">chinese</a>
+                    <a href="/ukrainian/mc">ukrainian</a>
                 </div>
             </div>
         </div>
@@ -62,36 +65,27 @@
             <div class="dropdown">
                 <img src="{% static 'svg/dropdown.svg' %}" onclick="showList(this)" alt="">
                 <div class="dropdown-content">
-                    <a href="/english/tbtl">english</a>
-                    <a href="/indonesian/tbtl">indonesian</a>
-                    <a href="/spanish/tbtl">spanish</a>
-                    <a href="/portuguese/tbtl">portuguese</a>
-                    <a href="/russian/tbtl">russian</a>
-                    <a href="/italiano/tbtl">italian</a>
-                    <a href="/filipino/tbtl">filipino</a>
-                    <a href="/chinese/tbtl">chinese</a>
-                    <a href="/ukrainian/tbtl">ukrainian</a>
+                    <a href="/english/mc">english</a>
+                    <a href="/indonesian/mc">indonesian</a>
+                    <a href="/spanish/mc">spanish</a>
+                    <a href="/portuguese/mc">portuguese</a>
+                    <a href="/russian/mc">russian</a>
+                    <a href="/italiano/mc">italian</a>
+                    <a href="/filipino/mc">filipino</a>
+                    <a href="/chinese/mc">chinese</a>
+                    <a href="/ukrainian/mc">ukrainian</a>
                 </div>
             </div>
         </nav>
     </header>
-    <section id="maininfo">
-        <div class="maincon">
-            <div class="preview">
-                <div class="conprev" id="con">
-                    <iframe src="https://www.youtube.com/embed/6Ra80Wzvcrw?rel=0"
-                        style=""
-                        allowfullscreen scrolling="no"
-                        allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"
-                        referrerpolicy="strict-origin"></iframe>
-                </div>
-            </div>
-            <div class="text">
-                <div class="context" id="con">
-                    <h1>{{ t.tbtl }}</h1>
-                    <h2>{{ t.tbtlinfo }}</h2>
-                </div>
-            </div>
+    <section class="xenobotsection">
+        <div class="con">
+            <img class="xenobot" src="{% static 'imgs/xenobot.png' %}" alt="">
+            <img class="xenobot" src="{% static 'imgs/xenobot3.gif' %}" alt="">
+        </div>
+        <div class="con">
+            <img class="xenobot" src="{% static 'imgs/xenobot5.gif' %}" alt="">
+            <img class="xenobot" src="{% static 'imgs/xenobot6.png' %}" alt="">
         </div>
     </section>
     <footer>
@@ -127,6 +121,29 @@
     }
 
     document.addEventListener('click', dropdGone);
+
+    const randolist = [
+        "{% static 'sounds/xeno1.mp3' %}",
+        "{% static 'sounds/xeno2.mp3' %}",
+        "{% static 'sounds/xeno3.mp3' %}",
+        "{% static 'sounds/xeno4.mp3' %}"
+    ]
+
+    function randoAudio() {
+        const rindex = Math.floor(Math.random() * randolist.length);
+        let selected = new Audio(randolist[rindex]);
+        selected.play();
+    }
+
+    document.addEventListener('click', function (event) {
+        const xenobot = event.target.closest('.xenobot');
+        if (!xenobot) return;
+        xenobot.classList.remove('after');
+        void xenobot.offsetWidth;
+        console.log('meow');
+        xenobot.classList.add("after");
+        randoAudio();
+    })
 </script>
 
 </html>
