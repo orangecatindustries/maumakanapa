@@ -17,6 +17,7 @@ class staticSitemap(Sitemap):
             static_items.append({'lang': lang, 'viewname': 'tsrfindex'})
             static_items.append({'lang': lang, 'viewname': 'tbtlindex'})
             static_items.append({'lang': lang, 'viewname': 'tsrfindex'})
+            static_items.append({'lang': lang, 'viewname': 'xenobot'})
         return static_items
 
     def location(self, item):
