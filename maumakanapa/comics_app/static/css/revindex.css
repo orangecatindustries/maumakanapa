@@ -154,6 +154,7 @@
         display: flex;
         flex-direction: row;
         gap: 2em;
+        align-items: center;
     }
 
     .preview {
@@ -170,13 +171,16 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         width: 40vw;
-        height: 30em;
     }
 
     .conprev iframe {
         width: 100%;
         height: 100%;
         border-radius: 22px;
+    }
+
+    .conprev {
+        height: 30em;
     }
 
     .context {
@@ -186,6 +190,7 @@
         overflow-y: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        min-height: auto;
     }
 
     .context h1 {
@@ -325,7 +330,13 @@
             border-bottom: 1px solid #999999;
         }
 
+        #maininfo {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
         .maincon {
+            margin-top: 4em;
             flex-direction: column;
         }
 
@@ -335,6 +346,14 @@
 
         .context h1 {
             text-align: center;
+        }
+
+        footer img {
+            display: none;
+        }
+
+        .footerstuff img {
+            display: block;
         }
     }
 
