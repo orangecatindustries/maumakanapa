@@ -316,6 +316,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            opacity: 0.3;
         }
 
         .wow-gif {
@@ -390,11 +391,6 @@
         .wow-fl:hover .wow-gif,
         .wow-ch:hover .wow-gif {
             opacity: 1;
-        }
-
-        .all img {
-            opacity: 0.3;
-            width: 25em;
         }
 
         .lang-link {
