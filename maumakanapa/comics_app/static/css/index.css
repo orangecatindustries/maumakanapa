@@ -178,7 +178,7 @@
             height: 25vh;
             display: block;
             object-fit: cover;
-            mask-image: url("/static/imgs/maumakanapalogo.png");
+            mask-image: url("/static/imgs/maumakanapalogo.webp");
             mask-size: contain;
             mask-repeat: no-repeat;
             mask-position: center top;
