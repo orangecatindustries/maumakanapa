@@ -1,99 +1,289 @@
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@font-face {
+    font-family: "Karla";
+    src: url("/static/fonts/karla.ttf") format("truetype");
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-    @font-face {
-        font-family: "Jaya";
-        src: url("/static/fonts/everything.otf") format("truetype");
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
+@font-face {
+    font-family: "Jaya";
+    src: url("/static/fonts/everything.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Labirhin";
+    src: url("/static/fonts/labirhin.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "russianlabi";
+    src: url("/static/fonts/russianlabi.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+:root {
+    --primary-font: "Karla", sans-serif;
+    --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --main-background-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-image: url("/static/imgs/backgroundxeno.jpg");
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    width: 75%;
+    max-width: 1025px;
+    margin: 0 auto;
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    backdrop-filter: blur(10px);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+header img {
+    height: 60px;
+    margin-top: -3px;
+}
+
+.logos {
+    margin-left: 15px;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+}
+
+.logos img {
+    height: 45px;
+}
+
+header a {
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+header nav {
+    display: flex;
+    gap: 62px;
+    margin-right: 35px;
+}
+
+.icons {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img {
+    margin-top: 10px;
+    height: 45px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    min-width: 180px;
+    box-shadow: var(--main-box-shadow);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#logo {
+    display: flex;
+}
+
+.xenojump {
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.xenojump img {
+    height: 100vh;
+    width: 100vw;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.xenobotsection {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    margin-top: 1em;
+}
+
+.con {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    pointer-events: all;
+    transition: 0.5s;
+}
+
+.con img {
+    height: 400px;
+    width: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.xenobot {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.xenobot.after {
+    animation: xenozoom 0.5s ease;
+}
+
+@keyframes xenozoom {
+    0% {
+        transform: scale(1.0);
     }
 
-    @font-face {
-        font-family: "Labirhin";
-        src: url("/static/fonts/labirhin.otf") format("truetype");
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
+    50% {
+        transform: scale(1.1);
     }
 
-    @font-face {
-        font-family: "russianlabi";
-        src: url("/static/fonts/russianlabi.ttf") format("truetype");
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
+    100% {
+        transform: scale(1.0);
     }
+}
 
-    :root {
-        --primary-font: "Karla", sans-serif;
-        --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-        --main-background-color: rgba(0, 0, 0, 0.3);
-    }
+footer {
+    margin-top: 50px;
+    background-color: var(--main-background-color);
+    width: 100%;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
 
-    body {
-        background-image: url("/static/imgs/backgroundxeno.jpg");
-        background-size: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin: 0;
-        min-height: 100vh;
-    }
+.footerstuff {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.footerstuff img {
+    height: 5em;
+    margin-top: -15px;
+}
+
+.footerstuff h1,
+.footerstuff h2 {
+    font-family: "Jaya";
+    color: lightgrey;
+    text-align: center;
+}
+
+html[lang="russian"] .footerstuff h1,
+html[lang="russian"] .footerstuff h2,
+html[lang="ukrainian"] .footerstuff h1,
+html[lang="ukrainian"] .footerstuff h2 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+}
+
+.footerstuff a {
+    text-decoration: none;
+    background: linear-gradient(to right, purple, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    height: 100px;
+}
+
+@media screen and (max-width: 900px) {
     header {
-        position: sticky;
-        top: 20px;
-        z-index: 100;
-        width: 75%;
-        max-width: 1025px;
-        margin: 0 auto;
-        background-color: var(--main-background-color);
-        border-radius: 22px;
-        left: 0;
-        right: 0;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-        backdrop-filter: blur(10px);
-        border-style: solid;
-        border-color: rgba(0, 0, 0, 0.15);
+        width: 90%;
+        height: 5em;
     }
 
-    header img {
-        height: 60px;
-        margin-top: -3px;
-    }
-
+    header nav,
     .logos {
-        margin-left: 15px;
-        margin-top: -5px;
-        display: flex;
-        align-items: center;
-    }
-
-    .logos img {
-        height: 45px;
-    }
-
-    header a {
-        font-family: var(--primary-font);
-        text-decoration: none;
-        color: white;
-        font-weight: 200;
-        font-size: 22px;
-        margin-top: 15px;
-    }
-
-    header nav {
-        display: flex;
-        gap: 62px;
-        margin-right: 35px;
+        display: none;
     }
 
     .icons {
-        display: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .icons .logo-icon img {
+        margin-top: 10px;
+        height: 60px;
     }
 
     .dropdown {
@@ -109,252 +299,67 @@
     }
 
     .dropdown-content {
-        position: absolute;
-        right: 0;
-        background: rgba(0, 0, 0, 0.8);
-        min-width: 180px;
-        box-shadow: var(--main-box-shadow);
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        border-radius: 12px;
-        overflow: hidden;
-        pointer-events: none;
+        max-height: 520px;
     }
 
-    .dropdown-content.show {
+    .dropdown:hover .dropdown-content {
         opacity: 1;
-        transform: translateY(0%);
-        transition: all 0.3s ease;
-        pointer-events: all;
+        transform: translateY(0);
+        pointer-events: auto;
+        overflow: auto;
+        max-height: 520px;
+        background: rgba(0, 0, 0, 0.8);
     }
 
     .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        display: block;
-        font-family: var(--primary-font);
-        font-size: 18px;
-        margin-bottom: 8px;
+        padding: 18px 20px;
+        margin-top: 0;
     }
 
-    .dropdown-content a:hover {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    #logo {
+    .dropdown li {
         display: flex;
+        margin: 12px;
+        border-bottom: 1px solid #999999;
     }
 
-    .xenojump {
-        position: fixed;
-        z-index: 999;
-        pointer-events: none;
-    }
-
-    .xenojump img {
-        height: 100vh;
-        width: 100vw;
-        -webkit-user-drag: none;
-        user-select: none;
-    }
-
-    .xenobotsection {
-        display: flex;
+    .maincon {
         flex-direction: column;
-        pointer-events: none;
-        margin-top: 1em;
     }
 
     .con {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        pointer-events: all;
-        transition: 0.5s;
-    }
-
-    .con img {
-        height: 400px;
-        width: auto;
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-
-    .xenobot {
-        -webkit-user-drag: none;
-        user-select: none;
-    }
-
-    .xenobot.after {
-        animation: xenozoom 0.5s ease;
-    }
-
-    @keyframes xenozoom {
-        0% {
-            transform: scale(1.0);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
-
-        100% {
-            transform: scale(1.0);
-        }
-    }
-
-    footer {
-        margin-top: 50px;
-        background-color: var(--main-background-color);
-        width: 100%;
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-    }
-
-    .footerstuff {
-        display: flex;
-        align-items: center;
         flex-direction: column;
     }
 
-    .footerstuff img {
-        height: 5em;
-        margin-top: -15px;
+    .con img {
+        height: 270px;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .footerstuff h1,
-    .footerstuff h2 {
-        font-family: "Jaya";
-        color: lightgrey;
+    .context h1 {
         text-align: center;
     }
 
-    html[lang="russian"] .footerstuff h1,
-    html[lang="russian"] .footerstuff h2,
-    html[lang="ukrainian"] .footerstuff h1,
-    html[lang="ukrainian"] .footerstuff h2 {
-        font-family: "russianlabi", "Labirhin", sans-serif;
-    }
-
-    .footerstuff a {
-        text-decoration: none;
-        background: linear-gradient(to right, purple, white);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    footer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
     footer img {
-        height: 100px;
+        display: none;
     }
 
-    @media screen and (max-width: 900px) {
-        header {
-            width: 90%;
-            height: 5em;
-        }
+    .footerstuff img {
+        display: block;
+    }
+}
 
-        header nav,
-        .logos {
-            display: none;
-        }
-
-        .icons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-
-        .icons .logo-icon img {
-            margin-top: 10px;
-            height: 60px;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown img {
-            margin-top: 10px;
-            height: 45px;
-            cursor: pointer;
-            filter: invert(1);
-        }
-
-        .dropdown-content {
-            max-height: 520px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-            overflow: auto;
-            max-height: 520px;
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .dropdown-content a {
-            padding: 18px 20px;
-            margin-top: 0;
-        }
-
-        .dropdown li {
-            display: flex;
-            margin: 12px;
-            border-bottom: 1px solid #999999;
-        }
-
-        .maincon {
-            flex-direction: column;
-        }
-
-        .con {
-            flex-direction: column;
-        }
-
-        .con img {
-            height: 270px;
-            margin-top: 20px;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .context h1 {
-            text-align: center;
-        }
-
-        footer img {
-            display: none;
-        }
-
-        .footerstuff img {
-            display: block;
-        }
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+    header {
+        width: 90%;
+        height: 5em;
     }
 
-    @media screen and (min-width: 901px) and (max-width: 1100px) {
-        header {
-            width: 90%;
-            height: 5em;
-        }
-
-        .con img {
-            height: 270px;
-            margin-top: 20px;
-            margin-left: 0;
-            margin-right: 0;
-        }
+    .con img {
+        height: 270px;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
+}

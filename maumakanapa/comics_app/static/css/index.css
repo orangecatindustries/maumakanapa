@@ -1,1029 +1,1035 @@
-        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
-        @font-face {
-            font-family: "Jaya";
-            src: url("/static/fonts/everything.otf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: "Labirhin";
-            src: url("/static/fonts/labirhin.otf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: "russianlabi";
-            src: url("/static/fonts/russianlabi.ttf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        :root {
-            --primary-font: "Karla", sans-serif;
-            --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            --main-background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        html,
-        body {
-            max-width: 100%;
-        }
-
-        body {
-            background-image: url("/static/imgs/meow.webp");
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            min-height: 100vh;
-        }
-
-        header {
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            width: 75%;
-            max-width: 1025px;
-            margin: 0 auto;
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
-        }
-
-        header img {
-            height: 60px;
-            margin-top: -3px;
-        }
-
-        .logos {
-            margin-left: 15px;
-            margin-top: -5px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logos img {
-            height: 45px;
-        }
-
-        header a {
-            font-family: var(--primary-font);
-            text-decoration: none;
-            color: white;
-            font-weight: 200;
-            font-size: 22px;
-            margin-top: 15px;
-        }
-
-        header nav {
-            display: flex;
-            gap: 62px;
-            margin-right: 35px;
-        }
-
-        .icons {
-            display: none;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown img {
-            margin-top: 10px;
-            height: 45px;
-            cursor: pointer;
-            filter: invert(1);
-        }
-
-        .dropdown-content {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            min-width: 180px;
-            box-shadow: var(--main-box-shadow);
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .dropdown-content.show {
-            opacity: 1;
-            transform: translateY(0%);
-            transition: all 0.3s ease;
-            pointer-events: all;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            display: block;
-            font-family: var(--primary-font);
-            font-size: 18px;
-            text-decoration: none;
-            margin-bottom: 8px;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        /* 1st section */
-
-        #logo {
-            display: flex;
-        }
-
-        .meow {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .videostuff {
-            width: 60em;
-            position: relative;
-            height: 15em;
-            filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.8));
-            transition: 0.5s;
-            margin-top: 0em;
-        }
-
-        .videostuff:hover {
-            transition: 0.5s;
-            filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 0.8));
-        }
-
-        .videostuff video {
-            width: 100%;
-            height: 25vh;
-            display: block;
-            object-fit: cover;
-            mask-image: url("/static/imgs/maumakanapalogo.webp");
-            mask-size: contain;
-            mask-repeat: no-repeat;
-            mask-position: center top;
-        }
-
-        /* containers */
-
-        .bigcontainer {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            padding: 2em;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 1.2em;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        #containers h3 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            text-shadow: rgba(0, 0, 0, 1) 0px 0px 24px;
-            font-size: 25px;
-            margin-top: -5px;
-        }
-
-        html[lang="russian"] #containers h3,
-        html[lang="ukrainian"] #containers h3 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 30px;
-        }
-
-        #containers {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .all {
-            display: flex;
-            flex-direction: column;
-            max-height: 480px;
-            transition: 1.5s;
-        }
-
-        .first {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .second {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .third {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .fourth {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .fifth {
-            display: flex;
-            justify-content: center;
-        }
-
-        .webcon {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            height: 13em;
-            width: 25em;
-            box-shadow: var(--main-box-shadow);
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            position: relative;
-        }
-
-        .webcon h1 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            position: relative;
-            z-index: 3;
-            margin: 20px;
-            font-size: 28px;
-        }
-
-        .labcon h2,
-        .webcon h2 {
-            position: relative;
-            font-family: var(--primary-font);
-            font-weight: 200;
-            z-index: 3;
-            color: white;
-            margin: 20px;
-            margin-top: -5px;
-            font-size: 20px;
-        }
-
-        html[lang="russian"] :is(button),
-        html[lang="ukrainian"] :is(button) {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 25px;
-        }
-
-        html[lang="russian"] .bigcontainer h3,
-        html[lang="ukrainian"] .bigcontainer h3 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 35px;
-        }
-
-        .webcon:hover {
-            transform: scale(1.05);
-            box-shadow: var(--main-box-shadow);
-        }
-
-        .webcon img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0.3;
-        }
-
-        .wow-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1;
-        }
-
-        .wow-pt .wow-gif {
-            background-image: url("/static/imgs/0629_5.gif");
-        }
-
-        .wow-en .wow-gif {
-            background-image: url("/static/imgs/englishflag.gif");
-        }
-
-        .wow-in .wow-gif {
-            background-image: url("/static/imgs/indonesianflag.gif");
-        }
-
-        .wow-sp .wow-gif {
-            background-image: url("/static/imgs/spanishflag.gif");
-        }
-
-        .wow-ru .wow-gif {
-            background-image: url("/static/imgs/russiangif.gif");
-        }
-
-        .wow-it .wow-gif {
-            background-image: url("/static/imgs/italiangif.gif");
-        }
-
-        .wow-fl .wow-gif {
-            background-image: url("/static/imgs/filipinogif.gif");
-        }
-
-        .wow-ch .wow-gif {
-            background-image: url("/static/imgs/chinagif.gif");
-        }
-
-        .wow-uk .wow-gif {
-            background-image: url("/static/imgs/ukrainiangif.gif");
-        }
-
-        .wow-gif::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            transform: scale(1.05);
-        }
-
-        .webcon:hover .wow-gif {
-            opacity: 1;
-        }
-
-        .lang-link {
-            text-decoration: none;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            z-index: 4;
-        }
-
-        .lang-link::after {
-            content: "";
-            position: absolute;
-            top: -500px;
-            left: -500px;
-            right: -500px;
-            bottom: -500px;
-            z-index: 8;
-        }
-
-        .lang-link button {
-            display: flex;
-            font-size: 17px;
-            padding: 0.8em 1em 0.8em 1em;
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            border-radius: 20em;
-            z-index: 4;
-            cursor: pointer;
-        }
-
-        .expandbutton {
-            margin-top: 15px;
-            font-size: 17px;
-            padding: 0.8em 1em 0.8em 1em;
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            background: rgba(0, 0, 0, 0.6);
-            border: none;
-            border-radius: 20em;
-            cursor: pointer;
-            margin: 15px;
-        }
-
-        .shadow {
-            display: flex;
-            justify-content: center;
-            z-index: 4;
-            width: 100%;
-            box-shadow: inset 0 -26px 18px -11px #000000;
-            position: absolute;
-            bottom: 0%;
-        }
-
-        .secbigcontainer {
-            margin-top: 2em;
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            padding: 2em;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 1.2em;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .all2 {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .all2 img {
-            margin-top: -9em;
-            opacity: 0.3;
-            width: 25em;
-            transition: 0.5s;
-        }
-
-        html[lang="russian"] .all2 h1,
-        html[lang="ukrainian"] .all2 h1 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 35px;
-        }
-
-        html[lang="russian"] .labcon h2,
-        html[lang="ukrainian"] .labcon h2 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 25px;
-        }
-
-        .labcon h1 {
-            font-family: var(--primary-font);
-            color: white;
-            font-weight: 200;
-            position: relative;
-            z-index: 3;
-            margin: 20px;
-            font-size: 28px;
-        }
-
-        .labcon {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            height: 13em;
-            width: 25em;
-            box-shadow: var(--main-box-shadow);
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .labcon:hover {
-            transform: scale(1.05);
-            box-shadow: var(--main-box-shadow);
-            opacity: 1;
-        }
-
-        .labcon:hover img {
-            opacity: 0.5;
-        }
-
-        .labcon img {
-            position: absolute;
-            top: 69%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .comcontainer {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            padding: 2em;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            z-index: 1;
-        }
-
-        .comcontainer h2 {
-            color: white;
-            font-family: var(--primary-font);
-            font-weight: 200;
-            margin-left: 40px;
-            text-decoration: none;
-        }
-
-        html[lang="ukrainian"] .comcontainer h2,
-        html[lang="russian"] .comcontainer h2 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 32px;
-        }
-
-        .xenobot {
-            height: 200px;
-            width: auto;
-            position: relative;
-            z-index: 2;
-            pointer-events: all;
-            cursor: pointer;
-            margin-left: 5em;
-            transition: 0.2s;
-            margin-bottom: -10px;
-        }
-
-        .xenobot.show {
-            animation: xenoscale 0.2s ease;
-        }
-
-        @keyframes xenoscale {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.10);
-            }
-
-            100% {
-                transform: scale(1.0);
-            }
-        }
-
-        .title {
-            margin-bottom: -200px;
-            margin-left: 20em;
-        }
-
-        .firststuff,
-        .secondstuff,
-        .thirdstuff {
-            display: flex;
-        }
-
-        .stuff h1 {
-            font-family: "Jaya";
-            text-align: center;
-            color: white;
-            font-size: 6em;
-            text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 24px;
-        }
-
-        html[lang="russian"] .stuff h1,
-        html[lang="ukrainian"] .stuff h1 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-            font-size: 7em;
-        }
-
-        .socialcon {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            padding: 2em;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
-            margin: 5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            height: 5em;
-            width: 21em;
-            transition: 0.5s;
-        }
-
-        .socialcon:hover {
-            transform: scale(1.05);
-        }
-
-        .discord:hover {
-            background-color: #3556CA;
-        }
-
-        .patreon:hover {
-            background-color: #f96854;
-        }
-
-        .merch:hover {
-            background-color: #fcb61e;
-        }
-
-        .twitter:hover {
-            background-color: lightskyblue;
-        }
-
-        .youtube:hover {
-            background-color: red;
-        }
-
-        .wiki:hover {
-            background-color: darkblue;
-        }
-
-        .socialcon img {
-            height: 85px;
-            filter: invert();
-        }
-
-        .patreon img {
-            height: 65px;
-            filter: invert();
-            margin-left: 6px;
-        }
-
-        .wiki img {
-            height: 65px;
-        }
-
-        footer {
-            margin-top: 50px;
-            background-color: var(--main-background-color);
-            width: 100%;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .footerstuff {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .footerstuff img {
-            height: 5em;
-            margin-top: -15px;
-        }
-
-        .footerstuff h1,
-        .footerstuff h2 {
-            font-family: "Jaya";
-            color: lightgrey;
-            text-align: center;
-        }
-
-        html[lang="russian"] .footerstuff h1,
-        html[lang="russian"] .footerstuff h2,
-        html[lang="ukrainian"] .footerstuff h1,
-        html[lang="ukrainian"] .footerstuff h2 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        footer img {
-            height: 100px;
-        }
-
-        .footerstuff a {
-            text-decoration: none;
-            background: linear-gradient(to right, purple, white);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @media screen and (max-width: 600px) {
-            html {
-                overflow-x: hidden;
-            }
-
-            header {
-                width: 90%;
-                height: 5em;
-            }
-
-            header nav,
-            .logos {
-                display: none;
-            }
-
-            .icons {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 0 15px;
-                box-sizing: border-box;
-            }
-
-            .icons .logo-icon img {
-                margin-top: 10px;
-                height: 60px;
-            }
-
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            .dropdown-content {
-                max-height: 520px;
-            }
-
-            .dropdown:hover .dropdown-content {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-                overflow: auto;
-                max-height: 520px;
-                background: rgba(0, 0, 0, 0.8);
-            }
-
-            .dropdown-content a {
-                padding: 18px 20px;
-                margin-top: 0;
-            }
-
-            .dropdown li {
-                display: flex;
-                margin: 12px;
-                border-bottom: 1px solid #999999;
-            }
-
-            .videostuff {
-                width: 22em;
-                margin-top: 2em;
-                max-width: 100vw;
-            }
-
-            .videostuff img {
-                height: 12vh;
-            }
-
-            /* haha more stuff related to containers! */
-
-            .bigcontainer {
-                margin-top: -6em;
-                width: 70vw;
-            }
-
-            .bigcontainer h3 {
-                text-align: center;
-            }
-
-            .all,
-            .first,
-            .second,
-            .third,
-            .fourth {
-                flex-direction: column;
-            }
-
-            .webcon img {
-                position: absolute;
-                width: 100%;
-                background-size: cover;
-                background-position: center;
-                transition: opacity 0.3s ease-in-out;
-                z-index: 1;
-            }
-
-            .webcon {
-                width: 80vw;
-                height: 12em;
-            }
-
-            #all h1 {
-                margin-top: 15px;
-            }
-
-            #all h2 {
-                margin-top: -15px;
-            }
-
-            /* community */
-
-            #about {
-                display: flex;
-                flex-direction: column;
-            }
-
-            html[lang="russian"] .stuff h1,
-            html[lang="ukrainian"] .stuff h1 {
-                font-family: "russianlabi", "Labirhin", sans-serif;
-                font-size: 12vw;
-            }
-
-            .title {
-                margin-bottom: -24vw;
-                margin-left: 5em;
-            }
-
-            .stuff h1 {
-                font-family: "Jaya";
-                color: white;
-                font-size: 11vw;
-                text-align: center;
-            }
-
-            .firststuff,
-            .secondstuff,
-            .thirdstuff {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .secbigcontainer {
-                width: 70vw;
-            }
-
-            .labcon {
-                width: 80vw;
-                height: 12em;
-                align-items: center;
-            }
-
-            .labcon img {
-                top: 75%;
-            }
-
-            .comcontainer {
-                width: 70vw;
-            }
-
-            #containers h3 {
-                text-align: center;
-            }
-
-            .socialcon {
-                box-shadow: var(--main-box-shadow);
-                flex-direction: column;
-                height: 4em;
-                width: 50vw;
-            }
-
-            .socialcon img {
-                height: 55px;
-                margin-top: -16px;
-            }
-
-            .wiki img {
-                height: 50px;
-                margin-top: -16px;
-            }
-
-            .patreon img {
-                height: 55px;
-                margin-top: -15px;
-            }
-
-            .comcontainer h2 {
-                color: white;
-                font-family: var(--primary-font);
-                font-weight: 200;
-                text-decoration: none;
-                font-size: 20px;
-                margin-top: 15px;
-                margin-left: 0px;
-            }
-
-            .wiki h2 {
-                margin-top: 25px;
-            }
-
-            .patreon h2 {
-                margin-top: 20px;
-                margin-left: 0px;
-            }
-
-            .xenobot {
-                height: 24vw;
-                margin-bottom: -8px;
-                margin-left: 0px;
-            }
-
-            footer img {
-                display: none;
-            }
-
-            .footerstuff img {
-                display: block;
-            }
-
-        }
-
-        @media screen and (min-width: 601px) and (max-width: 1100px) {
-            header {
-                width: 90%;
-                height: 5em;
-            }
-
-            header nav {
-                display: none;
-            }
-
-            .logos {
-                display: none;
-            }
-
-            .icons {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 0 15px;
-                box-sizing: border-box;
-            }
-
-            .icons .logo-icon img {
-                margin-top: 10px;
-                height: 60px;
-            }
-
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            .dropdown img {
-                margin-top: 10px;
-                height: 45px;
-                cursor: pointer;
-                filter: invert(1);
-            }
-
-            .dropdown:hover .dropdown-content {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-
-            .webcon {
-                width: 40vw;
-            }
-
-            .labcon {
-                width: 40vw;
-                aspect-ratio: 16 / 9;
-            }
-
-            .socialcon {
-                width: 26vw;
-            }
-
-            .socialcon img {
-                height: 68px;
-            }
-
-
-            .stuff h1 {
-                font-size: 10vw;
-                margin-bottom: 12vh;
-                margin-left: -22vw;
-            }
-
-            .xenobot {
-                height: 17vw;
-            }
-
-            .videostuff {
-                width: 40em;
-                height: 10em;
-                margin-top: 1em;
-            }
-
-            .lang-link button {
-                left: 44px;
-            }
-
-            html[lang="russian"] .stuff h1, html[lang="ukrainian"] .stuff h1 {
-                font-size: 10vw;
-                /* font-size: 7em; */
-            }
-        }
+@font-face {
+    font-family: "Karla";
+    src: url("/static/fonts/karla.ttf") format("truetype");
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Jaya";
+    src: url("/static/fonts/everything.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Labirhin";
+    src: url("/static/fonts/labirhin.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "russianlabi";
+    src: url("/static/fonts/russianlabi.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+:root {
+    --primary-font: "Karla", sans-serif;
+    --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --main-background-color: rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+    max-width: 100%;
+}
+
+body {
+    background-image: url("/static/imgs/meow.webp");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    width: 75%;
+    max-width: 1025px;
+    margin: 0 auto;
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+header img {
+    height: 60px;
+    margin-top: -3px;
+}
+
+.logos {
+    margin-left: 15px;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+}
+
+.logos img {
+    height: 45px;
+}
+
+header a {
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+header nav {
+    display: flex;
+    gap: 62px;
+    margin-right: 35px;
+}
+
+.icons {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img {
+    margin-top: 10px;
+    height: 45px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    min-width: 180px;
+    box-shadow: var(--main-box-shadow);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 1st section */
+
+#logo {
+    display: flex;
+}
+
+.meow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.videostuff {
+    width: 60em;
+    position: relative;
+    height: 15em;
+    filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.8));
+    transition: 0.5s;
+    margin-top: 0em;
+}
+
+.videostuff:hover {
+    transition: 0.5s;
+    filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 0.8));
+}
+
+.videostuff video {
+    width: 100%;
+    height: 25vh;
+    display: block;
+    object-fit: cover;
+    mask-image: url("/static/imgs/maumakanapalogo.webp");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center top;
+}
+
+/* containers */
+
+.bigcontainer {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.2em;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#containers h3 {
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: 200;
+    text-shadow: rgba(0, 0, 0, 1) 0px 0px 24px;
+    font-size: 25px;
+    margin-top: -5px;
+}
+
+html[lang="russian"] #containers h3,
+html[lang="ukrainian"] #containers h3 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 30px;
+}
+
+#containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    max-height: 480px;
+    transition: 1.5s;
+}
+
+.first {
+    display: flex;
+    flex-direction: row;
+}
+
+.second {
+    display: flex;
+    flex-direction: row;
+}
+
+.third {
+    display: flex;
+    flex-direction: row;
+}
+
+.fourth {
+    display: flex;
+    flex-direction: row;
+}
+
+.fifth {
+    display: flex;
+    justify-content: center;
+}
+
+.webcon {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    height: 13em;
+    width: 25em;
+    box-shadow: var(--main-box-shadow);
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.webcon h1 {
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: 200;
+    position: relative;
+    z-index: 3;
+    margin: 20px;
+    font-size: 28px;
+}
+
+.labcon h2,
+.webcon h2 {
+    position: relative;
+    font-family: var(--primary-font);
+    font-weight: 200;
+    z-index: 3;
+    color: white;
+    margin: 20px;
+    margin-top: -5px;
+    font-size: 20px;
+}
+
+html[lang="russian"] :is(button),
+html[lang="ukrainian"] :is(button) {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 25px;
+}
+
+html[lang="russian"] .bigcontainer h3,
+html[lang="ukrainian"] .bigcontainer h3 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 35px;
+}
+
+.webcon:hover {
+    transform: scale(1.05);
+    box-shadow: var(--main-box-shadow);
+}
+
+.webcon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.3;
+}
+
+.wow-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.wow-pt .wow-gif {
+    background-image: url("/static/imgs/0629_5.gif");
+}
+
+.wow-en .wow-gif {
+    background-image: url("/static/imgs/englishflag.gif");
+}
+
+.wow-in .wow-gif {
+    background-image: url("/static/imgs/indonesianflag.gif");
+}
+
+.wow-sp .wow-gif {
+    background-image: url("/static/imgs/spanishflag.gif");
+}
+
+.wow-ru .wow-gif {
+    background-image: url("/static/imgs/russiangif.gif");
+}
+
+.wow-it .wow-gif {
+    background-image: url("/static/imgs/italiangif.gif");
+}
+
+.wow-fl .wow-gif {
+    background-image: url("/static/imgs/filipinogif.gif");
+}
+
+.wow-ch .wow-gif {
+    background-image: url("/static/imgs/chinagif.gif");
+}
+
+.wow-uk .wow-gif {
+    background-image: url("/static/imgs/ukrainiangif.gif");
+}
+
+.wow-gif::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+.webcon:hover .wow-gif {
+    opacity: 1;
+}
+
+.lang-link {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 4;
+}
+
+.lang-link::after {
+    content: "";
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    right: -500px;
+    bottom: -500px;
+    z-index: 8;
+}
+
+.lang-link button {
+    display: flex;
+    font-size: 17px;
+    padding: 0.8em 1em 0.8em 1em;
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: 200;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 20em;
+    z-index: 4;
+    cursor: pointer;
+}
+
+.expandbutton {
+    margin-top: 15px;
+    font-size: 17px;
+    padding: 0.8em 1em 0.8em 1em;
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: 200;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 20em;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.shadow {
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+    width: 100%;
+    box-shadow: inset 0 -26px 18px -11px #000000;
+    position: absolute;
+    bottom: 0%;
+}
+
+.secbigcontainer {
+    margin-top: 2em;
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.2em;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.all2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.all2 img {
+    margin-top: -9em;
+    opacity: 0.3;
+    width: 25em;
+    transition: 0.5s;
+}
+
+html[lang="russian"] .all2 h1,
+html[lang="ukrainian"] .all2 h1 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 35px;
+}
+
+html[lang="russian"] .labcon h2,
+html[lang="ukrainian"] .labcon h2 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 25px;
+}
+
+.labcon h1 {
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: 200;
+    position: relative;
+    z-index: 3;
+    margin: 20px;
+    font-size: 28px;
+}
+
+.labcon {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    height: 13em;
+    width: 25em;
+    box-shadow: var(--main-box-shadow);
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.labcon:hover {
+    transform: scale(1.05);
+    box-shadow: var(--main-box-shadow);
+    opacity: 1;
+}
+
+.labcon:hover img {
+    opacity: 0.5;
+}
+
+.labcon img {
+    position: absolute;
+    top: 69%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.comcontainer {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.comcontainer h2 {
+    color: white;
+    font-family: var(--primary-font);
+    font-weight: 200;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+html[lang="ukrainian"] .comcontainer h2,
+html[lang="russian"] .comcontainer h2 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 32px;
+}
+
+.xenobot {
+    height: 200px;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    pointer-events: all;
+    cursor: pointer;
+    margin-left: 5em;
+    transition: 0.2s;
+    margin-bottom: -10px;
+}
+
+.xenobot.show {
+    animation: xenoscale 0.2s ease;
+}
+
+@keyframes xenoscale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.10);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.title {
+    margin-bottom: -200px;
+    margin-left: 20em;
+}
+
+.firststuff,
+.secondstuff,
+.thirdstuff {
+    display: flex;
+}
+
+.stuff h1 {
+    font-family: "Jaya";
+    text-align: center;
+    color: white;
+    font-size: 6em;
+    text-shadow: rgba(255, 255, 255, 0.4) 0px 0px 24px;
+}
+
+html[lang="russian"] .stuff h1,
+html[lang="ukrainian"] .stuff h1 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+    font-size: 7em;
+}
+
+.socialcon {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5em;
+    width: 21em;
+    transition: 0.5s;
+}
+
+.socialcon:hover {
+    transform: scale(1.05);
+}
+
+.discord:hover {
+    background-color: #3556CA;
+}
+
+.patreon:hover {
+    background-color: #f96854;
+}
+
+.merch:hover {
+    background-color: #fcb61e;
+}
+
+.twitter:hover {
+    background-color: lightskyblue;
+}
+
+.youtube:hover {
+    background-color: red;
+}
+
+.wiki:hover {
+    background-color: darkblue;
+}
+
+.socialcon img {
+    height: 85px;
+    filter: invert();
+}
+
+.patreon img {
+    height: 65px;
+    filter: invert();
+    margin-left: 6px;
+}
+
+.wiki img {
+    height: 65px;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: var(--main-background-color);
+    width: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.footerstuff {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerstuff img {
+    height: 5em;
+    margin-top: -15px;
+}
+
+.footerstuff h1,
+.footerstuff h2 {
+    font-family: "Jaya";
+    color: lightgrey;
+    text-align: center;
+}
+
+html[lang="russian"] .footerstuff h1,
+html[lang="russian"] .footerstuff h2,
+html[lang="ukrainian"] .footerstuff h1,
+html[lang="ukrainian"] .footerstuff h2 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    height: 100px;
+}
+
+.footerstuff a {
+    text-decoration: none;
+    background: linear-gradient(to right, purple, white);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 90%;
+        height: 5em;
+    }
+
+    header nav,
+    .logos {
+        display: none;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .icons .logo-icon img {
+        margin-top: 10px;
+        height: 60px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        max-height: 520px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        overflow: auto;
+        max-height: 520px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .dropdown-content a {
+        padding: 18px 20px;
+        margin-top: 0;
+    }
+
+    .dropdown li {
+        display: flex;
+        margin: 12px;
+        border-bottom: 1px solid #999999;
+    }
+
+    .videostuff {
+        width: 22em;
+        margin-top: 2em;
+        max-width: 100vw;
+    }
+
+    .videostuff img {
+        height: 12vh;
+    }
+
+    /* haha more stuff related to containers! */
+
+    .bigcontainer {
+        margin-top: -6em;
+        width: 70vw;
+    }
+
+    .bigcontainer h3 {
+        text-align: center;
+    }
+
+    .all,
+    .first,
+    .second,
+    .third,
+    .fourth {
+        flex-direction: column;
+    }
+
+    .webcon img {
+        position: absolute;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 1;
+    }
+
+    .webcon {
+        width: 80vw;
+        height: 12em;
+    }
+
+    #all h1 {
+        margin-top: 15px;
+    }
+
+    #all h2 {
+        margin-top: -15px;
+    }
+
+    /* community */
+
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    html[lang="russian"] .stuff h1,
+    html[lang="ukrainian"] .stuff h1 {
+        font-family: "russianlabi", "Labirhin", sans-serif;
+        font-size: 12vw;
+    }
+
+    .title {
+        margin-bottom: -24vw;
+        margin-left: 5em;
+    }
+
+    .stuff h1 {
+        font-family: "Jaya";
+        color: white;
+        font-size: 11vw;
+        text-align: center;
+    }
+
+    .firststuff,
+    .secondstuff,
+    .thirdstuff {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secbigcontainer {
+        width: 70vw;
+    }
+
+    .labcon {
+        width: 80vw;
+        height: 12em;
+        align-items: center;
+    }
+
+    .labcon img {
+        top: 75%;
+    }
+
+    .comcontainer {
+        width: 70vw;
+    }
+
+    #containers h3 {
+        text-align: center;
+    }
+
+    .socialcon {
+        box-shadow: var(--main-box-shadow);
+        flex-direction: column;
+        height: 4em;
+        width: 50vw;
+    }
+
+    .socialcon img {
+        height: 55px;
+        margin-top: -16px;
+    }
+
+    .wiki img {
+        height: 50px;
+        margin-top: -16px;
+    }
+
+    .patreon img {
+        height: 55px;
+        margin-top: -15px;
+    }
+
+    .comcontainer h2 {
+        color: white;
+        font-family: var(--primary-font);
+        font-weight: 200;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+
+    .wiki h2 {
+        margin-top: 25px;
+    }
+
+    .patreon h2 {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    .xenobot {
+        height: 24vw;
+        margin-bottom: -8px;
+        margin-left: 0px;
+    }
+
+    footer img {
+        display: none;
+    }
+
+    .footerstuff img {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+    header {
+        width: 90%;
+        height: 5em;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .logos {
+        display: none;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .icons .logo-icon img {
+        margin-top: 10px;
+        height: 60px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown img {
+        margin-top: 10px;
+        height: 45px;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .webcon {
+        width: 40vw;
+    }
+
+    .labcon {
+        width: 40vw;
+        aspect-ratio: 16 / 9;
+    }
+
+    .socialcon {
+        width: 26vw;
+    }
+
+    .socialcon img {
+        height: 68px;
+    }
+
+
+    .stuff h1 {
+        font-size: 10vw;
+        margin-bottom: 12vh;
+        margin-left: -22vw;
+    }
+
+    .xenobot {
+        height: 17vw;
+    }
+
+    .videostuff {
+        width: 40em;
+        height: 10em;
+        margin-top: 1em;
+    }
+
+    .lang-link button {
+        left: 44px;
+    }
+
+    html[lang="russian"] .stuff h1,
+    html[lang="ukrainian"] .stuff h1 {
+        font-size: 10vw;
+        /* font-size: 7em; */
+    }
+}

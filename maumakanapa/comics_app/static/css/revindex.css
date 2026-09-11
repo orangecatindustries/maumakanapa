@@ -1,4 +1,9 @@
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    @font-face {
+        font-family: "Karla";
+        src: url("/static/fonts/karla.ttf") format("truetype");
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
 
     @font-face {
         font-family: "Jaya";

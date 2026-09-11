@@ -1,423 +1,428 @@
-        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
-        @font-face {
-            font-family: "Jaya";
-            src: url("/static/fonts/everything.otf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: "Labirhin";
-            src: url("/static/fonts/labirhin.otf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        @font-face {
-            font-family: "russianlabi";
-            src: url("/static/fonts/russianlabi.ttf") format("truetype");
-            font-style: normal;
-            font-display: swap;
-            font-weight: 400;
-        }
-
-        :root {
-            --primary-font: "Karla", sans-serif;
-            --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            --main-background-color: rgba(0, 0, 0, 0.3);
-        }
-
-
-        body {
-            background-image: url("/static/imgs/meow.webp");
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            min-height: 100vh;
-        }
-
-        header {
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            width: 75%;
-            max-width: 1025px;
-            margin: 0 auto;
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            left: 0;
-            right: 0;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-            backdrop-filter: blur(10px);
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        header img {
-            height: 60px;
-            margin-top: -3px;
-        }
-
-        .logos {
-            margin-left: 15px;
-            margin-top: -5px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logos img {
-            height: 45px;
-        }
-
-        header a {
-            font-family: var(--primary-font);
-            text-decoration: none;
-            color: white;
-            font-weight: 200;
-            font-size: 22px;
-            margin-top: 15px;
-        }
-
-        header nav {
-            display: flex;
-            gap: 62px;
-            margin-right: 35px;
-        }
-
-        .icons {
-            display: none;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown img {
-            margin-top: 10px;
-            height: 45px;
-            cursor: pointer;
-            filter: invert(1);
-        }
-
-        .dropdown-content {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            min-width: 180px;
-            box-shadow: var(--main-box-shadow);
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .dropdown-content.show {
-            opacity: 1;
-            transform: translateY(0%);
-            transition: all 0.3s ease;
-            pointer-events: all;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            display: block;
-            font-family: var(--primary-font);
-            font-size: 18px;
-            text-decoration: none;
-            margin-bottom: 8px;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        #logo {
-            display: flex;
-        }
-
-        #reader-section {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-            flex: 1;
-        }
-
-        /* More container stuff! */
-
-        .reader-container {
-            background-color: var(--main-background-color);
-            border-radius: 22px;
-            padding: 2.5em;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-            margin: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            max-width: 900px;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-        }
-
-        .comic-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .comic-header .ep-num {
-            font-family: var(--primary-font);
-            color: #d1d1d1;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        html[lang="russian"] .comic-header h1,
-        html[lang="ukrainian"] .comic-header h1 {
-            font-family: "russianlabi", "Jaya", sans-serif;
-        }
-
-        html[lang="russian"] .comic-header p,
-        html[lang="ukrainian"] .comic-header p {
-            font-family: "russianlabi", "Jaya", sans-serif;
-            font-size: 25px;
-        }
-
-        html[lang="russian"] .nav-btn,
-        html[lang="ukrainian"] .nav-btn {
-            font-family: "russianlabi", "Jaya", sans-serif;
-        }
-
-        .comic-header h1 {
-            font-family: "Jaya", sans-serif;
-            color: white;
-            font-size: 3.5em;
-            margin: 5px 0;
-        }
-
-        .comic-header p {
-            font-family: var(--primary-font);
-            color: #b3b3b3;
-            font-size: 18px;
-            margin: 0;
-            font-weight: 200;
-        }
-
-        .comic-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        .nav-btn {
-            font-family: var(--primary-font);
-            font-size: 1.5em;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: 0.5s;
-            font-weight: 200;
-        }
-
-        .nav-btn:hover:not(.disabled) {
-            background: rgba(255, 255, 255, 0.35);
-            transform: scale(1.05);
-        }
-
-        .nav-btn.disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .pages-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            gap: 0;
-            margin: 20px 0;
-        }
-
-        .pages-stack img {
-            width: 50em;
-            margin: 20px;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        footer {
-            margin-top: 50px;
-            background-color: var(--main-background-color);
-            width: 100%;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .footerstuff {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .footerstuff img {
-            height: 5em;
-            margin-top: -15px;
-        }
-
-        .footerstuff h1,
-        .footerstuff h2 {
-            font-family: "Jaya";
-            color: lightgrey;
-            text-align: center;
-        }
-
-        html[lang="russian"] .footerstuff h1,
-        html[lang="russian"] .footerstuff h2,
-        html[lang="ukrainian"] .footerstuff h1,
-        html[lang="ukrainian"] .footerstuff h2 {
-            font-family: "russianlabi", "Labirhin", sans-serif;
-        }
-
-        .footerstuff a {
-            text-decoration: none;
-            background: linear-gradient(to right, purple, white);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        footer img {
-            height: 100px;
-        }
-
-        @media screen and (max-width: 900px) {
-            header {
-                width: 90%;
-                height: 5em;
-            }
-
-            header nav,
-            .logos {
-                display: none;
-            }
-
-            .icons {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 0 15px;
-                box-sizing: border-box;
-            }
-
-            .pages-stack img {
-                width: 90vw;
-                margin: 5px;
-            }
-
-            .icons .logo-icon img {
-                margin-top: 10px;
-                height: 60px;
-            }
-
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            .dropdown img {
-                margin-top: 10px;
-                height: 45px;
-                cursor: pointer;
-                filter: invert(1);
-            }
-
-            .dropdown-content {
-                max-height: 520px;
-            }
-
-            .dropdown:hover .dropdown-content {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-                overflow: auto;
-                max-height: 520px;
-            }
-
-            .dropdown-content a {
-                padding: 18px 20px;
-                margin-top: 0;
-            }
-
-            .dropdown li {
-                display: flex;
-                margin: 12px;
-                border-bottom: 1px solid #999999;
-            }
-
-            .reader-container {
-                width: 92%;
-                padding: 1.5em;
-            }
-
-            .comic-header h1 {
-                font-size: 2.5em;
-            }
-
-            .nav-btn {
-                padding: 8px 16px;
-                font-size: 20px;
-            }
-
-            footer img {
-                display: none;
-            }
-
-            .footerstuff img {
-                display: block;
-            }
-        }
-
-        @media screen and (min-width: 901px) and (max-width: 1100px) {
-            header {
-                width: 90%;
-                height: 5em;
-            }
-
-            .pages-stack img {
-                width: 80vw;
-            }
-
-            .comic-header h1 {
-                font-size: 5em;
-            }
-
-            .nav-btn {
-                padding: 8px 16px;
-                font-size: 24px;
-            }
-        }
+@font-face {
+    font-family: "Karla";
+    src: url("/static/fonts/karla.ttf") format("truetype");
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Jaya";
+    src: url("/static/fonts/everything.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Labirhin";
+    src: url("/static/fonts/labirhin.otf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "russianlabi";
+    src: url("/static/fonts/russianlabi.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+:root {
+    --primary-font: "Karla", sans-serif;
+    --main-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --main-background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+    background-image: url("/static/imgs/meow.webp");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    width: 75%;
+    max-width: 1025px;
+    margin: 0 auto;
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    backdrop-filter: blur(10px);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+header img {
+    height: 60px;
+    margin-top: -3px;
+}
+
+.logos {
+    margin-left: 15px;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+}
+
+.logos img {
+    height: 45px;
+}
+
+header a {
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+header nav {
+    display: flex;
+    gap: 62px;
+    margin-right: 35px;
+}
+
+.icons {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img {
+    margin-top: 10px;
+    height: 45px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    min-width: 180px;
+    box-shadow: var(--main-box-shadow);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#logo {
+    display: flex;
+}
+
+#reader-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex: 1;
+}
+
+/* More container stuff! */
+
+.reader-container {
+    background-color: var(--main-background-color);
+    border-radius: 22px;
+    padding: 2.5em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.comic-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.comic-header .ep-num {
+    font-family: var(--primary-font);
+    color: #d1d1d1;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+html[lang="russian"] .comic-header h1,
+html[lang="ukrainian"] .comic-header h1 {
+    font-family: "russianlabi", "Jaya", sans-serif;
+}
+
+html[lang="russian"] .comic-header p,
+html[lang="ukrainian"] .comic-header p {
+    font-family: "russianlabi", "Jaya", sans-serif;
+    font-size: 25px;
+}
+
+html[lang="russian"] .nav-btn,
+html[lang="ukrainian"] .nav-btn {
+    font-family: "russianlabi", "Jaya", sans-serif;
+}
+
+.comic-header h1 {
+    font-family: "Jaya", sans-serif;
+    color: white;
+    font-size: 3.5em;
+    margin: 5px 0;
+}
+
+.comic-header p {
+    font-family: var(--primary-font);
+    color: #b3b3b3;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 200;
+}
+
+.comic-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.nav-btn {
+    font-family: var(--primary-font);
+    font-size: 1.5em;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: 200;
+}
+
+.nav-btn:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
+}
+
+.nav-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.pages-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    margin: 20px 0;
+}
+
+.pages-stack img {
+    width: 50em;
+    margin: 20px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: var(--main-background-color);
+    width: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.footerstuff {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerstuff img {
+    height: 5em;
+    margin-top: -15px;
+}
+
+.footerstuff h1,
+.footerstuff h2 {
+    font-family: "Jaya";
+    color: lightgrey;
+    text-align: center;
+}
+
+html[lang="russian"] .footerstuff h1,
+html[lang="russian"] .footerstuff h2,
+html[lang="ukrainian"] .footerstuff h1,
+html[lang="ukrainian"] .footerstuff h2 {
+    font-family: "russianlabi", "Labirhin", sans-serif;
+}
+
+.footerstuff a {
+    text-decoration: none;
+    background: linear-gradient(to right, purple, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    height: 100px;
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        width: 90%;
+        height: 5em;
+    }
+
+    header nav,
+    .logos {
+        display: none;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .pages-stack img {
+        width: 90vw;
+        margin: 5px;
+    }
+
+    .icons .logo-icon img {
+        margin-top: 10px;
+        height: 60px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown img {
+        margin-top: 10px;
+        height: 45px;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    .dropdown-content {
+        max-height: 520px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        overflow: auto;
+        max-height: 520px;
+    }
+
+    .dropdown-content a {
+        padding: 18px 20px;
+        margin-top: 0;
+    }
+
+    .dropdown li {
+        display: flex;
+        margin: 12px;
+        border-bottom: 1px solid #999999;
+    }
+
+    .reader-container {
+        width: 92%;
+        padding: 1.5em;
+    }
+
+    .comic-header h1 {
+        font-size: 2.5em;
+    }
+
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 20px;
+    }
+
+    footer img {
+        display: none;
+    }
+
+    .footerstuff img {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+    header {
+        width: 90%;
+        height: 5em;
+    }
+
+    .pages-stack img {
+        width: 80vw;
+    }
+
+    .comic-header h1 {
+        font-size: 5em;
+    }
+
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 24px;
+    }
+}
