@@ -79,7 +79,7 @@
     <section id="logo">
         <div class="meow">
             <div class="videostuff">
-                <img src="" alt="animated logo" id="random-media">
+                <video autoplay loop muted playsinline src="" alt="animated logo" id="random-media"></video>
             </div>
         </div>
     </section>
@@ -155,7 +155,7 @@
                 <div class="fifth">
                     <div class="wow-uk webcon">
                         <h1>Ukrainian</h1>
-                        <h2>ММА українською!</h2>
+                        <h2>MMA українською!</h2>
                         <a href="/ukrainian/comics" class="lang-link"><button>{{ t.button }}</button></a>
                         <img src="{% static 'imgs/ukrainianpng.webp' %}" alt="">
                         <div class="wow-gif"></div>
@@ -174,13 +174,13 @@
                         <h1>{{ t.titlerar }}</h1>
                         <h2>{{ t.subtitlerar }}</h2>
                         <a href="{{ t.buttonrar }}" class="lang-link"><button>{{ t.button2 }}</button></a>
-                        <img src="{% static 'imgs/revisionafterrevision.jpg' %}" alt="">
+                        <img src="{% static 'imgs/revisionafterrevision.webp' %}" alt="">
                     </div>
                     <div class="tsrf labcon">
                         <h1>{{ t.titletsrf }}</h1>
                         <h2>{{ t.subtitletsrf }}</h2>
                         <a href="{{ t.buttontsrf }}" class="lang-link"><button>{{ t.button2 }}</button></a>
-                        <img src="{% static 'imgs/thestarsarefalling.jpg' %}" alt="">
+                        <img src="{% static 'imgs/thestarsarefalling.webp' %}" alt="">
                     </div>
                 </div>
                 <div class="second">
@@ -188,13 +188,13 @@
                         <h1>{{ t.titlemc }}</h1>
                         <h2>{{ t.subtitlemc }}</h2>
                         <a href="{{ t.buttonmc }}" class="lang-link"><button>{{ t.button2 }}</button></a>
-                        <img src="{% static 'imgs/missilecity.jpg' %}" alt="">
+                        <img src="{% static 'imgs/missilecity.webp' %}" alt="">
                     </div>
                     <div class="tbtl labcon">
                         <h1>{{ t.titletbtl }}</h1>
                         <h2>{{ t.subtitletbtl }}</h2>
                         <a href="{{ t.buttontbtl }}" class="lang-link"><button>{{ t.button2 }}</button></a>
-                        <img src="{% static 'imgs/thebigtempelie.jpg' %}" alt="">
+                        <img src="{% static 'imgs/thebigtempelie.webp' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
             <div class="title">
                 <h1>{{ t.community }}</h1>
             </div>
-                <img class="xenobot" src="{% static 'imgs/xenobot1.webp' %}" alt="">
+            <img class="xenobot" src="{% static 'imgs/xenobot1.webp' %}" alt="">
             <div class="comcontainer">
                 <div class="firststuff">
                     <a href="https://discord.gg/labirhin" style="text-decoration: none">
@@ -271,13 +271,13 @@
 
     <script>
         const randolist = [
-            "{% static 'imgs/gif1.gif' %}",
-            "{% static 'imgs/gif2.gif' %}",
-            "{% static 'imgs/gif3.gif' %}",
-            "{% static 'imgs/gif4.gif' %}",
-            "{% static 'imgs/gif5.gif' %}",
-            "{% static 'imgs/gif6.gif' %}",
-            "{% static 'imgs/gif7.gif' %}"
+            "{% static 'imgs/gif1.mp4' %}",
+            "{% static 'imgs/gif2.mp4' %}",
+            "{% static 'imgs/gif3.mp4' %}",
+            "{% static 'imgs/gif4.mp4' %}",
+            "{% static 'imgs/gif5.mp4' %}",
+            "{% static 'imgs/gif6.mp4' %}",
+            "{% static 'imgs/gif7.mp4' %}"
         ]
 
         const rindex = Math.floor(Math.random() * randolist.length);
