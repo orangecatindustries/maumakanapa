@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/933e061e-aa33-4946-8061-c1046ba83347" />![Logo](https://maumakanapa.art/static/imgs/maumakanapaweb.png)
-
 # `maumakanapa.art` // your place to read labirhin's comics!
 
 ## What is this website?
