@@ -21,6 +21,7 @@ urlpatterns = [
     path('<str:lang>/tbtl/', views.tbtlindex, name='tbtlindex'),
     path('<str:lang>/mc/', views.mcindex, name='mcindex'),
     path('<str:lang>/xenobot/', views.xenobot, name='xenobot'),
+    path('<str:lang>/ai/', views.ai, name='ai'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
