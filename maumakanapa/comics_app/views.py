@@ -716,3 +716,13 @@ def xenobot(request, lang):
         "t": TRANSLATIONS[lang],
     }
     return render(request, "comics_app/xenobot.html", context)
+
+def ai(request, lang):
+    if lang not in TRANSLATIONS:
+        lang = "english"
+
+    context = {
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+    }
+    return render(request, "comics_app/ai.html", context)

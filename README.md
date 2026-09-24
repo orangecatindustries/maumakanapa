@@ -1,5 +1,4 @@
 ![Logo](https://maumakanapa.art/static/imgs/maumakanapaweb.png)
-
 # `maumakanapa.art` // your place to read labirhin's comics!
 
 ## What is this website?
@@ -35,7 +34,8 @@ You will need the following:
 * django-admin-sortable2
 * django-minify-html
 * django-compressor
-* gunicorn
+* gunicorn (if you want to host via linux)
+* whitenoise (if you want to host via windows)
 
 ## Do you have permission to host the webcomic?
 I have talked with higher ups about my website, and it is now considered an official website to read the Mau Makan Apa comic, so technically, yes, I do have permission.
