@@ -1,3 +1,4 @@
+![Logo](https://maumakanapa.art/static/imgs/maumakanapaweb.png)
 # `maumakanapa.art` // your place to read labirhin's comics!
 
 ## What is this website?
