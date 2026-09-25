@@ -37,6 +37,7 @@
 
 
 body {
+    background-size: 2000px;
     background-image: url("/static/imgs/meow.webp");
     display: flex;
     align-items: center;

@@ -43,6 +43,7 @@ body, button {
 
 body {
     background-image: url("/static/imgs/meow.webp");
+    background-size: 2000px;
     display: flex;
     align-items: center;
     flex-direction: column;
