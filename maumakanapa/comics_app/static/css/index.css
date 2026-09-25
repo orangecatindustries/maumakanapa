@@ -38,6 +38,7 @@
 html,
 body {
     max-width: 100%;
+    font-family: var(--primary-font);
 }
 
 body {
@@ -87,7 +88,6 @@ header img {
 }
 
 header a {
-    font-family: var(--primary-font);
     text-decoration: none;
     color: white;
     font-weight: 200;
@@ -142,7 +142,6 @@ header nav {
     color: white;
     padding: 12px 16px;
     display: block;
-    font-family: var(--primary-font);
     font-size: 18px;
     text-decoration: none;
     margin-bottom: 8px;
@@ -209,7 +208,6 @@ header nav {
 }
 
 #containers h3 {
-    font-family: var(--primary-font);
     color: white;
     font-weight: 200;
     text-shadow: rgba(0, 0, 0, 1) 0px 0px 24px;
@@ -275,7 +273,6 @@ html[lang="ukrainian"] #containers h3 {
 }
 
 .webcon h1 {
-    font-family: var(--primary-font);
     color: white;
     font-weight: 200;
     position: relative;
@@ -287,7 +284,7 @@ html[lang="ukrainian"] #containers h3 {
 .labcon h2,
 .webcon h2 {
     position: relative;
-    font-family: var(--primary-font);
+
     font-weight: 200;
     z-index: 3;
     color: white;
@@ -410,7 +407,6 @@ html[lang="ukrainian"] .bigcontainer h3 {
     display: flex;
     font-size: 17px;
     padding: 0.8em 1em 0.8em 1em;
-    font-family: var(--primary-font);
     color: white;
     font-weight: 200;
     background: rgba(0, 0, 0, 0.5);
@@ -424,7 +420,6 @@ html[lang="ukrainian"] .bigcontainer h3 {
     margin-top: 15px;
     font-size: 17px;
     padding: 0.8em 1em 0.8em 1em;
-    font-family: var(--primary-font);
     color: white;
     font-weight: 200;
     background: rgba(0, 0, 0, 0.6);
@@ -486,7 +481,6 @@ html[lang="ukrainian"] .labcon h2 {
 }
 
 .labcon h1 {
-    font-family: var(--primary-font);
     color: white;
     font-weight: 200;
     position: relative;
@@ -546,7 +540,6 @@ html[lang="ukrainian"] .labcon h2 {
 
 .comcontainer h2 {
     color: white;
-    font-family: var(--primary-font);
     font-weight: 200;
     margin-left: 40px;
     text-decoration: none;
@@ -910,7 +903,6 @@ footer img {
 
     .comcontainer h2 {
         color: white;
-        font-family: var(--primary-font);
         font-weight: 200;
         text-decoration: none;
         font-size: 20px;
