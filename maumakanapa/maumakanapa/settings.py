@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-DEBUG = False
+RUNNING_SERVER = 'runserver' in sys.argv
+DEBUG = os.environ.get(
+    'DJANGO_DEBUG', '1' if RUNNING_SERVER else ''
+).lower() in {'1', 'true', 'yes'}
 
 ALLOWED_HOSTS = ['maumakanapa.art', 'www.maumakanapa.art', '127.0.0.1', '192.168.1.164']
 
@@ -47,7 +51,7 @@ STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder',
 ]
 
-COMPRESS_ENABLED = not DEBUG
+COMPRESS_ENABLED = not DEBUG and not RUNNING_SERVER
 COMPRESS_DEBUG_TOGGLE = False
 COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.rCSSMinFilter']
 COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.rJSMinFilter']
@@ -96,6 +100,13 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'maumakanapa-comment-rate-limits',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -133,9 +144,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE = not DEBUG and not RUNNING_SERVER
 
 COMPRESS_ROOT = STATIC_ROOT
+
+# Comment uploads and anonymous owner credentials are intentionally bounded.
+COMMENT_IMAGE_MAX_BYTES = 5 * 1024 * 1024
+COMMENT_IMAGE_MAX_PIXELS = 20_000_000
+COMMENT_IMAGE_MAX_DIMENSION = 10_000
+COMMENT_IMAGE_MAX_FRAMES = 100
+COMMENT_OWNER_COOKIE_AGE = 60 * 60 * 24 * 365
+COMMENT_OWNER_COOKIE_NAME = 'comment_owner'
+COMMENT_REPORT_RETENTION_DAYS = 365
+DATA_UPLOAD_MAX_MEMORY_SIZE = 7 * 1024 * 1024
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2_500_000
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

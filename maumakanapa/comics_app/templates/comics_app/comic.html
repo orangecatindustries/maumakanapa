@@ -16,7 +16,7 @@
     <title>Mau Makan Apa¿ - {{ comic.title }}</title>
     <link rel="icon" type="image/x-icon" href="/static/imgs/3dsadExo.ico">
     {% compress css %}
-    <link rel="stylesheet" href="{% static 'css/comic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/comic.css' %}?v=staff-badge-gradient">
     {% endcompress %}
 </head>
 
@@ -86,6 +86,7 @@
                 <p>{{ comic.subtitle }}</p>
                 {% endif %}
             </div>
+            <a href="#discussion" class="nav-btn discussion-jump">Jump to episode discussion ↓</a>
             <div class="comic-nav">
                 {% if prev_comic %}
                 <a href="{% url 'page' lang=prev_comic.language number=prev_comic.ep_number %}" class="nav-btn">‹ Prev
@@ -123,6 +124,44 @@
                 <span class="nav-btn disabled">Next Episode ›</span>
                 {% endif %}
             </div>
+            <section class="discussion" id="discussion" aria-labelledby="discussion-title">
+                <h2 id="discussion-title">Episode discussion</h2>
+                <p class="discussion-intro">Post anonymously. This browser keeps edit/delete access for one year; losing its ownership cookie means losing anonymous post controls.</p>
+                {% if user.is_authenticated and user.is_staff %}
+                <p class="staff-posting-notice">You are signed in as <strong>{{ user.get_username }}</strong>. Your post will show the [STAFF] badge, even if you choose to post anonymously.</p>
+                {% endif %}
+                {% if messages %}
+                <div class="discussion-messages" role="status">
+                    {% for message in messages %}<p class="{{ message.tags }}">{{ message }}</p>{% endfor %}
+                </div>
+                {% endif %}
+                <form class="comment-form" method="post" enctype="multipart/form-data"
+                    action="{% url 'comment_create' lang=comic.language number=comic.ep_number %}">
+                    {% csrf_token %}
+                    {% if not user.is_authenticated or not user.is_staff %}
+                    <label for="{{ comment_form.display_name.id_for_label }}">Name <span>(optional)</span></label>
+                    {{ comment_form.display_name }}
+                    {% else %}
+                    <label class="check-label staff-anonymous-option">
+                        <input type="checkbox" name="post_anonymously">
+                        Post as Anonymous (keep the [STAFF] badge)
+                    </label>
+                    {% endif %}
+                    <label for="{{ comment_form.body.id_for_label }}">Comment</label>
+                    {{ comment_form.body }}
+                    <label for="{{ comment_form.image.id_for_label }}">Image or GIF <span>(optional, up to 5 MB)</span></label>
+                    {{ comment_form.image }}
+                    <small>JPEG, PNG, GIF, and WebP are supported. Videos are not allowed.</small>
+                    <button type="submit" class="discussion-button">Post comment</button>
+                </form>
+                <div class="comment-list">
+                    {% for comment in comments %}
+                    {% include "comics_app/_comment.html" with comment=comment %}
+                    {% empty %}
+                    <p class="no-comments">No comments yet. Start the conversation!</p>
+                    {% endfor %}
+                </div>
+            </section>
             {% else %}
             <div class="comic-header" style="text-align: center; padding: 50px 0;">
                 <h1>{{ t.notcomic1 }}</h1>

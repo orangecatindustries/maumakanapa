@@ -1,5 +1,26 @@
-from django.shortcuts import render
-from .models import webcomic
+from hashlib import sha256
+import secrets
+
+from django.contrib import messages
+from django.conf import settings
+from django.core.cache import cache
+from django.db.models import Prefetch
+from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
+from django.utils.crypto import salted_hmac
+from django.views.decorators.http import require_POST
+
+from .forms import CommentCreateForm, CommentEditForm, CommentReportForm
+from .comment_moderation import screen_comment
+from .models import (
+    CommentLike,
+    CommentModerationEvent,
+    CommentReport,
+    EpisodeComment,
+    webcomic,
+)
+from .services import migrate_legacy_owner_key, record_moderation_event
+
 
 TRANSLATIONS = {
     "english": {
@@ -629,6 +650,9 @@ def page(request, lang, number):
     if lang not in TRANSLATIONS:
         lang = "english"
 
+    owner_keys = comment_owner_keys(request, create=True)
+    if request.session.session_key and len(owner_keys) > 1:
+        migrate_legacy_owner_key(owner_keys[1], owner_keys[0])
     comic = webcomic.objects.filter(language__iexact=lang, ep_number=number).first()
 
     if comic:
@@ -654,8 +678,311 @@ def page(request, lang, number):
         "pages": pages,
         "prev_comic": prev_comic,
         "next_comic": next_comic,
+        "comments": (
+            comic.comments.filter(parent__isnull=True, is_approved=True)
+            .prefetch_related(
+                Prefetch(
+                    "replies",
+                    queryset=EpisodeComment.objects.filter(is_approved=True)
+                    .prefetch_related("likes")
+                    .order_by("created_at", "pk"),
+                ),
+                "likes",
+            )
+            .order_by("created_at", "pk")
+            if comic else []
+        ),
+        "comment_form": CommentCreateForm(),
+        "comment_owner_keys": owner_keys,
+        "liked_comment_ids": (
+            set(CommentLike.objects.filter(owner_key__in=owner_keys)
+                .values_list("comment_id", flat=True))
+            if owner_keys else set()
+        ),
     }
-    return render(request, "comics_app/comic.html", context)
+    response = render(request, "comics_app/comic.html", context)
+    return set_comment_owner_cookie(request, response)
+
+
+def _owner_key_for_token(token):
+    return salted_hmac('episode-comment-owner-cookie', token).hexdigest()
+
+
+def comment_owner_key(request, create=False):
+    token = getattr(request, '_comment_owner_token', None)
+    if token is None:
+        token = request.COOKIES.get(settings.COMMENT_OWNER_COOKIE_NAME, '')
+        if len(token) < 32 or len(token) > 128 or not token.isascii():
+            token = ''
+    if not token and create:
+        token = secrets.token_urlsafe(32)
+        request._comment_owner_token = token
+    if token:
+        return _owner_key_for_token(token)
+    session_key = request.session.session_key
+    if session_key:
+        return salted_hmac('episode-comment-owner', session_key).hexdigest()
+    return ''
+
+
+def comment_owner_keys(request, create=False):
+    keys = []
+    owner_key = comment_owner_key(request, create=create)
+    if owner_key:
+        keys.append(owner_key)
+    session_key = request.session.session_key
+    if session_key:
+        legacy_key = salted_hmac('episode-comment-owner', session_key).hexdigest()
+        if legacy_key not in keys:
+            keys.append(legacy_key)
+    return keys
+
+
+def set_comment_owner_cookie(request, response):
+    token = getattr(request, '_comment_owner_token', None)
+    if token:
+        response.set_cookie(
+            settings.COMMENT_OWNER_COOKIE_NAME,
+            token,
+            max_age=getattr(settings, 'COMMENT_OWNER_COOKIE_AGE', 60 * 60 * 24 * 365),
+            httponly=True,
+            secure=request.is_secure(),
+            samesite='Lax',
+            path='/',
+        )
+    return response
+
+
+def allow_comment_write(request, owner_key, *, new_comment=False):
+    address_key = sha256(request.META.get("REMOTE_ADDR", "").encode()).hexdigest()
+    limits = [
+        (f"episode-comment-ip:{address_key}", 30, 60),
+        (f"episode-comment-owner:{owner_key}", 5 if new_comment else 30, 600 if new_comment else 60),
+    ]
+    for key, limit, window in limits:
+        cache.add(key, 0, timeout=window)
+        try:
+            count = cache.incr(key)
+        except ValueError:
+            cache.add(key, 0, timeout=window)
+            count = cache.incr(key)
+        if count > limit:
+            return False
+    return True
+
+
+def comment_redirect(comic):
+    return redirect(f"{comic.get_absolute_url()}#discussion")
+
+
+def get_episode_comment(request, lang, number, comment_id):
+    comic = get_object_or_404(webcomic, language__iexact=lang, ep_number=number)
+    comment = get_object_or_404(EpisodeComment, pk=comment_id, webcomic=comic)
+    return comic, comment
+
+
+@require_POST
+def create_episode_comment(request, lang, number):
+    comic = get_object_or_404(webcomic, language__iexact=lang, ep_number=number)
+    form = CommentCreateForm(request.POST, request.FILES)
+    if not form.is_valid():
+        for field_errors in form.errors.values():
+            for error in field_errors:
+                messages.error(request, error)
+        return comment_redirect(comic)
+
+    owner_key = comment_owner_key(request, create=True)
+    if not allow_comment_write(request, owner_key, new_comment=True):
+        messages.error(request, "You're posting too quickly. Please wait before posting again.")
+        return set_comment_owner_cookie(request, comment_redirect(comic))
+
+    comment = form.save(commit=False)
+    comment.webcomic = comic
+    comment.owner_key = owner_key
+    if request.user.is_authenticated:
+        comment.author = request.user
+        if request.user.is_staff:
+            if request.POST.get("post_anonymously") == "on":
+                comment.display_name = "Anonymous"
+            else:
+                comment.display_name = request.user.get_username()[:32]
+    moderation_reasons = screen_comment(comment.display_name, comment.body)
+    comment.is_approved = not moderation_reasons
+    comment.moderation_reason = ", ".join(moderation_reasons)
+    parent_id = request.POST.get("parent_id")
+    if parent_id:
+        comment.parent = get_object_or_404(
+            EpisodeComment, pk=parent_id, webcomic=comic, parent__isnull=True
+        )
+    comment.save()
+    if not comment.is_approved:
+        record_moderation_event(
+            comment,
+            CommentModerationEvent.Action.UNAPPROVED,
+            actor=request.user,
+            details={
+                'source': 'automatic_screening',
+                'moderation_reason': comment.moderation_reason,
+            },
+        )
+    if comment.is_approved:
+        messages.success(request, "Your comment was posted.")
+    else:
+        messages.success(
+            request,
+            "Your comment was sent to the moderators for review and is not public yet.",
+        )
+    return set_comment_owner_cookie(
+        request,
+        redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}"),
+    )
+
+
+@require_POST
+def edit_episode_comment(request, lang, number, comment_id):
+    comic, comment = get_episode_comment(request, lang, number, comment_id)
+    owner_keys = comment_owner_keys(request)
+    if comment.author_id:
+        is_owner = bool(
+            request.user.is_authenticated
+            and comment.author_id == request.user.pk
+        )
+    else:
+        is_owner = comment.owner_key in owner_keys
+    if not is_owner:
+        messages.error(request, "Only the browser session that posted this comment can edit it.")
+        return comment_redirect(comic)
+    owner_key = comment_owner_key(request, create=True)
+    if not allow_comment_write(request, owner_key or comment.owner_key):
+        messages.error(request, "You're doing that too quickly. Please wait and try again.")
+        return set_comment_owner_cookie(request, comment_redirect(comic))
+
+    form = CommentEditForm(request.POST, request.FILES, instance=comment)
+    if not form.is_valid():
+        for field_errors in form.errors.values():
+            for error in field_errors:
+                messages.error(request, error)
+        return set_comment_owner_cookie(
+            request,
+            redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}"),
+        )
+
+    previous_image = comment.image
+    previously_approved = comment.is_approved
+    comment = form.save(commit=False)
+    if not comment.author_id and comment.owner_key != owner_key:
+        comment.owner_key = owner_key
+    if form.cleaned_data.get("remove_image") and not form.cleaned_data.get("image"):
+        comment.image = ""
+    moderation_reasons = screen_comment(comment.display_name, comment.body)
+    comment.is_approved = not moderation_reasons
+    comment.moderation_reason = ", ".join(moderation_reasons)
+    comment.edited_at = timezone.now()
+    comment.save()
+    if previously_approved != comment.is_approved:
+        record_moderation_event(
+            comment,
+            (
+                CommentModerationEvent.Action.APPROVED
+                if comment.is_approved
+                else CommentModerationEvent.Action.UNAPPROVED
+            ),
+            actor=request.user,
+            details={'source': 'comment_edit_screening'},
+        )
+    if previous_image and previous_image.name != comment.image.name:
+        previous_image.delete(save=False)
+    if comment.is_approved:
+        messages.success(request, "Your comment was updated.")
+    else:
+        messages.success(
+            request,
+            "Your edited comment was sent to the moderators for review and is not public yet.",
+        )
+    return set_comment_owner_cookie(
+        request,
+        redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}"),
+    )
+
+
+@require_POST
+def delete_episode_comment(request, lang, number, comment_id):
+    comic, comment = get_episode_comment(request, lang, number, comment_id)
+    owner_keys = comment_owner_keys(request)
+    if comment.author_id:
+        is_owner = bool(
+            request.user.is_authenticated
+            and comment.author_id == request.user.pk
+        )
+    else:
+        is_owner = comment.owner_key in owner_keys
+    owner_key = comment_owner_key(request)
+    if not is_owner:
+        messages.error(request, "Only the browser session that posted this comment can delete it.")
+        return comment_redirect(comic)
+    if not allow_comment_write(request, owner_key or comment.owner_key):
+        messages.error(request, "You're doing that too quickly. Please wait and try again.")
+        return comment_redirect(comic)
+
+    record_moderation_event(
+        comment,
+        CommentModerationEvent.Action.COMMENT_DELETED,
+        actor=request.user,
+        details={'source': 'comment_owner'},
+    )
+    comment.delete()
+    messages.success(request, "Your comment was deleted.")
+    return set_comment_owner_cookie(request, comment_redirect(comic))
+
+
+@require_POST
+def like_episode_comment(request, lang, number, comment_id):
+    comic, comment = get_episode_comment(request, lang, number, comment_id)
+    owner_key = comment_owner_key(request, create=True)
+    if not allow_comment_write(request, owner_key):
+        messages.error(request, "You're doing that too quickly. Please wait and try again.")
+        return comment_redirect(comic)
+    like, created = CommentLike.objects.get_or_create(comment=comment, owner_key=owner_key)
+    if not created:
+        like.delete()
+    return set_comment_owner_cookie(
+        request,
+        redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}"),
+    )
+
+
+@require_POST
+def report_episode_comment(request, lang, number, comment_id):
+    comic, comment = get_episode_comment(request, lang, number, comment_id)
+    form = CommentReportForm(request.POST)
+    if not form.is_valid():
+        for field_errors in form.errors.values():
+            for error in field_errors:
+                messages.error(request, error)
+        return set_comment_owner_cookie(
+            request,
+            redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}"),
+        )
+
+    owner_key = comment_owner_key(request, create=True)
+    if not allow_comment_write(request, owner_key):
+        messages.error(request, "You're doing that too quickly. Please wait and try again.")
+        return comment_redirect(comic)
+    report, created = CommentReport.objects.get_or_create(
+        comment=comment,
+        reporter_key=owner_key,
+        defaults={"reason": form.cleaned_data["reason"]},
+    )
+    if not created and report.reason != form.cleaned_data["reason"]:
+        report.reason = form.cleaned_data["reason"]
+        report.save(update_fields=["reason"])
+    if created:
+        comment.is_reported = True
+        comment.save(update_fields=["is_reported"])
+        messages.success(request, "Thanks. This comment was flagged for moderator review.")
+    else:
+        messages.info(request, "Your report has been updated for moderator review.")
+    return redirect(f"{comic.get_absolute_url()}#comment-{comment.pk}")
 
 def about(request, lang):
     if lang not in TRANSLATIONS:

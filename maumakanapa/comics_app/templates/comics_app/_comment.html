@@ -1,0 +1,79 @@
+<article class="comment-card" id="comment-{{ comment.pk }}">
+    <div class="comment-meta">
+        <strong>{{ comment.display_name }}</strong>
+        {% if comment.author and comment.author.is_staff %}<span class="staff-badge">[STAFF]</span>{% endif %}
+        <time datetime="{{ comment.created_at|date:'c' }}">{{ comment.created_at|date:"M j, Y, g:i A" }}</time>
+        {% if comment.edited_at %}<span class="edited-label">(edited)</span>{% endif %}
+    </div>
+    {% if comment.body %}<p class="comment-body">{{ comment.body|linebreaksbr }}</p>{% endif %}
+    {% if comment.image %}
+    <a class="comment-image-link" href="{{ comment.image.url }}" target="_blank" rel="noopener">
+        <img class="comment-image" src="{{ comment.image.url }}" alt="Image attached by {{ comment.display_name }}" loading="lazy">
+    </a>
+    {% endif %}
+    <div class="comment-actions">
+        <form method="post" action="{% url 'comment_like' lang=comic.language number=comic.ep_number comment_id=comment.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="text-button" aria-label="{% if comment.pk in liked_comment_ids %}Unlike{% else %}Like{% endif %} comment">
+                {% if comment.pk in liked_comment_ids %}♥{% else %}♡{% endif %} {{ comment.likes.count }}
+            </button>
+        </form>
+        {% if not comment.parent %}
+        <details class="inline-action">
+            <summary class="text-button">Reply</summary>
+            <form class="reply-form" method="post" enctype="multipart/form-data"
+                action="{% url 'comment_create' lang=comic.language number=comic.ep_number %}">
+                {% csrf_token %}
+                <input type="hidden" name="parent_id" value="{{ comment.pk }}">
+                {% if not user.is_authenticated or not user.is_staff %}
+                <label>Name <span>(optional)</span><input type="text" name="display_name" maxlength="32" autocomplete="nickname"></label>
+                {% else %}
+                <label class="check-label staff-anonymous-option">
+                    <input type="checkbox" name="post_anonymously">
+                    Post as Anonymous (keep the [STAFF] badge)
+                </label>
+                {% endif %}
+                <label>Reply<textarea name="body" rows="3" maxlength="2000"></textarea></label>
+                <label>Image or GIF<input type="file" name="image" accept="image/jpeg,image/png,image/gif,image/webp"></label>
+                <button type="submit" class="discussion-button">Post reply</button>
+            </form>
+        </details>
+        {% endif %}
+        <details class="inline-action">
+            <summary class="text-button">Report</summary>
+            <form class="reply-form" method="post"
+                action="{% url 'comment_report' lang=comic.language number=comic.ep_number comment_id=comment.pk %}">
+                {% csrf_token %}
+                <label for="report-reason-{{ comment.pk }}">Why should a moderator review this comment?</label>
+                <textarea id="report-reason-{{ comment.pk }}" name="reason" rows="3" maxlength="500" minlength="5"
+                    placeholder="Please explain your concern (5–500 characters)." required></textarea>
+                <button type="submit" class="discussion-button">Send report</button>
+            </form>
+        </details>
+        {% if comment.author_id and user.is_authenticated and comment.author_id == user.id or not comment.author_id and comment.owner_key in comment_owner_keys %}
+        <details class="inline-action">
+            <summary class="text-button">Edit</summary>
+            <form class="reply-form" method="post" enctype="multipart/form-data"
+                action="{% url 'comment_edit' lang=comic.language number=comic.ep_number comment_id=comment.pk %}">
+                {% csrf_token %}
+                <label>Edit comment<textarea name="body" rows="4" maxlength="2000">{{ comment.body }}</textarea></label>
+                {% if comment.image %}<label class="check-label"><input type="checkbox" name="remove_image"> Remove current image</label>{% endif %}
+                <label>Replace or add image<input type="file" name="image" accept="image/jpeg,image/png,image/gif,image/webp"></label>
+                <button type="submit" class="discussion-button">Save changes</button>
+            </form>
+        </details>
+        <form method="post" action="{% url 'comment_delete' lang=comic.language number=comic.ep_number comment_id=comment.pk %}"
+            onsubmit="return confirm('Delete this comment? This cannot be undone.');">
+            {% csrf_token %}
+            <button type="submit" class="text-button delete-button">Delete</button>
+        </form>
+        {% endif %}
+    </div>
+    {% if not comment.parent %}
+    <div class="comment-replies">
+        {% for reply in comment.replies.all %}
+        {% include "comics_app/_comment.html" with comment=reply %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</article>

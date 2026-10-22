@@ -1,0 +1,39 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="content-main">
+  <p>Reported or automatically held comments awaiting moderator attention.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Comment</th>
+        <th>Episode</th>
+        <th>Status</th>
+        <th>Reports</th>
+        <th>Moderation reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comment in comments %}
+      <tr>
+        <td><a href="{% url 'admin:comics_app_episodecomment_change' comment.pk %}">{{ comment.display_name }} — {{ comment.body|truncatechars:100|default:"[image attachment]" }}</a></td>
+        <td>{{ comment.webcomic }}</td>
+        <td>{% if comment.is_approved %}Published{% else %}Held{% endif %}{% if comment.is_reported %}; reported{% endif %}</td>
+        <td>
+          {% for report in comment.reports.all %}
+            <p>{{ report.created_at|date:"SHORT_DATETIME_FORMAT" }}: {{ report.reason }}</p>
+          {% empty %}
+            —
+          {% endfor %}
+        </td>
+        <td>{{ comment.moderation_reason|default:"—" }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5">The moderation queue is clear.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="{% url 'admin:comics_app_commentreport_changelist' %}">Open report list</a></p>
+</div>
+{% endblock %}
