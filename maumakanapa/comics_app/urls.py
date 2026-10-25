@@ -23,6 +23,7 @@ urlpatterns = [
     path('<str:lang>/xenobot/', views.xenobot, name='xenobot'),
     path('<str:lang>/ai/', views.ai, name='ai'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('<str:lang>/new-home/', views.newhome, name='newhome'),
 ]
 
 if settings.DEBUG:

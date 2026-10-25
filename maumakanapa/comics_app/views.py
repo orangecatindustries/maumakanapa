@@ -726,3 +726,13 @@ def ai(request, lang):
         "t": TRANSLATIONS[lang],
     }
     return render(request, "comics_app/ai.html", context)
+
+def newhome(request, lang):
+    if lang not in TRANSLATIONS:
+        lang = "english"
+
+    context = {
+        "current_lang": lang,
+        "t": TRANSLATIONS[lang],
+    }
+    return render(request, "comics_app/newhome.html", context)
