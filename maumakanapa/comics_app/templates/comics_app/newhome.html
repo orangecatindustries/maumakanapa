@@ -1428,50 +1428,6 @@
     <h3>buttons do NOT work here</h3>
     <a id="skip-loading-button">skip loading</a>
 </div>
-
-<script>
-
-    const loadingImages = [
-        "{% static 'new-imgs/WEEWEE.webp' %}",
-        "{% static 'new-imgs/kepala_lobi.webp' %}",
-        "{% static 'new-imgs/EXOHEAD.webp' %}",
-        "{% static 'new-imgs/GIXHEAD.webp' %}",
-        "{% static 'new-imgs/ERIKAHEAD.webp' %}"
-    ];
-
-    const diceroll = Math.floor(Math.random() * 10);
-    if (diceroll < loadingImages.length) {
-        document.getElementById("loading-image").src = loadingImages[diceroll];
-    }
-
-    const loadingTexts = [
-        "we're making things awesum,,",
-        "we're loading sum epikness....",
-        "meow meow mrrrp!",
-        "laaaaaaaaaaaaabirhin.",
-        "revision.. after revision..",
-        "everything, only from jaya abadi!",
-        "let jaya blow your mind!"
-    ];
-    document.getElementById("loading-text").textContent =
-        loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
-
-    const loadingscreen = document.querySelector(".loading-meow");
-    const loadingSkip = document.getElementById("skip-loading-button")
-
-    window.addEventListener('load', () => {
-        loadingscreen.style.opacity = "0";
-        setTimeout(() => { loadingscreen.style.display = "none"; }, 1000);
-    });
-
-    setTimeout(() => {
-        loadingSkip.style.display = "block";
-    }, 3000);
-
-    loadingSkip.addEventListener('click', (event) => {
-        loadingscreen.style.opacity = "0";
-        setTimeout(() => { loadingscreen.style.display = "none"; }, 1000);
-    });
 </script>
 <header>
     <div class="navwrap">
@@ -1620,6 +1576,48 @@
 </header>
 
 <script>
+    const loadingImages = [
+        "{% static 'new-imgs/WEEWEE.webp' %}",
+        "{% static 'new-imgs/kepala_lobi.webp' %}",
+        "{% static 'new-imgs/EXOHEAD.webp' %}",
+        "{% static 'new-imgs/GIXHEAD.webp' %}",
+        "{% static 'new-imgs/ERIKAHEAD.webp' %}"
+    ];
+
+    const diceroll = Math.floor(Math.random() * 10);
+    if (diceroll < loadingImages.length) {
+        document.getElementById("loading-image").src = loadingImages[diceroll];
+    }
+
+    const loadingTexts = [
+        "we're making things awesum,,",
+        "we're loading sum epikness....",
+        "meow meow mrrrp!",
+        "laaaaaaaaaaaaabirhin.",
+        "revision.. after revision..",
+        "everything, only from jaya abadi!",
+        "let jaya blow your mind!"
+    ];
+    document.getElementById("loading-text").textContent =
+        loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+
+    const loadingscreen = document.querySelector(".loading-meow");
+    const loadingSkip = document.getElementById("skip-loading-button")
+
+    window.addEventListener('load', () => {
+        loadingscreen.style.opacity = "0";
+        setTimeout(() => { loadingscreen.style.display = "none"; }, 1000);
+    });
+
+    setTimeout(() => {
+        loadingSkip.style.display = "block";
+    }, 3000);
+
+    loadingSkip.addEventListener('click', (event) => {
+        loadingscreen.style.opacity = "0";
+        setTimeout(() => { loadingscreen.style.display = "none"; }, 1000);
+    });
+
     const dropdownbtn = document.getElementById("ham-expand");
     const navdrop = document.querySelector(".nav");
 
